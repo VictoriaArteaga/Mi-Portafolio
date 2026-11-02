@@ -1,3 +1,6 @@
+"use client";
+
+import { useLang, useT } from "@/lib/prefs";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import { Github } from "./Icons";
@@ -18,12 +21,14 @@ const tones: Record<ProjectTone, Style> = {
 const tilts = ["-rotate-[8deg]", "rotate-[6deg]", "-rotate-[5deg]", "rotate-[9deg]", "rotate-[5deg]", "-rotate-[7deg]"];
 
 export default function Projects() {
+  const t = useT().projects;
+  const { lang } = useLang();
   return (
-    <section id="proyectos" className="overflow-hidden bg-sand py-20 sm:py-24">
+    <section id="proyectos" className="overflow-hidden bg-sand py-20 dark:bg-dusk sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota">FEATURED WORK</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">Selected Projects</h2>
+          <p className="text-xs font-bold tracking-[0.2em] text-terracota">{t.eyebrow}</p>
+          <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">{t.title}</h2>
         </Reveal>
 
         <ul className="mt-14 grid gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 lg:grid-cols-3">
@@ -37,16 +42,16 @@ export default function Projects() {
                   >
                     <div className={`flex h-full flex-col rounded-[1.6rem] border-[1.5px] p-4 ${s.frame}`}>
                       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]">
-                        {p.image && <Image src={p.image} alt={`Captura de ${p.title}`} fill sizes="288px" className="object-cover" />}
+                        {p.image && <Image src={p.image} alt={t.shot(p.title)} fill sizes="288px" className="object-cover" />}
                       </div>
 
-                      <h3 className={`font-script mt-3 text-4xl leading-none ${s.title}`}>{p.title}</h3>
-                      <p className={`mt-2 text-sm leading-snug ${s.text}`}>{p.description}</p>
+                      <h3 className={`font-script mt-3 text-center text-4xl leading-none ${s.title}`}>{p.title}</h3>
+                      <p className={`mt-2 text-center text-sm leading-snug ${s.text}`}>{p.description?.[lang] ?? t.description}</p>
 
-                      <ul className="mt-3 flex flex-wrap gap-1.5">
-                        {p.tags.map((t) => (
-                          <li key={t} className={`rounded-md border px-2 py-0.5 text-[0.7rem] font-semibold ${s.tag}`}>
-                            {t}
+                      <ul className="mt-3 flex flex-wrap justify-center gap-1.5">
+                        {p.tags.map((tag) => (
+                          <li key={tag} className={`rounded-md border px-2 py-0.5 text-[0.7rem] font-semibold ${s.tag}`}>
+                            {tag}
                           </li>
                         ))}
                       </ul>
@@ -54,7 +59,7 @@ export default function Projects() {
                       <div className="mt-4 flex items-center justify-end gap-3">
                         <a
                           href={p.repo}
-                          aria-label={`Repositorio de ${p.title}`}
+                          aria-label={t.repo(p.title)}
                           className={`grid size-9 place-items-center rounded-full transition-transform duration-150 ease-out-strong hover:scale-110 active:scale-90 ${s.gh}`}
                         >
                           <Github className="size-6" />
@@ -63,7 +68,7 @@ export default function Projects() {
                           href={p.demo}
                           className={`rounded-md px-4 py-2 text-sm font-bold transition-transform duration-150 ease-out-strong active:scale-[0.96] ${s.btn}`}
                         >
-                          Ver Demo
+                          {t.demo}
                         </a>
                       </div>
                     </div>

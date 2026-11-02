@@ -1,14 +1,9 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fff6ec;
-  --foreground: #2a1a12;
-}
+/* Modo oscuro: se activa con la clase .dark en <html> y se usa con las utilidades dark: de Tailwind. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
   --color-cream: #fff6ec;
   --color-sand: #fbd0a6;
   --color-ink: #2a1a12;
@@ -18,6 +13,14 @@
   --color-crimson: #dc0032;
   --color-blush: #ffa0ae;
   --color-butter: #ffe49a;
+
+  /* Paleta del modo oscuro */
+  --color-night: #17100c;
+  --color-umber: #1e1510;
+  --color-dusk: #3d2616;
+  --color-bark: #261913;
+  --color-moon: #f5e6d6;
+  --color-linen: #e3c3a4;
 
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-fraunces);
@@ -32,8 +35,6 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 

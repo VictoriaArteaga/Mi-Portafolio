@@ -1,15 +1,15 @@
+"use client";
+
+import { useT } from "@/lib/prefs";
 import Reveal from "./Reveal";
 import { ArrowRight, Heart, Pencil, Spark } from "./Icons";
 
-const values = [
-  { icon: Pencil, label: "Estética limpia y juguetona" },
-  { icon: Heart, label: "Detallista y confiable" },
-  { icon: Spark, label: "Comunicación clara y a tiempo" },
-];
+const icons = [Pencil, Heart, Spark];
 
 export default function About() {
+  const t = useT().about;
   return (
-    <section id="sobre-mi" className="bg-[#fff1e2] py-20 sm:py-24">
+    <section id="sobre-mi" className="bg-[#fff1e2] py-20 dark:bg-umber sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 md:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           {/* Polaroid. Sustituye el degradado por <Image src="/about.jpg" fill ... /> */}
@@ -23,32 +23,33 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota">SOBRE MÍ</p>
+          <p className="text-xs font-bold tracking-[0.2em] text-terracota">{t.eyebrow}</p>
           <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-            El diseño es la forma en que comunico ideas y emociones.
+            {t.title}
           </h2>
-          <p className="mt-5 max-w-lg leading-relaxed text-ink/75">
-            Creo que una buena interfaz es más que algo bonito: es claridad, conexión y propósito. Me gusta
-            unir código y diseño para que cada proyecto se vea cuidado, funcione con fluidez y se sienta
-            humano.
+          <p className="mt-5 max-w-lg leading-relaxed text-ink/75 dark:text-moon/75">
+            {t.text}
           </p>
 
           <ul className="mt-8 grid gap-5 sm:grid-cols-3">
-            {values.map(({ icon: Icon, label }) => (
+            {t.values.map((label, i) => {
+              const Icon = icons[i];
+              return (
               <li key={label} className="flex items-center gap-3 sm:flex-col sm:items-start">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sand text-terracota">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sand text-terracota dark:bg-dusk">
                   <Icon className="size-5" />
                 </span>
-                <span className="text-sm font-medium text-ink/80">{label}</span>
+                <span className="text-sm font-medium text-ink/80 dark:text-moon/80">{label}</span>
               </li>
-            ))}
+              );
+            })}
           </ul>
 
           <a
             href="#contacto"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-terracota px-6 py-3 text-sm font-semibold text-white transition-[transform,background-color] duration-150 ease-out-strong hover:bg-[#d4660f] active:scale-[0.97]"
           >
-            Conoce más
+            {t.more}
             <ArrowRight className="size-4" />
           </a>
         </Reveal>

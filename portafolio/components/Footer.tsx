@@ -1,17 +1,11 @@
-import { Logo } from "./Navbar";
+"use client";
+
+import { useT } from "@/lib/prefs";
+import { Logo, sections } from "./Navbar";
 import { ArrowRight, Github, Instagram, Linkedin, Mail, Plane } from "./Icons";
 
 // TODO: reemplaza por tus enlaces y correo reales.
 const EMAIL = "hola@tudominio.com";
-
-const quick = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#experiencia", label: "Experiencia" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#testimonios", label: "Testimonios" },
-  { href: "#contacto", label: "Contacto" },
-];
 
 const socials = [
   { href: "#", label: "Instagram", icon: Instagram },
@@ -20,6 +14,9 @@ const socials = [
 ];
 
 export default function Footer() {
+  const t = useT();
+  const f = t.footer;
+  const quick = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
   return (
     <footer>
       <section id="contacto" className="relative overflow-hidden bg-terracota text-white">
@@ -28,33 +25,33 @@ export default function Footer() {
           <div className="flex items-center gap-5">
             <Plane className="hidden size-12 -rotate-12 text-white/70 sm:block" />
             <h2 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-              ¿Tienes un proyecto
+              {f.titleStart}
               <br />
-              en mente?
+              {f.titleEnd}
             </h2>
           </div>
           <div className="max-w-sm">
-            <p className="text-sm text-white/90">Me encantará escuchar tus ideas y ayudarte a hacerlas realidad.</p>
+            <p className="text-sm text-white/90">{f.text}</p>
             <a
               href={`mailto:${EMAIL}`}
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-terracota transition-transform duration-150 ease-out-strong hover:scale-[1.03] active:scale-[0.97]"
             >
-              Escríbeme
+              {f.cta}
               <ArrowRight className="size-4" />
             </a>
           </div>
         </div>
       </section>
 
-      <div className="bg-ink text-cream">
+      <div className="bg-ink text-cream dark:border-t dark:border-cream/10">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <Logo />
-            <p className="mt-4 text-xs text-cream/60">© 2026 María Victoria Arteaga. Todos los derechos reservados.</p>
+            <p className="mt-4 text-xs text-cream/60">{f.rights}</p>
           </div>
 
-          <nav aria-label="Enlaces rápidos">
-            <h3 className="text-sm font-semibold">Enlaces rápidos</h3>
+          <nav aria-label={f.quickLabel}>
+            <h3 className="text-sm font-semibold">{f.quickLabel}</h3>
             <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-cream/70">
               {quick.map((l) => (
                 <li key={l.href}>
@@ -67,7 +64,7 @@ export default function Footer() {
           </nav>
 
           <div>
-            <h3 className="text-sm font-semibold">Sígueme</h3>
+            <h3 className="text-sm font-semibold">{f.follow}</h3>
             <ul className="mt-4 flex gap-3">
               {socials.map(({ href, label, icon: Icon }) => (
                 <li key={label}>

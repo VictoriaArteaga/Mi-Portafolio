@@ -8,7 +8,8 @@ export type ProjectTone =
 
 export type Project = {
   title: string;
-  description: string;
+  /** Descripción por idioma. Si falta se usa el texto provisional de lib/copy.ts. */
+  description?: { es: string; en: string };
   tags: string[];
   tone: ProjectTone;
   repo: string;
@@ -21,7 +22,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Ñawi Nariño",
-    description: "Descripción breve del proyecto y del problema que resuelve.",
     tags: ["Next.js", "Tailwind", "TypeScript"],
     tone: "blush",
     repo: "#",
@@ -29,7 +29,6 @@ export const projects: Project[] = [
   },
   {
     title: "Respira",
-    description: "Descripción breve del proyecto y del problema que resuelve.",
     tags: ["React", "CSS", "API"],
     tone: "crimson",
     repo: "#",
@@ -37,7 +36,6 @@ export const projects: Project[] = [
   },
   {
     title: "Coco",
-    description: "Descripción breve del proyecto y del problema que resuelve.",
     tags: ["Next.js", "Tailwind"],
     tone: "tangerine",
     repo: "#",
@@ -45,7 +43,6 @@ export const projects: Project[] = [
   },
   {
     title: "Teñas",
-    description: "Descripción breve del proyecto y del problema que resuelve.",
     tags: ["React", "Node", "SQL"],
     tone: "butter",
     repo: "#",
@@ -53,7 +50,6 @@ export const projects: Project[] = [
   },
   {
     title: "Ar 3D",
-    description: "Descripción breve del proyecto y del problema que resuelve.",
     tags: ["Three.js", "WebXR", "JS"],
     tone: "terracota",
     repo: "#",
@@ -61,7 +57,6 @@ export const projects: Project[] = [
   },
   {
     title: "Hope Link",
-    description: "Descripción breve del proyecto y del problema que resuelve.",
     tags: ["Next.js", "Prisma", "TS"],
     tone: "cocoa",
     repo: "#",

@@ -78,3 +78,16 @@ export const Plane = ({ className }: IconProps) => (
     <path d="M21 3L3 10.500l7 3 3 7L21 3zM10 13.500L21 3" />
   </svg>
 );
+
+export const Sun = ({ className }: IconProps) => (
+  <svg {...base} className={className}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+  </svg>
+);
+
+export const Moon = ({ className }: IconProps) => (
+  <svg {...base} className={className}>
+    <path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z" />
+  </svg>
+);

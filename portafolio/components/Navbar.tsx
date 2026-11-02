@@ -1,20 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/lib/prefs";
 import { ArrowRight } from "./Icons";
+import Controls from "./Controls";
 
-const links = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#experiencia", label: "Experiencia" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#testimonios", label: "Testimonios" },
-  { href: "#contacto", label: "Contacto" },
-];
+export const sections = ["#inicio", "#sobre-mi", "#experiencia", "#proyectos", "#testimonios", "#contacto"];
 
 export function Logo({ className = "" }: { className?: string }) {
+  const t = useT();
   return (
-    <a href="#inicio" className={`group inline-flex flex-col leading-none ${className}`} aria-label="Victoria Arteaga, inicio">
+    <a href="#inicio" className={`group inline-flex flex-col leading-none ${className}`} aria-label={t.nav.home}>
       <span className="font-script text-4xl text-terracota transition-transform duration-200 ease-out-strong group-active:scale-95">
         Victoria
       </span>
@@ -25,10 +21,12 @@ export function Logo({ className = "" }: { className?: string }) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const t = useT();
+  const links = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
 
   return (
-    <header className="sticky top-0 z-50 bg-ink text-cream">
-      <nav className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8" aria-label="Principal">
+    <header className="sticky top-0 z-50 bg-ink text-cream dark:border-b dark:border-cream/10">
+      <nav className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8" aria-label={t.nav.label}>
         <Logo />
 
         <ul className="hidden items-center gap-8 text-sm font-medium lg:flex">
@@ -48,22 +46,25 @@ export default function Navbar() {
           href="#contacto"
           className="hidden items-center gap-2 rounded-full bg-terracota px-5 py-2.5 text-sm font-semibold text-white transition-[transform,background-color] duration-150 ease-out-strong hover:bg-tangerine active:scale-[0.97] lg:inline-flex"
         >
-          Let&apos;s Work Together
+          {t.nav.cta}
           <ArrowRight className="size-4" />
         </a>
 
+        <div className="ml-auto flex items-center gap-2 lg:ml-0">
+        <Controls />
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="menu-movil"
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           className="relative grid size-11 place-items-center rounded-full transition-transform duration-150 active:scale-90 lg:hidden"
         >
           <span className={`absolute h-0.5 w-5 rounded-full bg-cream transition-transform duration-200 ease-out-strong ${open ? "rotate-45" : "-translate-y-1.5"}`} />
           <span className={`absolute h-0.5 w-5 rounded-full bg-cream transition-opacity duration-150 ${open ? "opacity-0" : "opacity-100"}`} />
           <span className={`absolute h-0.5 w-5 rounded-full bg-cream transition-transform duration-200 ease-out-strong ${open ? "-rotate-45" : "translate-y-1.5"}`} />
         </button>
+        </div>
       </nav>
 
       <div
@@ -90,7 +91,7 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
           className="mt-3 inline-flex items-center gap-2 rounded-full bg-terracota px-5 py-3 text-sm font-semibold text-white active:scale-[0.97]"
         >
-          Let&apos;s Work Together
+          {t.nav.cta}
           <ArrowRight className="size-4" />
         </a>
       </div>
