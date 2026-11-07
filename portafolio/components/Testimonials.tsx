@@ -23,8 +23,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonios" aria-labelledby="testimonios-title" className="py-12 sm:py-14">
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10">
+    <section id="testimonios" aria-labelledby="testimonios-title" className="flex min-h-[calc(100svh-4.5rem)] items-center py-10 sm:py-12">
+      <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-10">
         <Reveal className="flex flex-col items-center text-center">
           <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{eyebrow}</p>
           <h2 id="testimonios-title" className="mt-1 font-serif text-4xl font-semibold leading-[1.05] sm:text-[56px]">
@@ -35,30 +35,32 @@ export default function Testimonials() {
           </svg>
         </Reveal>
 
-        <ul className="mt-10 grid gap-8 lg:grid-cols-3 lg:gap-6">
+        <ul className="mt-8 grid gap-8 lg:grid-cols-3 lg:gap-6">
           {items.map((item, i) => (
             <li key={item.name}>
               <Reveal delay={i * 90} className="h-full">
                 <figure
                   className={`flex h-full flex-col items-center gap-4 rounded-[28px] p-7 text-center text-ink dark:text-moon ${cardTones[i % cardTones.length]}`}
                 >
-                  <svg aria-hidden viewBox="0 0 48 36" className="h-8 w-11 fill-current opacity-35">
-                    <path d="M0 36V20C0 8 6 2 18 0l2 6c-6 2-8 6-8 10h8v20Zm28 0V20c0-12 6-18 18-20l2 6c-6 2-8 6-8 10h8v20Z" />
-                  </svg>
-                  <blockquote className="space-y-3 text-[15px] leading-[1.6]">
+                  <figcaption className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+                    <svg aria-hidden viewBox="0 0 48 36" className="h-8 w-11 fill-current opacity-35">
+                      <path d="M0 36V20C0 8 6 2 18 0l2 6c-6 2-8 6-8 10h8v20Zm28 0V20c0-12 6-18 18-20l2 6c-6 2-8 6-8 10h8v20Z" />
+                    </svg>
+                    <span className="flex items-center justify-center gap-3.5">
+                      <span
+                        aria-hidden
+                        className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-serif text-xl font-semibold text-cream dark:bg-tangerine dark:text-night"
+                      >
+                        {item.name.replace("Ing. ", "").charAt(0)}
+                      </span>
+                      <span className="font-hand text-3xl font-bold leading-none">{item.name}</span>
+                    </span>
+                  </figcaption>
+                  <blockquote className="my-auto space-y-3 text-[15px] leading-[1.6]">
                     {item.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </blockquote>
-                  <figcaption className="mt-auto flex items-center justify-center gap-3.5 pt-2">
-                    <span
-                      aria-hidden
-                      className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-serif text-xl font-semibold text-cream dark:bg-tangerine dark:text-night"
-                    >
-                      {item.name.replace("Ing. ", "").charAt(0)}
-                    </span>
-                    <span className="font-hand text-3xl font-bold leading-none">{item.name}</span>
-                  </figcaption>
                 </figure>
               </Reveal>
             </li>
