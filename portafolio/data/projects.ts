@@ -23,7 +23,7 @@ export const projects: Project[] = [
   {
     title: "Ñawi Nariño",
     tags: ["Next.js", "Tailwind", "TypeScript", "PostgreSQL"],
-    tone: "blush",
+    tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
     demo: "#",
   },
@@ -47,13 +47,15 @@ export const projects: Project[] = [
     tone: "butter",
     repo: "https://github.com/VictoriaArteaga/SENAS.git",
     demo: "#",
+    image: "/projects/senas.svg",
   },
   {
     title: "Arq 3D",
     tags: ["Java", "SpringBoot", "TypeScript", "React", "TripoIA", "PostgreSQL"],
-    tone: "terracota",
+    tone: "blush",
     repo: "#",
-    demo: "#",
+    demo: "https://modelo-conceptual-3d.vercel.app/",
+    image: "/projects/arq-3d.svg",
   },
   {
     title: "Hope Link",

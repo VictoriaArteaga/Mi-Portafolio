@@ -41,10 +41,12 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonios" aria-label={t.eyebrow} className="py-20 sm:py-24">
+    <section id="testimonios" aria-labelledby="testimonios-title" className="py-20 sm:py-24">
       <div className="mx-auto max-w-screen-2xl px-5 sm:px-8">
         <Reveal className="text-center">
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota dark:text-tangerine">{t.eyebrow}</p>
+          <h2 id="testimonios-title" className="font-serif text-4xl font-semibold sm:text-5xl">
+            {t.title}
+          </h2>
         </Reveal>
 
         <ul className="mt-14 grid gap-8 md:grid-cols-2">

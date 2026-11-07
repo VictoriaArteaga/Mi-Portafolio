@@ -25,11 +25,11 @@ const es = {
     cv: "Descargar CV",
   },
   about: {
-    eyebrow: "SOBRE MÍ",
+    sectionTitle: "Sobre mí",
     title: "El diseño es la forma en que comunico ideas y emociones.",
     text: "Creo que una buena interfaz es más que algo bonito: es claridad, conexión y propósito. Me gusta unir código y diseño para que cada proyecto se vea cuidado, funcione con fluidez y se sienta humano.",
-    values: ["Estética limpia y juguetona", "Detallista y confiable", "Comunicación clara y a tiempo"],
-    more: "Conoce más",
+    stackTitle: "Mi stack",
+    stack: ["Nest.js", "SpringBoot", "FastAPI", "Next.js", "React", "Unity", "PostgreSQL", "Realidad virtual", "AWS"],
   },
   experience: {
     title: "Trayectoria",
@@ -39,15 +39,14 @@ const es = {
     academicEmpty: "La experiencia académica se añadirá próximamente.",
   },
   projects: {
-    eyebrow: "TRABAJO DESTACADO",
-    title: "Proyectos seleccionados",
+    title: "Proyectos",
     description: "Descripción breve del proyecto y del problema que resuelve.",
     demo: "Ver demo",
     repo: (title: string) => `Repositorio de ${title}`,
     shot: (title: string) => `Captura de ${title}`,
   },
   testimonials: {
-    eyebrow: "TESTIMONIOS",
+    title: "Testimonios",
     items: [
       { name: "Ing. Daniel Arteaga", quote: "Aquí va un testimonio real sobre el cuidado por el detalle y la atención al cliente." },
     ],
@@ -104,11 +103,11 @@ const en: Copy = {
     cv: "Download CV",
   },
   about: {
-    eyebrow: "ABOUT ME",
+    sectionTitle: "About me",
     title: "Design is how I communicate ideas and emotions.",
     text: "I believe a good interface is more than something pretty: it's clarity, connection and purpose. I like to blend code and design so every project looks polished, runs smoothly and feels human.",
-    values: ["Clean, playful aesthetics", "Detail-oriented and reliable", "Clear, on-time communication"],
-    more: "Learn more",
+    stackTitle: "My stack",
+    stack: ["Nest.js", "SpringBoot", "FastAPI", "Next.js", "React", "Unity", "PostgreSQL", "Virtual reality", "AWS"],
   },
   experience: {
     title: "Career",
@@ -118,15 +117,14 @@ const en: Copy = {
     academicEmpty: "Academic experience will be added soon.",
   },
   projects: {
-    eyebrow: "FEATURED WORK",
-    title: "Selected Projects",
+    title: "Projects",
     description: "Short description of the project and the problem it solves.",
     demo: "View Demo",
     repo: (title) => `${title} repository`,
     shot: (title) => `Screenshot of ${title}`,
   },
   testimonials: {
-    eyebrow: "TESTIMONIALS",
+    title: "Testimonials",
     items: [
       { name: "Ing. Daniel Arteaga", quote: "A real testimonial goes here about attention to detail and client care." },
     ],

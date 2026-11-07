@@ -27,8 +27,7 @@ export default function Projects() {
     <section id="proyectos" className="overflow-hidden bg-sand py-20 dark:bg-dusk sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="text-center">
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota dark:text-tangerine">{t.eyebrow}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">{t.title}</h2>
+          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">{t.title}</h2>
         </Reveal>
 
         <ul className="mt-14 grid gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 lg:grid-cols-3">
@@ -56,7 +55,7 @@ export default function Projects() {
                         ))}
                       </ul>
 
-                      <div className="mt-4 flex items-center justify-end gap-3">
+                      <div className="mt-4 flex items-center justify-center gap-3">
                         <a
                           href={p.repo}
                           aria-label={t.repo(p.title)}
@@ -66,6 +65,8 @@ export default function Projects() {
                         </a>
                         <a
                           href={p.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className={`rounded-md px-4 py-2 text-sm font-bold transition-transform duration-150 ease-out-strong active:scale-[0.96] ${s.btn}`}
                         >
                           {t.demo}
