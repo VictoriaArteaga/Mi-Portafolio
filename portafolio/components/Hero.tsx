@@ -51,13 +51,13 @@ export default function Hero() {
               </svg>
             </span>
           </h1>
-          <div className="space-y-4 text-lg leading-[1.7] text-cocoa dark:text-moon/75">
+          <div className="space-y-4 text-justify text-lg leading-[1.7] text-cocoa dark:text-moon/75">
             {profile.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 
-          <ul className="flex flex-wrap gap-2.5">
+          <ul className="flex flex-wrap justify-center gap-2.5">
             {extra.chips.map((chip, i) => (
               <li key={chip} className={`rounded-full px-4 py-2 text-sm font-bold text-ink ${chipTones[i % chipTones.length]}`}>
                 {chip}
