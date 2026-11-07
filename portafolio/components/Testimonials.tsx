@@ -5,9 +5,9 @@ import { testimonios } from "@/data/testimonios";
 import Reveal from "./Reveal";
 
 const cardTones = [
-  "-rotate-1 bg-butter shadow-[8px_8px_0_var(--color-terracota)] dark:bg-terracota/20 dark:shadow-[8px_8px_0_var(--color-tangerine)]",
-  "rotate-1 bg-[#ffd9dd] shadow-[8px_8px_0_var(--color-crimson)] dark:bg-crimson/20 dark:shadow-[8px_8px_0_var(--color-crimson)]",
-  "bg-sand shadow-[8px_8px_0_var(--color-cocoa)] dark:bg-butter/10 dark:shadow-[8px_8px_0_var(--color-linen)]",
+  "-rotate-1 bg-butter shadow-[8px_8px_0_#e87524] dark:bg-terracota/20 dark:shadow-[8px_8px_0_#ffa048]",
+  "rotate-1 bg-[#ffd9dd] shadow-[8px_8px_0_#dc0032] dark:bg-crimson/20 dark:shadow-[8px_8px_0_#dc0032]",
+  "bg-sand shadow-[8px_8px_0_#5a3720] dark:bg-butter/10 dark:shadow-[8px_8px_0_#e9c9a9]",
 ];
 
 export default function Testimonials() {

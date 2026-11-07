@@ -64,7 +64,7 @@ export default function Footer() {
         <div
           aria-hidden
           className="absolute bottom-10 left-8 h-24 w-36 opacity-60 dark:opacity-25"
-          style={{ backgroundImage: "radial-gradient(var(--color-cream) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+          style={{ backgroundImage: "radial-gradient(#fff6ec 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16 lg:gap-24 lg:px-12">
           <div className="flex flex-col gap-6">
@@ -78,7 +78,7 @@ export default function Footer() {
 
           <form
             onSubmit={handleSubmit}
-            className="relative grid gap-6 rounded-[28px] bg-cream p-7 lg:p-12 text-ink shadow-[10px_10px_0_var(--color-cocoa)] dark:bg-bark dark:text-moon dark:shadow-[10px_10px_0_var(--color-night)] sm:p-8"
+            className="relative grid gap-6 rounded-[28px] bg-cream p-7 lg:p-12 text-ink shadow-[10px_10px_0_#5a3720] dark:border-2 dark:border-cream/20 dark:bg-bark dark:text-moon dark:shadow-[10px_10px_0_#e87524] sm:p-8"
             aria-label={f.submit}
           >
             <span aria-hidden className="absolute -top-3.5 right-7 h-[26px] w-20 rotate-[4deg] bg-butter/95" />
@@ -91,7 +91,7 @@ export default function Footer() {
                   type="text"
                   autoComplete="name"
                   required
-                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-dusk dark:bg-night dark:text-moon"
+                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-cream/25 dark:bg-night dark:text-moon"
                 />
               </label>
               <label className="grid gap-2 text-sm font-bold lg:text-base" htmlFor="contact-email">
@@ -102,7 +102,7 @@ export default function Footer() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-dusk dark:bg-night dark:text-moon"
+                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-cream/25 dark:bg-night dark:text-moon"
                 />
               </label>
             </div>
@@ -114,7 +114,7 @@ export default function Footer() {
                 name="message"
                 rows={7}
                 required
-                className="resize-y rounded-xl border-2 border-[#f0cfae] bg-white px-4 py-3 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-dusk dark:bg-night dark:text-moon"
+                className="resize-y rounded-xl border-2 border-[#f0cfae] bg-white px-4 py-3 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-cream/25 dark:bg-night dark:text-moon"
               />
             </label>
 

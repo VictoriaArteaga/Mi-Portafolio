@@ -15,9 +15,9 @@ function Timeline({
   label: string;
 }) {
   const cardTones = [
-    "bg-white shadow-[6px_6px_0_var(--color-terracota)] dark:bg-bark dark:shadow-[6px_6px_0_var(--color-tangerine)]",
-    "bg-butter shadow-[6px_6px_0_var(--color-crimson)] dark:bg-terracota/20 dark:shadow-[6px_6px_0_var(--color-crimson)]",
-    "bg-[#ffd9dd] shadow-[6px_6px_0_var(--color-cocoa)] dark:bg-crimson/20 dark:shadow-[6px_6px_0_var(--color-linen)]",
+    "bg-white shadow-[6px_6px_0_#e87524] dark:bg-bark dark:shadow-[6px_6px_0_#ffa048]",
+    "bg-butter shadow-[6px_6px_0_#dc0032] dark:bg-terracota/20 dark:shadow-[6px_6px_0_#dc0032]",
+    "bg-[#ffd9dd] shadow-[6px_6px_0_#5a3720] dark:bg-crimson/20 dark:shadow-[6px_6px_0_#e9c9a9]",
   ];
   const markerTones = [
     "bg-terracota dark:bg-tangerine",

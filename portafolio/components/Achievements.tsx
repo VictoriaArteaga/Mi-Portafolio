@@ -27,11 +27,11 @@ export default function Achievements() {
         <div className="absolute right-[30%] top-6 size-10 rounded-full bg-blush/70 dark:bg-blush/15" />
         <div
           className="absolute right-10 top-28 h-28 w-36 opacity-70 dark:opacity-30"
-          style={{ backgroundImage: "radial-gradient(var(--color-terracota) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+          style={{ backgroundImage: "radial-gradient(#e87524 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <div
           className="absolute bottom-10 left-8 h-24 w-32 opacity-60 dark:opacity-25"
-          style={{ backgroundImage: "radial-gradient(var(--color-cocoa) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+          style={{ backgroundImage: "radial-gradient(#5a3720 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <svg viewBox="0 0 200 12" fill="none" className="absolute bottom-24 right-[18%] w-32 text-terracota/50">
           <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
@@ -69,7 +69,7 @@ export default function Achievements() {
                 className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-18.67px)]"
               >
                 <Reveal className="h-full" delay={(i % 3) * 80}>
-                  <article className="relative flex h-full flex-col gap-2 rounded-3xl border-2 border-[#f0cfae] bg-white p-6 shadow-[0_8px_0_var(--color-sand)] transition-transform duration-300 ease-out-strong hover:-translate-y-1.5 dark:border-dusk dark:bg-bark dark:shadow-[0_8px_0_var(--color-night)]">
+                  <article className="relative flex h-full flex-col gap-2 rounded-3xl border-2 border-[#f0cfae] bg-white p-6 shadow-[0_8px_0_#fbd0a6] transition-transform duration-300 ease-out-strong hover:-translate-y-1.5 dark:border-dusk dark:bg-bark dark:shadow-[0_8px_0_#100e0c]">
                     <span aria-hidden className="absolute -top-3 right-7 h-6 w-16 rotate-[5deg] bg-butter/90 dark:bg-butter/30" />
                     <svg aria-hidden viewBox="0 0 24 24" className="absolute bottom-5 right-5 size-6 fill-terracota/30 dark:fill-tangerine/25">
                       <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />

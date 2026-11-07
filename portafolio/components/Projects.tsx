@@ -34,11 +34,11 @@ export default function Projects() {
         <div className="absolute bottom-24 right-[8%] size-24 rounded-full bg-butter/70 dark:bg-butter/10" />
         <div
           className="absolute left-6 top-16 h-32 w-32 opacity-70 dark:opacity-30"
-          style={{ backgroundImage: "radial-gradient(var(--color-terracota) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+          style={{ backgroundImage: "radial-gradient(#e87524 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <div
           className="absolute bottom-16 right-10 h-28 w-36 opacity-60 dark:opacity-25"
-          style={{ backgroundImage: "radial-gradient(var(--color-cocoa) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+          style={{ backgroundImage: "radial-gradient(#5a3720 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         {[
           "left-[7%] top-[45%] size-8 fill-crimson",
