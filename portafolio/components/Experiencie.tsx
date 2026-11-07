@@ -105,7 +105,28 @@ export default function Experiencie() {
   const activeTitle = isWork ? t.workTitle : t.academicTitle;
 
   return (
-    <section id="experiencia" className="py-20 sm:py-24">
+    <section id="experiencia" className="relative isolate overflow-hidden py-20 sm:py-24">
+      {/* Adornos sutiles de fondo */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-24 top-20 size-60 rounded-full border-2 border-terracota/20 dark:border-tangerine/10" />
+        <div className="absolute -right-28 bottom-24 size-72 rounded-full bg-butter/40 dark:bg-terracota/5" />
+        <div className="absolute -right-10 top-10 size-40 rounded-full border-2 border-crimson/15 dark:border-blush/10" />
+        <div
+          className="absolute left-6 bottom-20 h-24 w-32 opacity-40 dark:opacity-15"
+          style={{ backgroundImage: "radial-gradient(#e87524 2px, transparent 2px)", backgroundSize: "18px 18px" }}
+        />
+        {[
+          "left-[8%] top-16 size-6 fill-terracota/60",
+          "right-[9%] top-[30%] size-5 fill-crimson/50",
+          "right-[14%] bottom-12 size-7 fill-terracota/40",
+          "left-[5%] top-[55%] size-4 fill-cocoa/40 dark:fill-tangerine/30",
+        ].map((cls) => (
+          <svg key={cls} viewBox="0 0 24 24" className={`absolute ${cls}`}>
+            <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
+          </svg>
+        ))}
+      </div>
+
       <div className="mx-auto max-w-[1264px] px-5 sm:px-8">
         <Reveal className="flex flex-col items-center text-center">
           <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{extra.eyebrow}</p>

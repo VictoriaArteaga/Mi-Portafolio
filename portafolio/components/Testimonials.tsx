@@ -40,7 +40,7 @@ export default function Testimonials() {
             <li key={item.name}>
               <Reveal delay={i * 90} className="h-full">
                 <figure
-                  className={`flex h-full flex-col gap-4 rounded-[28px] p-7 text-ink dark:text-moon ${cardTones[i % cardTones.length]}`}
+                  className={`flex h-full flex-col items-center gap-4 rounded-[28px] p-7 text-center text-ink dark:text-moon ${cardTones[i % cardTones.length]}`}
                 >
                   <svg aria-hidden viewBox="0 0 48 36" className="h-8 w-11 fill-current opacity-35">
                     <path d="M0 36V20C0 8 6 2 18 0l2 6c-6 2-8 6-8 10h8v20Zm28 0V20c0-12 6-18 18-20l2 6c-6 2-8 6-8 10h8v20Z" />
@@ -50,7 +50,7 @@ export default function Testimonials() {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </blockquote>
-                  <figcaption className="mt-auto flex items-center gap-3.5 pt-2">
+                  <figcaption className="mt-auto flex items-center justify-center gap-3.5 pt-2">
                     <span
                       aria-hidden
                       className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-serif text-xl font-semibold text-cream dark:bg-tangerine dark:text-night"
