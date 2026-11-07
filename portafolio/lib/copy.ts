@@ -16,18 +16,11 @@ const es = {
     toLang: "Cambiar el idioma a inglés",
   },
   hero: {
-    greeting: "Hola, soy María Victoria",
-    titleStart: "Construyo interfaces que",
-    titleAccent: "cuentan historias.",
-    intro:
-      "Soy María Victoria Arteaga. Desarrollo frontend y diseño de interfaces con cariño por el detalle: ideas que se vuelven experiencias claras, cálidas y memorables.",
     contact: "¡Contáctame!",
     cv: "Descargar CV",
   },
   about: {
     sectionTitle: "Sobre mí",
-    title: "El diseño es la forma en que comunico ideas y emociones.",
-    text: "Creo que una buena interfaz es más que algo bonito: es claridad, conexión y propósito. Me gusta unir código y diseño para que cada proyecto se vea cuidado, funcione con fluidez y se sienta humano.",
     stackTitle: "Mi stack",
     stack: ["Nest.js", "SpringBoot", "FastAPI", "Next.js", "React", "Unity", "PostgreSQL", "Realidad virtual", "AWS"],
   },
@@ -94,18 +87,11 @@ const en: Copy = {
     toLang: "Cambiar el idioma a español",
   },
   hero: {
-    greeting: "Hi, I'm María Victoria",
-    titleStart: "I build interfaces that",
-    titleAccent: "tell stories.",
-    intro:
-      "I'm María Victoria Arteaga. I do frontend development and interface design with a love for detail: ideas that turn into clear, warm and memorable experiences.",
     contact: "Contact me!",
     cv: "Download CV",
   },
   about: {
     sectionTitle: "About me",
-    title: "Design is how I communicate ideas and emotions.",
-    text: "I believe a good interface is more than something pretty: it's clarity, connection and purpose. I like to blend code and design so every project looks polished, runs smoothly and feels human.",
     stackTitle: "My stack",
     stack: ["Nest.js", "SpringBoot", "FastAPI", "Next.js", "React", "Unity", "PostgreSQL", "Virtual reality", "AWS"],
   },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useT } from "@/lib/prefs";
+import { useLang, useT } from "@/lib/prefs";
 import { academicExperience, workExperience } from "@/data/experience";
 import Reveal from "./Reveal";
 
@@ -15,14 +15,14 @@ function Timeline({
   label: string;
 }) {
   const cardTones = [
-    "bg-blush text-ink dark:bg-crimson/20 dark:text-moon",
-    "bg-butter text-ink dark:bg-terracota/20 dark:text-moon",
-    "bg-sand text-ink dark:bg-butter/10 dark:text-moon",
+    "bg-white shadow-[6px_6px_0_var(--color-terracota)] dark:bg-bark dark:shadow-[6px_6px_0_var(--color-tangerine)]",
+    "bg-butter shadow-[6px_6px_0_var(--color-crimson)] dark:bg-terracota/20 dark:shadow-[6px_6px_0_var(--color-crimson)]",
+    "bg-[#ffd9dd] shadow-[6px_6px_0_var(--color-cocoa)] dark:bg-crimson/20 dark:shadow-[6px_6px_0_var(--color-linen)]",
   ];
   const markerTones = [
-    "border-crimson bg-crimson dark:border-night dark:bg-tangerine",
-    "border-terracota bg-terracota dark:border-night dark:bg-blush",
-    "border-cocoa bg-cocoa dark:border-night dark:bg-butter",
+    "bg-terracota dark:bg-tangerine",
+    "bg-crimson dark:bg-blush",
+    "bg-cocoa dark:bg-butter",
   ];
 
   return (
@@ -33,7 +33,7 @@ function Timeline({
       className="mt-8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota"
     >
       {entries.length === 0 ? (
-        <div className="relative mx-auto max-w-3xl py-8 pl-12">
+        <div className="relative mx-auto max-w-none py-8 pl-12">
           <span
             aria-hidden
             className="absolute bottom-0 left-[1.6rem] top-0 w-1 rounded-full bg-terracota/35 dark:bg-tangerine/35"
@@ -47,37 +47,37 @@ function Timeline({
           </p>
         </div>
       ) : (
-        <div className="relative mx-auto max-w-3xl py-2 pl-12">
+        <div className="relative mx-auto max-w-none py-2">
           <span
             aria-hidden
-            className="absolute bottom-6 left-[1.6rem] top-6 w-1 rounded-full bg-terracota/35 dark:bg-tangerine/35"
+            className="absolute bottom-6 left-[11px] top-6 border-l-[3px] border-dashed border-terracota/55 dark:border-tangerine/55"
           />
           <ol className="relative space-y-6" aria-label={label}>
             {entries.map((item, index) => (
-              <li key={`${item.period}-${item.title}-${item.organization}`} className="relative">
+              <li key={`${item.period}-${item.title}-${item.organization}`} className="relative pl-12">
                 <span
                   aria-hidden
-                  className={`absolute -left-[2rem] top-6 size-5 rounded-full border-4 border-cream dark:border-night ${
+                  className={`absolute left-0.5 top-[30px] size-5 rounded-full border-4 border-cream dark:border-night ${
                     markerTones[index % markerTones.length]
                   }`}
                 />
                 <article
-                  className={`rounded-2xl border-l-8 p-5 sm:p-6 ${
+                  className={`flex flex-col items-start gap-2 rounded-[22px] border-2 border-ink px-6 py-6 text-ink dark:border-moon/70 dark:text-moon sm:px-8 ${
                     cardTones[index % cardTones.length]
-                  } ${markerTones[index % markerTones.length].split(" ")[0]}`}
+                  }`}
                 >
                   {item.period && (
-                    <p className="text-base font-bold text-crimson dark:text-tangerine">{item.period}</p>
+                    <p className="rounded-full bg-ink px-3.5 py-1 text-sm font-bold text-cream dark:bg-tangerine dark:text-night">{item.period}</p>
                   )}
-                  <h4 className="mt-1 font-serif text-xl font-semibold sm:text-2xl">{item.title}</h4>
-                  <p className="mt-1 text-base font-semibold text-cocoa dark:text-linen">{item.organization}</p>
+                  <h4 className="font-serif text-xl font-semibold sm:text-2xl">{item.title}</h4>
+                  <p className="text-base font-bold text-cocoa dark:text-linen">{item.organization}</p>
                   {item.description && (
-                    <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink dark:text-moon">
+                    <p className="mt-1 text-base leading-relaxed text-ink dark:text-moon">
                       {item.description}
                     </p>
                   )}
                   {item.highlights && (
-                    <ul className="mt-3 list-disc space-y-1 pl-5 text-base leading-relaxed text-ink dark:text-moon">
+                    <ul className="mt-1 list-disc space-y-1 pl-5 text-base leading-relaxed text-ink dark:text-moon">
                       {item.highlights.map((highlight) => (
                         <li key={highlight}>{highlight}</li>
                       ))}
@@ -95,15 +95,24 @@ function Timeline({
 
 export default function Experiencie() {
   const t = useT().experience;
+  const { lang } = useLang();
+  const extra =
+    lang === "es"
+      ? { eyebrow: "03 · mi camino" }
+      : { eyebrow: "03 · my path" };
   const [selected, setSelected] = useState<"work" | "academic">("work");
   const isWork = selected === "work";
   const activeTitle = isWork ? t.workTitle : t.academicTitle;
 
   return (
     <section id="experiencia" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal className="text-center">
-          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">{t.title}</h2>
+      <div className="mx-auto max-w-[1264px] px-5 sm:px-8">
+        <Reveal className="flex flex-col items-center text-center">
+          <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{extra.eyebrow}</p>
+          <h2 className="mt-1 font-serif text-4xl font-semibold leading-[1.05] sm:text-[56px]">{t.title}</h2>
+          <svg aria-hidden viewBox="0 0 200 12" fill="none" className="mt-2 w-40 text-terracota dark:text-tangerine">
+            <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+          </svg>
         </Reveal>
 
         <Reveal className="mt-10">

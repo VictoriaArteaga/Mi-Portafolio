@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useT } from "@/lib/prefs";
+import { useLang, useT } from "@/lib/prefs";
+import { profileContent } from "@/data/profile";
 import Reveal from "./Reveal";
 const stackIcons = ["nest", "spring", "fastapi", "next", "react", "unity", "postgres", "vr", "aws"] as const;
 
@@ -79,14 +80,28 @@ function StackIcon({ kind }: { kind: (typeof stackIcons)[number] }) {
 }
 
 export default function About() {
+  const { lang } = useLang();
   const t = useT().about;
+  const paragraphs = profileContent[lang].about.paragraphs;
+  const extra =
+    lang === "es"
+      ? { eyebrow: "01 · conóceme", stamp: ["backend", "& IA", "aplicada"], beyond: "Fuera del código:" }
+      : { eyebrow: "01 · get to know me", stamp: ["backend", "& applied", "AI"], beyond: "Beyond the code:" };
+  const mainParagraphs = paragraphs.length > 1 ? paragraphs.slice(0, -1) : paragraphs;
+  const beyondParagraph = paragraphs.length > 1 ? paragraphs[paragraphs.length - 1] : null;
+
   return (
-    <section id="sobre-mi" className="bg-[#fff1e2] py-20 dark:bg-umber sm:py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[504px_minmax(0,1fr)]">
-        <Reveal>
+    <section id="sobre-mi" className="relative overflow-hidden bg-[#fff1e2] py-12 dark:bg-umber sm:py-14">
+      {/* Anillos decorativos */}
+      <div aria-hidden className="absolute right-10 top-5 size-36 rounded-full border-[3px] border-tangerine/60" />
+      <div aria-hidden className="absolute right-20 top-14 size-36 rounded-full border-[3px] border-terracota/40" />
+
+      <div className="relative mx-auto grid max-w-[1264px] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[460px_minmax(0,1fr)] lg:gap-16">
+        <Reveal className="relative">
           {/* Polaroid */}
           <div className="relative mx-auto w-full max-w-[504px] -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
             <div aria-hidden className="absolute -left-6 -top-3 h-8 w-20 -rotate-45 bg-butter/80" />
+            <div aria-hidden className="absolute -right-6 -top-2 h-8 w-20 rotate-[40deg] bg-blush/80" />
             <div className="relative aspect-[463/614] overflow-hidden bg-[#f1eee5] dark:bg-bark">
               <Image src="/about-vector.svg" alt="Ilustración vectorial de María Victoria Arteaga en un encuentro de investigación" fill unoptimized sizes="(min-width: 1024px) 480px, min(480px, calc(100vw - 64px))" className="object-cover object-center" />
             </div>
@@ -94,31 +109,62 @@ export default function About() {
               Victoria Arteaga
             </span>
           </div>
+
+          {/* Sello */}
+          <div
+            aria-hidden
+            className="font-hand absolute -bottom-5 right-0 grid size-[6.5rem] rotate-[10deg] place-items-center rounded-full border-[3px] border-dashed border-cocoa bg-butter text-center text-[1.35rem] font-bold leading-none text-ink dark:border-linen dark:bg-terracota dark:text-night sm:-right-3"
+          >
+            <span>
+              {extra.stamp[0]}
+              <br />
+              {extra.stamp[1]}
+              <br />
+              {extra.stamp[2]}
+            </span>
+          </div>
         </Reveal>
 
         <Reveal delay={100}>
-          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+          <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{extra.eyebrow}</p>
+          <h2 className="mt-1 font-serif text-4xl font-semibold sm:text-5xl">
             {t.sectionTitle}
           </h2>
-          <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight sm:text-3xl">
-            {t.title}
-          </h3>
-          <p className="mt-5 max-w-lg leading-relaxed text-ink/75 dark:text-moon/75">
-            {t.text}
-          </p>
+          <svg aria-hidden viewBox="0 0 200 12" fill="none" className="mt-2 w-40 text-terracota dark:text-tangerine">
+            <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+          </svg>
 
-          <div className="mt-8">
+          <div className="mt-5 space-y-4 text-justify leading-relaxed text-ink/75 dark:text-moon/75">
+            {mainParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+
+          {beyondParagraph && (
+            <div className="mt-6 flex items-start gap-3.5 rounded-[1.25rem] border-2 border-dashed border-terracota bg-cream px-5 py-4 dark:border-tangerine dark:bg-night">
+              <svg aria-hidden viewBox="0 0 24 24" className="mt-0.5 size-7 shrink-0 fill-terracota dark:fill-tangerine">
+                <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
+              </svg>
+              <p className="text-base leading-relaxed text-ink dark:text-moon">
+                <strong>{extra.beyond}</strong> {beyondParagraph}
+              </p>
+            </div>
+          )}
+
+          <div className="mt-6">
             <h3 className="font-serif text-2xl font-semibold">{t.stackTitle}</h3>
-            <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4">
+            <ul className="mt-4 flex flex-wrap gap-2.5">
               {t.stack.map((name, i) => (
-                <li key={name} className="flex items-center gap-2 text-sm font-medium text-ink dark:text-moon">
+                <li
+                  key={name}
+                  className="inline-flex items-center gap-2.5 rounded-[0.875rem] border-2 border-[#f0cfae] bg-white py-2 pl-2.5 pr-3.5 text-[0.95rem] font-medium text-ink dark:border-dusk dark:bg-bark dark:text-moon"
+                >
                   <StackIcon kind={stackIcons[i]} />
                   <span>{name}</span>
                 </li>
               ))}
             </ul>
           </div>
-
         </Reveal>
       </div>
     </section>

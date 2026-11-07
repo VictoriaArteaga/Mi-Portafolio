@@ -3,35 +3,17 @@
 import { useLang, useT } from "@/lib/prefs";
 import { testimonios } from "@/data/testimonios";
 import Reveal from "./Reveal";
-import { Star } from "./Icons";
 
-const avatars = [
-  { bg: "#6ea5ff", skin: "#fbd2bd", hair: "#1c1c2b", shirt: "#e8505b", long: false },
-  { bg: "#ff9a6c", skin: "#fbd2bd", hair: "#0b2f6b", shirt: "#0b6aa8", long: true },
-  { bg: "#6ea5ff", skin: "#fbd2bd", hair: "#1c1c2b", shirt: "#1f3a6e", long: false },
+const cardTones = [
+  "-rotate-1 bg-butter shadow-[8px_8px_0_var(--color-terracota)] dark:bg-terracota/20 dark:shadow-[8px_8px_0_var(--color-tangerine)]",
+  "rotate-1 bg-[#ffd9dd] shadow-[8px_8px_0_var(--color-crimson)] dark:bg-crimson/20 dark:shadow-[8px_8px_0_var(--color-crimson)]",
+  "bg-sand shadow-[8px_8px_0_var(--color-cocoa)] dark:bg-butter/10 dark:shadow-[8px_8px_0_var(--color-linen)]",
 ];
-
-function Avatar({ bg, skin, hair, shirt, long }: (typeof avatars)[number]) {
-  return (
-    <svg viewBox="0 0 80 80" aria-hidden className="size-[4.5rem] rounded-full">
-      <rect width="80" height="80" fill={bg} />
-      {long && <rect x="22" y="22" width="36" height="40" rx="16" fill={hair} />}
-      <path d="M10 80c2-16 14-22 30-22s28 6 30 22z" fill={shirt} />
-      <rect x="35" y="48" width="10" height="12" rx="4" fill={skin} />
-      <ellipse cx="40" cy="34" rx="12" ry="14" fill={skin} />
-      <path
-        d={long
-          ? "M27 34c0-12 6-18 13-18s13 6 13 18c-4-4-8-8-13-8s-9 4-13 8z"
-          : "M28 32c-2-12 5-17 12-17s14 5 12 17c-3-5-7-7-12-7s-9 2-12 7z"}
-        fill={hair}
-      />
-    </svg>
-  );
-}
 
 export default function Testimonials() {
   const t = useT().testimonials;
   const { lang } = useLang();
+  const eyebrow = lang === "es" ? "04 · lo que dicen" : "04 · what they say";
   const items = [
     ...testimonios.map((item) => ({
       name: item.name,
@@ -41,39 +23,42 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonios" aria-labelledby="testimonios-title" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-screen-2xl px-5 sm:px-8">
-        <Reveal className="text-center">
-          <h2 id="testimonios-title" className="font-serif text-4xl font-semibold sm:text-5xl">
+    <section id="testimonios" aria-labelledby="testimonios-title" className="py-12 sm:py-14">
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10">
+        <Reveal className="flex flex-col items-center text-center">
+          <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{eyebrow}</p>
+          <h2 id="testimonios-title" className="mt-1 font-serif text-4xl font-semibold leading-[1.05] sm:text-[56px]">
             {t.title}
           </h2>
+          <svg aria-hidden viewBox="0 0 200 12" fill="none" className="mt-2 w-40 text-terracota dark:text-tangerine">
+            <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+          </svg>
         </Reveal>
 
-        <ul className="mt-14 grid gap-8 md:grid-cols-2">
+        <ul className="mt-10 grid gap-8 lg:grid-cols-3 lg:gap-6">
           {items.map((item, i) => (
-            <li key={item.name} className={i === items.length - 1 ? "md:col-span-2" : ""}>
+            <li key={item.name}>
               <Reveal delay={i * 90} className="h-full">
-                <figure className="flex h-full flex-col rounded-[2rem] bg-terracota p-6 shadow-sm transition-[transform,box-shadow] duration-300 ease-out-strong hover:-translate-y-1 hover:shadow-lg hover:shadow-terracota/30 dark:bg-bark dark:shadow-black/25 dark:hover:shadow-black/35 sm:p-8">
-                  <figcaption className="flex flex-col items-center text-center">
-                    <Avatar {...avatars[i % avatars.length]} />
-                    <span className="mt-4 font-serif text-xl font-bold leading-tight text-cocoa dark:text-linen">
-                      {item.name}
-                    </span>
-                    <span
-                      className="mt-3 flex gap-1 text-amber-300"
-                      role="img"
-                      aria-label={lang === "es" ? "5 de 5 estrellas" : "5 out of 5 stars"}
-                    >
-                      {Array.from({ length: 5 }, (_, star) => (
-                        <Star key={star} className="size-6" />
-                      ))}
-                    </span>
-                  </figcaption>
-                  <blockquote className="mt-5 flex-1 space-y-4 text-justify text-base leading-relaxed text-cocoa dark:text-moon">
+                <figure
+                  className={`flex h-full flex-col gap-4 rounded-[28px] p-7 text-ink dark:text-moon ${cardTones[i % cardTones.length]}`}
+                >
+                  <svg aria-hidden viewBox="0 0 48 36" className="h-8 w-11 fill-current opacity-35">
+                    <path d="M0 36V20C0 8 6 2 18 0l2 6c-6 2-8 6-8 10h8v20Zm28 0V20c0-12 6-18 18-20l2 6c-6 2-8 6-8 10h8v20Z" />
+                  </svg>
+                  <blockquote className="space-y-3 text-[15px] leading-[1.6]">
                     {item.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </blockquote>
+                  <figcaption className="mt-auto flex items-center gap-3.5 pt-2">
+                    <span
+                      aria-hidden
+                      className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-serif text-xl font-semibold text-cream dark:bg-tangerine dark:text-night"
+                    >
+                      {item.name.replace("Ing. ", "").charAt(0)}
+                    </span>
+                    <span className="font-hand text-3xl font-bold leading-none">{item.name}</span>
+                  </figcaption>
                 </figure>
               </Reveal>
             </li>

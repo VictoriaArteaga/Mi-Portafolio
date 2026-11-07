@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { useT } from "@/lib/prefs";
+import { useLang, useT } from "@/lib/prefs";
 import { Logo, sections } from "./Navbar";
 import { Github, Linkedin, Mail, Plane } from "./Icons";
 
@@ -14,6 +14,7 @@ const socials = [
 
 export default function Footer() {
   const t = useT();
+  const { lang } = useLang();
   const f = t.footer;
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "unconfigured">("idle");
   const quick = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
@@ -58,23 +59,31 @@ export default function Footer() {
 
   return (
     <footer>
-      <section id="contacto" className="relative overflow-hidden bg-terracota text-white dark:bg-dusk dark:text-moon">
-        <div aria-hidden className="absolute -right-16 -top-20 size-64 rounded-full bg-tangerine/60" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-16">
-          <div>
-            <h2 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">{f.contactTitle}</h2>
-            <div className="flex items-center gap-5">
-              <Plane className="hidden size-12 -rotate-12 text-white/70 sm:block" />
-              <p className="mt-5 font-serif text-2xl font-medium leading-tight">
-                {f.titleStart} {f.titleEnd}
-              </p>
-            </div>
-            <p className="mt-5 max-w-sm text-base leading-relaxed text-white/90">{f.text}</p>
+      <section id="contacto" className="relative flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden bg-terracota py-20 text-ink dark:bg-dusk dark:text-moon sm:py-28">
+        <div aria-hidden className="absolute -right-16 -top-20 size-64 rounded-full bg-tangerine/60 dark:bg-terracota/20" />
+        <div
+          aria-hidden
+          className="absolute bottom-10 left-8 h-24 w-36 opacity-60 dark:opacity-25"
+          style={{ backgroundImage: "radial-gradient(var(--color-cream) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+        />
+        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16 lg:gap-24 lg:px-12">
+          <div className="flex flex-col gap-6">
+            <p className="font-hand text-3xl font-bold lg:text-4xl">{lang === "es" ? "06 · hablemos" : "06 · let's talk"}</p>
+            <h2 className="font-serif text-5xl font-semibold leading-[1.05] sm:text-[60px] lg:text-[84px]">
+              {f.titleStart}{" "}
+              <span className="font-hand text-6xl font-bold text-cream sm:text-7xl lg:text-[104px] dark:text-tangerine">{f.titleEnd}</span>
+            </h2>
+            <p className="max-w-xl text-lg leading-relaxed lg:text-2xl">{f.text}</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="grid gap-5" aria-label={f.submit}>
+          <form
+            onSubmit={handleSubmit}
+            className="relative grid gap-6 rounded-[28px] bg-cream p-7 lg:p-12 text-ink shadow-[10px_10px_0_var(--color-cocoa)] dark:bg-bark dark:text-moon dark:shadow-[10px_10px_0_var(--color-night)] sm:p-8"
+            aria-label={f.submit}
+          >
+            <span aria-hidden className="absolute -top-3.5 right-7 h-[26px] w-20 rotate-[4deg] bg-butter/95" />
             <div className="grid gap-5 sm:grid-cols-2">
-              <label className="grid gap-2 text-sm font-semibold" htmlFor="contact-name">
+              <label className="grid gap-2 text-sm font-bold lg:text-base" htmlFor="contact-name">
                 {f.name}
                 <input
                   id="contact-name"
@@ -82,10 +91,10 @@ export default function Footer() {
                   type="text"
                   autoComplete="name"
                   required
-                  className="min-h-12 rounded-lg bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-dusk dark:bg-night dark:text-moon"
                 />
               </label>
-              <label className="grid gap-2 text-sm font-semibold" htmlFor="contact-email">
+              <label className="grid gap-2 text-sm font-bold lg:text-base" htmlFor="contact-email">
                 {f.email}
                 <input
                   id="contact-email"
@@ -93,19 +102,19 @@ export default function Footer() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="min-h-12 rounded-lg bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-dusk dark:bg-night dark:text-moon"
                 />
               </label>
             </div>
 
-            <label className="grid gap-2 text-sm font-semibold" htmlFor="contact-message">
+            <label className="grid gap-2 text-sm font-bold lg:text-base" htmlFor="contact-message">
               {f.message}
               <textarea
                 id="contact-message"
                 name="message"
-                rows={5}
+                rows={7}
                 required
-                className="resize-y rounded-lg bg-white px-4 py-3 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+                className="resize-y rounded-xl border-2 border-[#f0cfae] bg-white px-4 py-3 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-dusk dark:bg-night dark:text-moon"
               />
             </label>
 
@@ -113,9 +122,10 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="min-h-12 rounded-full bg-white px-6 py-3 text-sm font-semibold text-terracota transition-transform duration-150 ease-out-strong hover:scale-[1.03] active:scale-[0.97] disabled:cursor-wait disabled:opacity-70 dark:bg-terracota dark:text-night dark:hover:bg-tangerine"
+                className="inline-flex min-h-12 items-center gap-2.5 rounded-2xl bg-cocoa px-7 py-3 text-base lg:min-h-14 lg:px-9 lg:text-lg font-bold text-sand transition-[transform,background-color] duration-150 ease-out-strong hover:bg-[#6b4328] active:scale-[0.97] disabled:cursor-wait disabled:opacity-70 dark:bg-terracota dark:text-night dark:hover:bg-tangerine"
               >
                 {status === "sending" ? f.sending : f.submit}
+                <Plane className="size-5" />
               </button>
               {status !== "idle" && status !== "sending" && (
                 <div
