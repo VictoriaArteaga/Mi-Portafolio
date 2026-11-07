@@ -21,11 +21,8 @@ export default function Footer() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
-    if (!endpoint) {
-      setStatus("unconfigured");
-      return;
-    }
+    // Si defines NEXT_PUBLIC_FORMSPREE_ENDPOINT se usa Formspree; si no, FormSubmit envía a tu correo.
+    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || `https://formsubmit.co/ajax/${EMAIL}`;
 
     setStatus("sending");
     const form = event.currentTarget;
@@ -42,10 +39,15 @@ export default function Footer() {
           name: data.get("name"),
           email: data.get("email"),
           message: data.get("message"),
+          _subject: `Nuevo mensaje de ${data.get("name")} desde tu portafolio`,
+          _replyto: data.get("email"),
+          _template: "table",
+          _captcha: "false",
         }),
       });
 
-      if (!response.ok) {
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.success === "false" || result?.success === false) {
         setStatus("error");
         return;
       }
@@ -130,9 +132,27 @@ export default function Footer() {
               {status !== "idle" && status !== "sending" && (
                 <div
                   role={status === "success" ? "status" : "alert"}
-                  className="flex items-center gap-3 text-sm leading-relaxed"
                   aria-live={status === "success" ? "polite" : "assertive"}
+                  className={`flex w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-base font-semibold leading-snug ${
+                    status === "success"
+                      ? "border-cocoa bg-butter text-ink dark:border-butter/40 dark:bg-butter/15 dark:text-butter"
+                      : "border-crimson bg-[#ffd9dd] text-ink dark:border-blush/50 dark:bg-crimson/20 dark:text-moon"
+                  }`}
                 >
+                  <span
+                    aria-hidden
+                    className={`grid size-8 shrink-0 place-items-center rounded-full ${
+                      status === "success" ? "bg-cocoa text-butter dark:bg-butter dark:text-night" : "bg-crimson text-white"
+                    }`}
+                  >
+                    {status === "success" ? (
+                      <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m5 12 5 5 9-10" />
+                      </svg>
+                    ) : (
+                      <span className="text-lg font-bold leading-none">!</span>
+                    )}
+                  </span>
                   <span>{status === "success" ? f.success : status === "error" ? f.error : f.unconfigured}</span>
                 </div>
               )}
