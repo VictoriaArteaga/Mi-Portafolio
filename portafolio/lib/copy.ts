@@ -10,7 +10,7 @@ const es = {
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
     cta: "Trabajemos juntos",
-    links: ["Inicio", "Sobre mí", "Experiencia", "Proyectos", "Testimonios", "Contacto"],
+    links: ["Inicio", "Sobre mí", "Proyectos", "Experiencia", "Testimonios", "Contacto"],
     toLight: "Cambiar a modo claro",
     toDark: "Cambiar a modo oscuro",
     toLang: "Cambiar el idioma a inglés",
@@ -33,14 +33,11 @@ const es = {
   },
   experience: {
     eyebrow: "TRAYECTORIA",
-    title: "Experiencia y herramientas",
-    // TODO: ajusta tu trayectoria, herramientas y niveles a la realidad.
-    timeline: [
-      { period: "2025 — Actualidad", role: "Tu cargo actual", place: "Empresa o proyecto", note: "Una línea sobre lo que construyes y el impacto que tiene." },
-      { period: "2024 — 2025", role: "Cargo anterior", place: "Empresa o proyecto", note: "Una línea sobre responsabilidades y logros." },
-      { period: "2022 — 2024", role: "Formación", place: "Universidad o programa", note: "Qué estudiaste y qué te llevaste." },
-    ],
-    skills: ["Frontend", "Diseño de interfaces", "Animación y microinteracciones", "Accesibilidad", "Backend y datos"],
+    title: "Experiencia",
+    workTitle: "Experiencia laboral",
+    academicTitle: "Experiencia académica",
+    workEmpty: "La experiencia laboral se añadirá próximamente.",
+    academicEmpty: "La experiencia académica se añadirá próximamente.",
   },
   projects: {
     eyebrow: "TRABAJO DESTACADO",
@@ -51,13 +48,9 @@ const es = {
     shot: (title: string) => `Captura de ${title}`,
   },
   testimonials: {
-    eyebrow: "PALABRAS AMABLES",
-    title: "Lo que dicen mis clientes",
-    // TODO: reemplaza por testimonios reales (con permiso de quien los dio).
+    eyebrow: "TESTIMONIOS",
     items: [
-      { name: "Nicolas García", quote: "Aquí va un testimonio real sobre la calidad del trabajo y la experiencia de colaborar contigo." },
-      { name: "Ivonne Barco", quote: "Aquí va un testimonio real sobre la comunicación, los tiempos y el resultado final." },
-      { name: "Daniel Arteaga", quote: "Aquí va un testimonio real sobre el cuidado por el detalle y la atención al cliente." },
+      { name: "Ing. Daniel Arteaga", quote: "Aquí va un testimonio real sobre el cuidado por el detalle y la atención al cliente." },
     ],
   },
   footer: {
@@ -83,7 +76,7 @@ const en: Copy = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     cta: "Let's Work Together",
-    links: ["Home", "About me", "Experience", "Projects", "Testimonials", "Contact"],
+    links: ["Home", "About me", "Projects", "Experience", "Testimonials", "Contact"],
     toLight: "Switch to light mode",
     toDark: "Switch to dark mode",
     toLang: "Cambiar el idioma a español",
@@ -106,13 +99,11 @@ const en: Copy = {
   },
   experience: {
     eyebrow: "JOURNEY",
-    title: "Experience & tools",
-    timeline: [
-      { period: "2025 — Present", role: "Your current role", place: "Company or project", note: "One line about what you build and the impact it has." },
-      { period: "2024 — 2025", role: "Previous role", place: "Company or project", note: "One line about responsibilities and achievements." },
-      { period: "2022 — 2024", role: "Education", place: "University or program", note: "What you studied and what you took away." },
-    ],
-    skills: ["Frontend", "Interface design", "Animation & microinteractions", "Accessibility", "Backend & data"],
+    title: "Experience",
+    workTitle: "Work experience",
+    academicTitle: "Academic experience",
+    workEmpty: "Work experience will be added soon.",
+    academicEmpty: "Academic experience will be added soon.",
   },
   projects: {
     eyebrow: "FEATURED WORK",
@@ -123,12 +114,9 @@ const en: Copy = {
     shot: (title) => `Screenshot of ${title}`,
   },
   testimonials: {
-    eyebrow: "KIND WORDS",
-    title: "What Clients Say",
+    eyebrow: "TESTIMONIALS",
     items: [
-      { name: "Nicolas García", quote: "A real testimonial goes here about the quality of the work and what it's like to collaborate with you." },
-      { name: "Ivonne Barco", quote: "A real testimonial goes here about communication, timing and the final result." },
-      { name: "Daniel Arteaga", quote: "A real testimonial goes here about the attention to detail and client care." },
+      { name: "Ing. Daniel Arteaga", quote: "A real testimonial goes here about attention to detail and client care." },
     ],
   },
   footer: {

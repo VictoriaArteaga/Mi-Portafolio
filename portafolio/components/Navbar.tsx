@@ -5,7 +5,7 @@ import { useT } from "@/lib/prefs";
 import { ArrowRight } from "./Icons";
 import Controls from "./Controls";
 
-export const sections = ["#inicio", "#sobre-mi", "#experiencia", "#proyectos", "#testimonios", "#contacto"];
+export const sections = ["#inicio", "#sobre-mi", "#proyectos", "#experiencia", "#testimonios", "#contacto"];
 
 export function Logo({ className = "" }: { className?: string }) {
   const t = useT();

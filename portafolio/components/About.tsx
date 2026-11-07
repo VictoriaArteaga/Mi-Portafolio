@@ -11,13 +11,13 @@ export default function About() {
   const t = useT().about;
   return (
     <section id="sobre-mi" className="bg-[#fff1e2] py-20 dark:bg-umber sm:py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 md:grid-cols-[0.9fr_1.1fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[504px_minmax(0,1fr)]">
         <Reveal>
           {/* Polaroid */}
-          <div className="relative mx-auto w-full max-w-xs -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
+          <div className="relative mx-auto w-full max-w-[504px] -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
             <div aria-hidden className="absolute -left-6 -top-3 h-8 w-20 -rotate-45 bg-butter/80" />
-            <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-sand to-tangerine">
-              <Image src="/about.png" alt="María Victoria Arteaga" fill sizes="320px" className="object-cover object-[38%_center]" />
+            <div className="relative aspect-[463/614] overflow-hidden bg-[#f1eee5] dark:bg-bark">
+              <Image src="/about.png" alt="María Victoria Arteaga en un encuentro de investigación" fill sizes="(min-width: 1024px) 480px, min(480px, calc(100vw - 64px))" className="object-cover object-center" />
             </div>
             <span className="font-hand absolute bottom-2 left-0 right-0 text-center text-2xl text-cocoa dark:text-linen">
               Victoria Arteaga

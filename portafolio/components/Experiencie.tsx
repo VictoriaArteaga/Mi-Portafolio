@@ -1,13 +1,43 @@
 "use client";
 
 import { useT } from "@/lib/prefs";
+import { academicExperience, workExperience } from "@/data/experience";
 import Reveal from "./Reveal";
 
-// TODO: ajusta herramientas y niveles (0 a 1) a la realidad. Los textos viven en lib/copy.ts.
-const tools = ["Next.js", "React", "TypeScript", "Tailwind", "Figma", "Git", "Node"];
-
-// Mismo orden que experience.skills en lib/copy.ts.
-const levels = [0.9, 0.85, 0.8, 0.75, 0.65];
+function Timeline({
+  entries,
+  emptyMessage,
+}: {
+  entries: typeof workExperience;
+  emptyMessage: string;
+}) {
+  return (
+    <ol className="relative mt-8 ml-3 space-y-8 border-l-2 border-dashed border-terracota/40">
+      {entries.length === 0 ? (
+        <li className="relative pl-8">
+          <span
+            aria-hidden
+            className="absolute -left-[0.6rem] top-1 size-4 rounded-full border-4 border-cream bg-terracota dark:border-night"
+          />
+          <p className="text-base leading-relaxed text-ink/70 dark:text-moon/70">{emptyMessage}</p>
+        </li>
+      ) : (
+        entries.map((item) => (
+          <li key={`${item.period}-${item.title}-${item.organization}`} className="relative pl-8">
+            <span
+              aria-hidden
+              className="absolute -left-[0.6rem] top-1 size-4 rounded-full border-4 border-cream bg-terracota dark:border-night"
+            />
+            <p className="text-sm font-semibold tracking-wide text-terracota dark:text-tangerine">{item.period}</p>
+            <h4 className="mt-1 font-serif text-xl font-semibold">{item.title}</h4>
+            <p className="text-base font-medium text-cocoa dark:text-linen">{item.organization}</p>
+            <p className="mt-2 leading-relaxed text-ink/75 dark:text-moon/75">{item.description}</p>
+          </li>
+        ))
+      )}
+    </ol>
+  );
+}
 
 export default function Experiencie() {
   const t = useT().experience;
@@ -20,46 +50,19 @@ export default function Experiencie() {
           <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">{t.title}</h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
-          <Reveal>
-            <ol className="relative ml-3 space-y-8 border-l-2 border-dashed border-terracota/40">
-              {t.timeline.map((item) => (
-                <li key={item.period} className="relative pl-8">
-                  <span aria-hidden className="absolute -left-[0.6rem] top-1 size-4 rounded-full border-4 border-cream bg-terracota dark:border-night" />
-                  <p className="text-xs font-semibold tracking-wide text-terracota">{item.period}</p>
-                  <h3 className="mt-1 font-serif text-xl font-semibold">{item.role}</h3>
-                  <p className="text-sm font-medium text-cocoa dark:text-linen">{item.place}</p>
-                  <p className="mt-1 max-w-sm text-sm text-ink/70 dark:text-moon/70">{item.note}</p>
-                </li>
-              ))}
-            </ol>
+        <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <Reveal className="h-full">
+            <section aria-labelledby="experiencia-laboral">
+              <h3 id="experiencia-laboral" className="font-serif text-2xl font-semibold">{t.workTitle}</h3>
+              <Timeline entries={workExperience} emptyMessage={t.workEmpty} />
+            </section>
           </Reveal>
 
-          <Reveal delay={100} passive className="reveal">
-            <ul className="flex flex-wrap gap-3">
-              {tools.map((tool) => (
-                <li
-                  key={tool}
-                  className="rounded-2xl border border-sand bg-white px-4 dark:border-dusk dark:bg-bark py-3 text-sm font-semibold shadow-sm transition-transform duration-200 ease-out-strong hover:-translate-y-1"
-                >
-                  {tool}
-                </li>
-              ))}
-            </ul>
-
-            <ul className="mt-10 space-y-5">
-              {t.skills.map((name, i) => (
-                <li key={name}>
-                  <div className="mb-1.5 text-sm font-medium">{name}</div>
-                  <div className="h-2 overflow-hidden rounded-full bg-sand/70 dark:bg-dusk">
-                    <div
-                      className="skill-bar h-full rounded-full bg-terracota"
-                      style={{ "--level": levels[i], "--bar-delay": `${200 + i * 90}ms` } as React.CSSProperties}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
+          <Reveal delay={100} className="h-full">
+            <section aria-labelledby="experiencia-academica">
+              <h3 id="experiencia-academica" className="font-serif text-2xl font-semibold">{t.academicTitle}</h3>
+              <Timeline entries={academicExperience} emptyMessage={t.academicEmpty} />
+            </section>
           </Reveal>
         </div>
       </div>

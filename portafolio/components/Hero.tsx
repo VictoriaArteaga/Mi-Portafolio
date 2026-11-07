@@ -7,12 +7,12 @@ import { Download, Heart } from "./Icons";
 export default function Hero() {
   const t = useT().hero;
   return (
-    <section id="inicio" className="relative isolate overflow-hidden bg-gradient-to-b from-[#fff1e2] to-cream dark:from-umber dark:to-night">
+    <section id="inicio" className="relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden bg-gradient-to-b from-[#fff1e2] to-cream dark:from-umber dark:to-night">
       {/* Manchas orgánicas de fondo */}
       <div aria-hidden className="absolute -left-24 top-1/2 -z-10 size-72 rounded-[45%_55%_60%_40%] bg-terracota/90 dark:opacity-20" />
       <div aria-hidden className="absolute -right-20 -top-16 -z-10 size-72 rounded-[55%_45%_40%_60%] bg-tangerine/90 dark:opacity-20" />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-24">
+      <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-24">
         <div>
           <p className="font-hand flex items-center gap-2 text-3xl text-ink/80 dark:text-moon/80">
             {t.greeting} <Heart className="size-5 text-terracota" />
