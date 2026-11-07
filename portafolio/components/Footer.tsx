@@ -2,15 +2,15 @@
 
 import { useState, type FormEvent } from "react";
 import { useLang, useT } from "@/lib/prefs";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/data/socials";
 import { Logo, sections } from "./Navbar";
 import { Github, Linkedin, Mail, Plane } from "./Icons";
 
-const EMAIL = "mrvctrarteaga@gmail.com";
 
 const socials = [
-  { href: "#", label: "GitHub", icon: Github },
-  { href: "#", label: "LinkedIn", icon: Linkedin },
-];
+  { href: GITHUB_URL, label: "GitHub", icon: Github },
+  { href: LINKEDIN_URL, label: "LinkedIn", icon: Linkedin },
+].filter((item) => item.href);
 
 export default function Footer() {
   const t = useT();
@@ -169,6 +169,8 @@ export default function Footer() {
                   <a
                     href={href}
                     aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="grid size-10 place-items-center rounded-full border border-cream/20 transition-[transform,background-color,color] duration-150 ease-out-strong hover:bg-terracota hover:text-white active:scale-90"
                   >
                     <Icon className="size-[1.15rem]" />

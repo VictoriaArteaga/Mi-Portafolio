@@ -16,13 +16,39 @@ export default function Achievements() {
   const eyebrow = lang === "es" ? "05 · reconocimientos" : "05 · recognitions";
 
   return (
-    <section id="logros" className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden bg-sand/40 py-12 dark:bg-dusk sm:py-14">
-      <svg aria-hidden viewBox="0 0 24 24" className="absolute left-[7%] top-12 -z-10 size-[34px] fill-terracota">
-        <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
-      </svg>
-      <svg aria-hidden viewBox="0 0 24 24" className="absolute bottom-10 right-[8%] -z-10 size-7 fill-crimson/70">
-        <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
-      </svg>
+    <section id="logros" className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden bg-sand/40 py-8 dark:bg-dusk sm:py-10">
+      {/* Fondo decorativo */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-24 top-10 size-64 rounded-full border-[3px] border-terracota/40" />
+        <div className="absolute -left-10 top-24 size-64 rounded-full border-[3px] border-cream/80 dark:border-tangerine/20" />
+        <div className="absolute -right-20 -top-16 size-72 rounded-full bg-tangerine/35 dark:bg-terracota/10" />
+        <div className="absolute -bottom-20 left-[18%] size-60 rounded-full bg-butter/60 dark:bg-butter/10" />
+        <div className="absolute bottom-16 right-[6%] size-28 rounded-full border-[3px] border-crimson/30 dark:border-blush/15" />
+        <div className="absolute right-[30%] top-6 size-10 rounded-full bg-blush/70 dark:bg-blush/15" />
+        <div
+          className="absolute right-10 top-28 h-28 w-36 opacity-70 dark:opacity-30"
+          style={{ backgroundImage: "radial-gradient(var(--color-terracota) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+        />
+        <div
+          className="absolute bottom-10 left-8 h-24 w-32 opacity-60 dark:opacity-25"
+          style={{ backgroundImage: "radial-gradient(var(--color-cocoa) 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
+        />
+        <svg viewBox="0 0 200 12" fill="none" className="absolute bottom-24 right-[18%] w-32 text-terracota/50">
+          <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+        </svg>
+        {[
+          "left-[7%] top-12 size-9 fill-terracota",
+          "left-[24%] top-[38%] size-5 fill-crimson",
+          "right-[10%] top-[44%] size-8 fill-crimson/70",
+          "right-[38%] bottom-10 size-6 fill-terracota",
+          "left-[4%] bottom-[30%] size-7 fill-cream dark:fill-tangerine/40",
+          "right-[4%] top-20 size-10 fill-cream dark:fill-tangerine/40",
+        ].map((cls) => (
+          <svg key={cls} viewBox="0 0 24 24" className={`absolute ${cls}`}>
+            <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
+          </svg>
+        ))}
+      </div>
 
       <div className="mx-auto w-full max-w-[1264px] px-5 sm:px-8">
         <Reveal className="flex flex-col items-center text-center">
@@ -36,11 +62,18 @@ export default function Achievements() {
         {achievements.length === 0 ? (
           <p className="mt-10 text-center leading-relaxed text-ink/70 dark:text-moon/70">{t.empty}</p>
         ) : (
-          <ul className="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 flex flex-wrap justify-center gap-7">
             {achievements.map((achievement, i) => (
-              <li key={`${achievement.title}-${achievement.issuer}-${achievement.date}`}>
+              <li
+                key={`${achievement.title}-${achievement.issuer}-${achievement.date}`}
+                className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-18.67px)]"
+              >
                 <Reveal className="h-full" delay={(i % 3) * 80}>
-                  <article className="flex h-full flex-col gap-2.5 rounded-3xl border-2 border-[#f0cfae] bg-white p-7 dark:border-dusk dark:bg-bark">
+                  <article className="relative flex h-full flex-col gap-2 rounded-3xl border-2 border-[#f0cfae] bg-white p-6 shadow-[0_8px_0_var(--color-sand)] transition-transform duration-300 ease-out-strong hover:-translate-y-1.5 dark:border-dusk dark:bg-bark dark:shadow-[0_8px_0_var(--color-night)]">
+                    <span aria-hidden className="absolute -top-3 right-7 h-6 w-16 rotate-[5deg] bg-butter/90 dark:bg-butter/30" />
+                    <svg aria-hidden viewBox="0 0 24 24" className="absolute bottom-5 right-5 size-6 fill-terracota/30 dark:fill-tangerine/25">
+                      <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
+                    </svg>
                     <span
                       aria-hidden
                       className={`grid size-[52px] place-items-center rounded-full ${badgeTones[i % badgeTones.length]}`}

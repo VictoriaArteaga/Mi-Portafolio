@@ -3,7 +3,14 @@
 import Image from "next/image";
 import { useLang, useT } from "@/lib/prefs";
 import { profileContent } from "@/data/profile";
-import { Download, Heart } from "./Icons";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/data/socials";
+import { Download, Github, Heart, Linkedin, Mail } from "./Icons";
+
+const socials = [
+  { href: GITHUB_URL, label: "GitHub", icon: Github, tone: "bg-terracota text-ink" },
+  { href: LINKEDIN_URL, label: "LinkedIn", icon: Linkedin, tone: "bg-tangerine text-ink" },
+  { href: `mailto:${EMAIL}`, label: EMAIL, icon: Mail, tone: "bg-cocoa text-sand" },
+].filter((item) => item.href);
 
 const chipTones = [
   "bg-butter -rotate-2",
@@ -86,11 +93,21 @@ export default function Hero() {
             <Image src="/hero.png" alt="María Victoria Arteaga" fill priority sizes="(min-width: 1024px) 470px, (min-width: 768px) 384px, 90vw" className="object-cover object-top" />
           </div>
 
-          <div aria-hidden className="absolute -right-3 top-1/2 flex flex-col gap-2 sm:-right-7">
-            <span className="size-[30px] rounded-lg bg-terracota shadow" />
-            <span className="size-[30px] rounded-lg bg-tangerine shadow" />
-            <span className="size-[30px] rounded-lg bg-cocoa shadow" />
-          </div>
+          <ul className="absolute -right-3 top-1/2 flex -translate-y-1/2 flex-col gap-2 sm:-right-7">
+            {socials.map(({ href, label, icon: Icon, tone }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  {...(href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                  className={`grid size-11 place-items-center rounded-xl shadow transition-transform duration-150 ease-out-strong hover:scale-110 active:scale-90 ${tone}`}
+                >
+                  <Icon className="size-5" />
+                </a>
+              </li>
+            ))}
+          </ul>
 
           <div className="absolute -left-3 bottom-9 -rotate-[5deg] rounded-2xl bg-crimson px-[18px] py-3 text-[0.9375rem] font-bold text-cream shadow-[0_10px_0_rgba(42,26,18,0.2)] sm:-left-9">
             {extra.badge}
