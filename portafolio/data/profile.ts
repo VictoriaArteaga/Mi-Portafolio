@@ -27,7 +27,7 @@ export const profileContent: Record<Lang, ProfileContent> = {
       paragraphs: [
         "Soy estudiante de Ingeniería de Software, con especial interés en el desarrollo backend, la arquitectura de software y la exploración de nuevas tecnologías. Durante mi formación he participado en proyectos que abarcan el desarrollo de API, aplicaciones de software e integración de inteligencia artificial. También me interesa el desarrollo de experiencias con realidad virtual y tecnologías inmersivas.",
         "He orientado parte de mi trayectoria hacia la investigación, participando en semilleros, proyectos relacionados con tecnologías inmersivas e inteligencia artificial aplicada a la educación médica, así como en ponencias y espacios de divulgación académica. Disfruto participar en competencias tecnológicas, donde encuentro oportunidades para aprender, experimentar y trabajar en equipo.",
-        "Me considero una persona autodidacta, curiosa y abierta a nuevas experiencias. Fuera del ámbito tecnológico, me interesan las danzas tradicionales, que he aprendido de manera empírica y en las que tuve la oportunidad de participar en una agrupación cultural. También disfruto el modelaje, una actividad que he explorado de forma autónoma.",
+        "Me considero una persona autodidacta, curiosa y abierta a nuevas experiencias. Fuera del ámbito tecnológico, me interesan las danzas tradicionales, que he aprendido de manera empírica y en las que tuve la oportunidad de participar eny una agrupación cultural. También disfruto el modelaje, una actividad que he explorado de forma autónoma.",
       ],
     },
   },
