@@ -5,8 +5,6 @@ import { copy, type Lang } from "./copy";
 
 export type Theme = "light" | "dark";
 
-// La fuente de verdad es el propio <html> (clase .dark y atributo lang). El script de
-// layout.tsx los fija antes del primer pintado, así no hay destello al recargar.
 const listeners = new Set<() => void>();
 
 function subscribe(cb: () => void) {

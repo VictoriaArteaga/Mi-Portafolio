@@ -1,0 +1,3044 @@
+{
+ "url": "http://localhost:3000",
+ "at": "2026-11-07T04:07:13.330Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.96,
+    0.96,
+    0.96,
+    0.36,
+    0.65,
+    0.88,
+    0.72
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 16,
+    "scripted": 1,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 5792,
+     "screens": 6.4,
+     "words": 552,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 36,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fhero.png&w=640&q=75",
+      "image?url=%2Fabout.png&w=640&q=75"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Construyo interfaces que cuentan historias.",
+     "words": 5,
+     "chars": 43,
+     "lines": 3,
+     "size": 72,
+     "vw": 5,
+     "font": "Caveat",
+     "weight": 700,
+     "tracking": -0.021,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.4,
+     "top": 311,
+     "mixedFonts": [
+      "Fraunces",
+      "Caveat"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Construyo interfaces que cuentan historias.",
+     "words": 5,
+     "lines": 3,
+     "size": 60,
+     "font": "Fraunces"
+    },
+    "headings": [
+     {
+      "text": "Victoria",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.05,
+      "top": 13,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Hola, soy María Victoria",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Caveat",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 263,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Construyo interfaces que cuentan historias.",
+      "words": 5,
+      "chars": 43,
+      "lines": 3,
+      "size": 72,
+      "vw": 5,
+      "font": "Caveat",
+      "weight": 700,
+      "tracking": -0.021,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 311,
+      "mixedFonts": [
+       "Fraunces",
+       "Caveat"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "El diseño es la forma en que comunico ideas y emociones.",
+      "words": 11,
+      "chars": 56,
+      "lines": 2,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.37,
+      "top": 1161,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos seleccionados",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 1902,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ñawi Nariño",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 2195,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Respira",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.16,
+      "top": 2199,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Coco",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 2201,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Señas",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 2690,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Hope Link",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 2694,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Arq 3D",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.16,
+      "top": 2698,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiencia",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 3151,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Logros y Certificados",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 4905,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Contacto",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 5163,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Victoria",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.05,
+      "top": 5604,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 15,
+     "maxLines": 3,
+     "over2Lines": 1,
+     "statements": 1,
+     "centered": 9,
+     "medianWords": 2,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.9,
+       "mono": false
+      },
+      {
+       "family": "Fraunces",
+       "share": 0.07,
+       "mono": false
+      },
+      {
+       "family": "Caveat",
+       "share": 0.02,
+       "mono": false
+      },
+      {
+       "family": "Mrs Saint Delafield",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      10,
+      11,
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      36,
+      60,
+      72
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 76,
+     "max": {
+      "size": 72,
+      "vw": 5,
+      "font": "Caveat",
+      "text": "cuentan historias."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 4,
+     "microLabelShare": 0.013,
+     "microSamples": [
+      "SOBRE MÍ",
+      "TRABAJO DESTACADO",
+      "TRAYECTORIA",
+      "TESTIMONIOS"
+     ],
+     "upperShare": 0.02,
+     "centerShare": 0.2,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "SOBRE MÍ",
+      "above": "El diseño es la forma en que comunico id",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 1133
+     },
+     {
+      "text": "TRABAJO DESTACADO",
+      "above": "Proyectos seleccionados",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 1878
+     },
+     {
+      "text": "TRAYECTORIA",
+      "above": "Experiencia",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3127
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#100e0c",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.14,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#1b1713",
+       "top": 901,
+       "hsl": {
+        "h": 30,
+        "s": 0.17,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#29231d",
+       "top": 1782,
+       "hsl": {
+        "h": 30,
+        "s": 0.17,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#fff4e8",
+       "share": 0.69
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.11
+      },
+      {
+       "color": "#dc0032",
+       "share": 0.05
+      },
+      {
+       "color": "#5a3720",
+       "share": 0.03
+      },
+      {
+       "color": "#fff6ec",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#e87524",
+      "hsl": {
+       "h": 25,
+       "s": 0.81,
+       "l": 0.53
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Next.js",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "Tailwind",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "TypeScript",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "PostgreSQL",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "Coco",
+       "ratio": 2,
+       "need": 3,
+       "size": 36,
+       "fg": "#ffffff",
+       "bg": "#ffa048"
+      },
+      {
+       "text": "Descripción breve del proyecto y del pro",
+       "ratio": 2,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#ffa048"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 2,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Descargar CV",
+      "¡Contáctame!"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 12,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.relative.aspect-[4/5] → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.font-hand.absolute → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.relative.mx-auto → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "article.relative.w-72 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "section#inicio.relative.isolate → linear-gradient(in oklab, rgb(27, 23, 19) 0%, rgb(16, 14, 12) 100%)",
+      "div.relative.aspect-[4/5] → linear-gradient(to right bottom in oklab, rgb(255, 160, 72) 0%, rgb(232, 117, 36) 100%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.sticky.top-0 1440px",
+      "div.bg-ink.text-cream 1440px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 25,
+     "boxRadius": 32,
+     "squareMedia": 1,
+     "roundedMedia": 1,
+     "mediaRadius": 999,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.14
+     }
+    ],
+    "nav": {
+     "links": 8,
+     "fixed": true,
+     "height": 73,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "fraunces",
+     "caveat",
+     "mrs saint delafield"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 5792,
+    "margins": {
+     "left": 64,
+     "right": 112
+    },
+    "sections": [
+     {
+      "sel": "section#inicio.relative.isolate",
+      "tag": "section",
+      "top": 73,
+      "height": 828,
+      "words": 42,
+      "media": 1,
+      "middle": 226,
+      "heading": {
+       "text": "cuentan historias.",
+       "size": 72,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 215,
+      "textLeft": 176,
+      "textRight": 215,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#sobre-mi.bg-[#fff1e2].py-20",
+      "tag": "section",
+      "top": 901,
+      "height": 881,
+      "words": 64,
+      "media": 1,
+      "middle": 52,
+      "heading": {
+       "text": "El diseño es la forma en que comunico ideas y emoc",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 171,
+      "right": 184,
+      "textLeft": 376,
+      "textRight": 184,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proyectos.overflow-hidden.bg-sand",
+      "tag": "section",
+      "top": 1782,
+      "height": 1249,
+      "words": 117,
+      "media": 0,
+      "middle": 58,
+      "heading": {
+       "text": "Proyectos seleccionados",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 232,
+      "right": 228,
+      "textLeft": 232,
+      "textRight": 228,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experiencia.py-20.sm:py-24",
+      "tag": "section",
+      "top": 3031,
+      "height": 688,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Experiencia",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 542,
+      "right": 542,
+      "textLeft": 542,
+      "textRight": 542,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#testimonios.py-20.sm:py-24",
+      "tag": "section",
+      "top": 3719,
+      "height": 1090,
+      "words": 286,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 64,
+      "right": 64,
+      "textLeft": 64,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#logros.bg-sand/40.py-20",
+      "tag": "section",
+      "top": 4809,
+      "height": 298,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Logros y Certificados",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 499,
+      "right": 499,
+      "textLeft": 499,
+      "textRight": 499,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 5107,
+      "height": 685,
+      "words": 49,
+      "media": 0,
+      "middle": 62,
+      "heading": {
+       "text": "Contacto",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 108,
+      "right": 112,
+      "textLeft": 112,
+      "textRight": 321,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Construyo interfaces que cuentan historias.",
+      "size": 60,
+      "top": 311,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 176,
+      "n": 3
+     },
+     {
+      "x": 736,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.13,
+    "voidBox": {
+     "x": 0,
+     "y": 780,
+     "w": 1440,
+     "h": 120
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.94,
+    0.95,
+    0.94,
+    0.94,
+    0.2,
+    0.84,
+    0.78,
+    0.71
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 16,
+    "scripted": 1,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 7248,
+     "screens": 7.1,
+     "words": 542,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 36,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fhero.png&w=640&q=75",
+      "image?url=%2Fabout.png&w=640&q=75"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Construyo interfaces que cuentan historias.",
+     "words": 5,
+     "chars": 43,
+     "lines": 5,
+     "size": 72,
+     "vw": 9.4,
+     "font": "Caveat",
+     "weight": 700,
+     "tracking": -0.021,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.47,
+     "top": 261,
+     "mixedFonts": [
+      "Fraunces",
+      "Caveat"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Construyo interfaces que cuentan historias.",
+     "words": 5,
+     "lines": 5,
+     "size": 60,
+     "font": "Fraunces"
+    },
+    "headings": [
+     {
+      "text": "Victoria",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 13,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Hola, soy María Victoria",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Caveat",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 213,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Construyo interfaces que cuentan historias.",
+      "words": 5,
+      "chars": 43,
+      "lines": 5,
+      "size": 72,
+      "vw": 9.4,
+      "font": "Caveat",
+      "weight": 700,
+      "tracking": -0.021,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 261,
+      "mixedFonts": [
+       "Fraunces",
+       "Caveat"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "El diseño es la forma en que comunico ideas y emociones.",
+      "words": 11,
+      "chars": 56,
+      "lines": 2,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1894,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos seleccionados",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2478,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ñawi Nariño",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 2771,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Respira",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 2775,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Señas",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 3266,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Coco",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 3274,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Hope Link",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 3766,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Arq 3D",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 3770,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiencia",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4223,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Logros y Certificados",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6341,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Contacto",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 6599,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Victoria",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 7040,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 15,
+     "maxLines": 5,
+     "over2Lines": 1,
+     "statements": 1,
+     "centered": 9,
+     "medianWords": 2,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "Fraunces",
+       "share": 0.07,
+       "mono": false
+      },
+      {
+       "family": "Caveat",
+       "share": 0.02,
+       "mono": false
+      },
+      {
+       "family": "Mrs Saint Delafield",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      10,
+      11,
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      36,
+      60,
+      72
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 34,
+     "max": {
+      "size": 72,
+      "vw": 9.4,
+      "font": "Caveat",
+      "text": "cuentan historias."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 4,
+     "microLabelShare": 0.013,
+     "microSamples": [
+      "SOBRE MÍ",
+      "TRABAJO DESTACADO",
+      "TRAYECTORIA",
+      "TESTIMONIOS"
+     ],
+     "upperShare": 0.02,
+     "centerShare": 0.21,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "SOBRE MÍ",
+      "above": "El diseño es la forma en que comunico id",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 1866
+     },
+     {
+      "text": "TRABAJO DESTACADO",
+      "above": "Proyectos seleccionados",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 2454
+     },
+     {
+      "text": "TRAYECTORIA",
+      "above": "Experiencia",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 4199
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#100e0c",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.14,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#1b1713",
+       "top": 1025,
+       "hsl": {
+        "h": 30,
+        "s": 0.17,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#211c17",
+       "top": 1108,
+       "hsl": {
+        "h": 30,
+        "s": 0.18,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#29231d",
+       "top": 2358,
+       "hsl": {
+        "h": 30,
+        "s": 0.17,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#fff4e8",
+       "share": 0.7
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.11
+      },
+      {
+       "color": "#dc0032",
+       "share": 0.05
+      },
+      {
+       "color": "#5a3720",
+       "share": 0.03
+      },
+      {
+       "color": "#fff6ec",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#e87524",
+      "hsl": {
+       "h": 25,
+       "s": 0.81,
+       "l": 0.53
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Next.js",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "Tailwind",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "TypeScript",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "PostgreSQL",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "Coco",
+       "ratio": 2,
+       "need": 3,
+       "size": 36,
+       "fg": "#ffffff",
+       "bg": "#ffa048"
+      },
+      {
+       "text": "Descripción breve del proyecto y del pro",
+       "ratio": 2,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#ffa048"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 2,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Descargar CV",
+      "¡Contáctame!"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 12,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.relative.aspect-[4/5] → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.font-hand.absolute → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.relative.mx-auto → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "article.relative.w-72 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "section#inicio.relative.isolate → linear-gradient(in oklab, rgb(27, 23, 19) 0%, rgb(16, 14, 12) 100%)",
+      "div.relative.aspect-[4/5] → linear-gradient(to right bottom in oklab, rgb(255, 160, 72) 0%, rgb(232, 117, 36) 100%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.sticky.top-0 768px",
+      "div.bg-ink.text-cream 768px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 25,
+     "boxRadius": 32,
+     "squareMedia": 1,
+     "roundedMedia": 1,
+     "mediaRadius": 999,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.14
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 73,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "fraunces",
+     "caveat",
+     "mrs saint delafield"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 7248,
+    "margins": {
+     "left": 32,
+     "right": 31
+    },
+    "sections": [
+     {
+      "sel": "section#inicio.relative.isolate",
+      "tag": "section",
+      "top": 73,
+      "height": 952,
+      "words": 42,
+      "media": 1,
+      "middle": 49,
+      "heading": {
+       "text": "cuentan historias.",
+       "size": 72,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 29,
+      "textLeft": 32,
+      "textRight": 29,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#sobre-mi.bg-[#fff1e2].py-20",
+      "tag": "section",
+      "top": 1025,
+      "height": 1333,
+      "words": 64,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 32,
+      "right": 48,
+      "textLeft": 32,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proyectos.overflow-hidden.bg-sand",
+      "tag": "section",
+      "top": 2358,
+      "height": 1746,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Proyectos seleccionados",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 88,
+      "right": 81,
+      "textLeft": 88,
+      "textRight": 81,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experiencia.py-20.sm:py-24",
+      "tag": "section",
+      "top": 4103,
+      "height": 688,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Experiencia",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 206,
+      "right": 206,
+      "textLeft": 206,
+      "textRight": 206,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#testimonios.py-20.sm:py-24",
+      "tag": "section",
+      "top": 4791,
+      "height": 1454,
+      "words": 286,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 64,
+      "right": 64,
+      "textLeft": 64,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#logros.bg-sand/40.py-20",
+      "tag": "section",
+      "top": 6245,
+      "height": 298,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Logros y Certificados",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 163,
+      "right": 163,
+      "textLeft": 163,
+      "textRight": 163,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 6543,
+      "height": 705,
+      "words": 49,
+      "media": 0,
+      "middle": 28,
+      "heading": {
+       "text": "Contacto",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 13,
+      "textLeft": 32,
+      "textRight": 87,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Construyo interfaces que cuentan historias.",
+      "size": 60,
+      "top": 261,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 5
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.94,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.95,
+    0.73,
+    0.43,
+    0.85,
+    0.79,
+    0.95,
+    0.5
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 16,
+    "scripted": 1,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 10000,
+     "screens": 11.8,
+     "words": 542,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 36,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fhero.png&w=640&q=75",
+      "image?url=%2Fabout.png&w=384&q=75"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Construyo interfaces que cuentan historias.",
+     "words": 5,
+     "chars": 43,
+     "lines": 4,
+     "size": 60,
+     "vw": 15.4,
+     "font": "Caveat",
+     "weight": 700,
+     "tracking": -0.02,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 185,
+     "mixedFonts": [
+      "Fraunces",
+      "Caveat"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Construyo interfaces que cuentan historias.",
+     "words": 5,
+     "lines": 4,
+     "size": 48,
+     "font": "Fraunces"
+    },
+    "headings": [
+     {
+      "text": "Victoria",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.18,
+      "top": 13,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Hola, soy María Victoria",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Caveat",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 137,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Construyo interfaces que cuentan historias.",
+      "words": 5,
+      "chars": 43,
+      "lines": 4,
+      "size": 60,
+      "vw": 15.4,
+      "font": "Caveat",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 185,
+      "mixedFonts": [
+       "Fraunces",
+       "Caveat"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Victoria Arteaga",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Caveat",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1327,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "El diseño es la forma en que comunico ideas y emociones.",
+      "words": 11,
+      "chars": 56,
+      "lines": 3,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1896,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos seleccionados",
+      "words": 2,
+      "chars": 23,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2610,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ñawi Nariño",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.6,
+      "top": 2936,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Respira",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.6,
+      "top": 3428,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Coco",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.6,
+      "top": 3890,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Señas",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.6,
+      "top": 4342,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Arq 3D",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.6,
+      "top": 4838,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Hope Link",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.6,
+      "top": 5323,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiencia",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5719,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiencia laboral",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5883,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Logros y Certificados",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 8548,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Contacto",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Fraunces",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 8812,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "¿Tienes un proyecto en mente?",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Fraunces",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 8870,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Victoria",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Mrs Saint Delafield",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.18,
+      "top": 9579,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 18,
+     "maxLines": 4,
+     "over2Lines": 2,
+     "statements": 2,
+     "centered": 11,
+     "medianWords": 2,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "Fraunces",
+       "share": 0.07,
+       "mono": false
+      },
+      {
+       "family": "Caveat",
+       "share": 0.02,
+       "mono": false
+      },
+      {
+       "family": "Mrs Saint Delafield",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      10,
+      11,
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      36,
+      48,
+      60
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 38,
+     "max": {
+      "size": 60,
+      "vw": 15.4,
+      "font": "Caveat",
+      "text": "cuentan historias."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 4,
+     "microLabelShare": 0.013,
+     "microSamples": [
+      "SOBRE MÍ",
+      "TRABAJO DESTACADO",
+      "TRAYECTORIA",
+      "TESTIMONIOS"
+     ],
+     "upperShare": 0.02,
+     "centerShare": 0.21,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "SOBRE MÍ",
+      "above": "El diseño es la forma en que comunico id",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 1868
+     },
+     {
+      "text": "TRABAJO DESTACADO",
+      "above": "Proyectos seleccionados",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 2586
+     },
+     {
+      "text": "TRAYECTORIA",
+      "above": "Experiencia",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 5695
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#100e0c",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.14,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#1b1713",
+       "top": 1247,
+       "hsl": {
+        "h": 30,
+        "s": 0.17,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#211c17",
+       "top": 1318,
+       "hsl": {
+        "h": 30,
+        "s": 0.18,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#29231d",
+       "top": 2506,
+       "hsl": {
+        "h": 30,
+        "s": 0.17,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#ffa0ae",
+       "top": 2720,
+       "hsl": {
+        "h": 351,
+        "s": 1,
+        "l": 0.81
+       }
+      },
+      {
+       "color": "#dc0032",
+       "top": 3213,
+       "hsl": {
+        "h": 346,
+        "s": 1,
+        "l": 0.43
+       }
+      },
+      {
+       "color": "#ffa048",
+       "top": 3675,
+       "hsl": {
+        "h": 29,
+        "s": 1,
+        "l": 0.64
+       }
+      },
+      {
+       "color": "#ffe49a",
+       "top": 4126,
+       "hsl": {
+        "h": 44,
+        "s": 1,
+        "l": 0.8
+       }
+      },
+      {
+       "color": "#e87524",
+       "top": 4623,
+       "hsl": {
+        "h": 25,
+        "s": 0.81,
+        "l": 0.53
+       }
+      },
+      {
+       "color": "#5a3720",
+       "top": 5107,
+       "hsl": {
+        "h": 24,
+        "s": 0.48,
+        "l": 0.24
+       }
+      },
+      {
+       "color": "#100e0c",
+       "top": 9530,
+       "hsl": {
+        "h": 30,
+        "s": 0.14,
+        "l": 0.05
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#fff4e8",
+       "share": 0.7
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.11
+      },
+      {
+       "color": "#dc0032",
+       "share": 0.05
+      },
+      {
+       "color": "#5a3720",
+       "share": 0.03
+      },
+      {
+       "color": "#fff6ec",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#e87524",
+      "hsl": {
+       "h": 25,
+       "s": 0.81,
+       "l": 0.53
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Next.js",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "Tailwind",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "TypeScript",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "PostgreSQL",
+       "ratio": 1.9,
+       "need": 4.5,
+       "size": 11.2,
+       "fg": "#ffffff",
+       "bg": "#ffa0ae"
+      },
+      {
+       "text": "Coco",
+       "ratio": 2,
+       "need": 3,
+       "size": 36,
+       "fg": "#ffffff",
+       "bg": "#ffa048"
+      },
+      {
+       "text": "Descripción breve del proyecto y del pro",
+       "ratio": 2,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#ffa048"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 2,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Descargar CV",
+      "¡Contáctame!"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 12,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.relative.aspect-[4/5] → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.font-hand.absolute → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.relative.mx-auto → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "article.relative.w-72 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "section#inicio.relative.isolate → linear-gradient(in oklab, rgb(27, 23, 19) 0%, rgb(16, 14, 12) 100%)",
+      "div.relative.aspect-[4/5] → linear-gradient(to right bottom in oklab, rgb(255, 160, 72) 0%, rgb(232, 117, 36) 100%)"
+     ],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.sticky.top-0 390px",
+      "div.bg-ink.text-cream 390px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 25,
+     "boxRadius": 32,
+     "squareMedia": 1,
+     "roundedMedia": 1,
+     "mediaRadius": 999,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 73,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "dm sans",
+     "fraunces",
+     "caveat",
+     "caveat fallback",
+     "mrs saint delafield"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 10000,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "section#inicio.relative.isolate",
+      "tag": "section",
+      "top": 73,
+      "height": 1174,
+      "words": 42,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "cuentan historias.",
+       "size": 60,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#sobre-mi.bg-[#fff1e2].py-20",
+      "tag": "section",
+      "top": 1247,
+      "height": 1259,
+      "words": 64,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Victoria Arteaga",
+       "size": 24,
+       "tag": "span"
+      },
+      "left": 20,
+      "right": 22,
+      "textLeft": 20,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proyectos.overflow-hidden.bg-sand",
+      "tag": "section",
+      "top": 2506,
+      "height": 3109,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ñawi Nariño",
+       "size": 36,
+       "tag": "h3"
+      },
+      "left": 80,
+      "right": 72,
+      "textLeft": 80,
+      "textRight": 72,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experiencia.py-20.sm:py-24",
+      "tag": "section",
+      "top": 5615,
+      "height": 652,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Experiencia",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 69,
+      "right": 69,
+      "textLeft": 74,
+      "textRight": 74,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#testimonios.py-20.sm:py-24",
+      "tag": "section",
+      "top": 6267,
+      "height": 2201,
+      "words": 286,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 44,
+      "right": 44,
+      "textLeft": 44,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#logros.bg-sand/40.py-20",
+      "tag": "section",
+      "top": 8468,
+      "height": 288,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Logros y Certificados",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 22,
+      "right": 22,
+      "textLeft": 22,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 8756,
+      "height": 1244,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Contacto",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Construyo interfaces que cuentan historias.",
+      "size": 48,
+      "top": 185,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 5
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 1440,
+   "message": "1 headline(s) wrap past two lines at 1440px: \"Construyo interfaces que cuentan historias.\" → 3 lines (5 words, 72px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 36px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "mixed-font-headline",
+   "width": 1440,
+   "message": "1 headline(s) switch typeface or to italic mid-line (the \"one italic serif word\" move).",
+   "fix": "Set the whole headline in one face. Emphasis comes from the words.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "3 eyebrow/kicker label(s) above headings: \"SOBRE MÍ\" above \"El diseño es la forma en que comunico id\"; \"TRABAJO DESTACADO\" above \"Proyectos seleccionados\"; \"TRAYECTORIA\" above \"Experiencia\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "4 tiny uppercase letter-spaced labels (e.g. \"SOBRE MÍ\", \"TRABAJO DESTACADO\", \"TRAYECTORIA\", \"TESTIMONIOS\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "width": 1440,
+   "message": "2 gradient fill(s): section#inicio.relative.isolate → linear-gradient(in oklab, rgb(27, 23, 19) 0%, rgb(16, 14, 12) 100%) | div.relative.aspect-[4/5] → linear-gradient(to right bottom in oklab, rgb(255, 160, 72) 0%, rgb(232, 117, 36) 100%)",
+   "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "12 box-shadow(s) on elements at rest: div.relative.aspect-[4/5] → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.font-hand.absolute → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.relative.mx-auto → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "2 thin rule(s)/divider line(s): header.sticky.top-0 1440px | div.bg-ink.text-cream 1440px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "6 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "palette-claude",
+   "width": 1440,
+   "message": "Cream + terracotta palette (text #fff4e8, text #fff6ec, button #e87524).",
+   "fix": "Re-draw the palette from the library. This pairing reads as an assistant brand, not yours.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Unreadable text: \"Next.js\" 1.9:1 (#ffffff on #ffa0ae); \"Tailwind\" 1.9:1 (#ffffff on #ffa0ae); \"TypeScript\" 1.9:1 (#ffffff on #ffa0ae); \"PostgreSQL\" 1.9:1 (#ffffff on #ffa0ae)",
+   "fix": "Raise contrast to at least 4.5:1 for text, 3:1 for large display.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "font-count",
+   "width": 1440,
+   "message": "4 typefaces in use (DM Sans, Fraunces, Caveat, Mrs Saint Delafield).",
+   "fix": "Two at most: one display, one text. Often one is enough.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "12 different font sizes (10, 11, 12, 14, 16, 18, 20, 24, 30, 36, 60, 72).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 2 picture(s) on the page (2 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "small-text",
+   "width": 1440,
+   "message": "2 text block(s) under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The margins differ: 64px on the left, 112px on the right, at 1440px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 768,
+   "message": "1 headline(s) wrap past two lines at 768px: \"Construyo interfaces que cuentan historias.\" → 5 lines (5 words, 72px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 32px or less."
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 390,
+   "message": "2 headline(s) wrap past two lines at 390px: \"Construyo interfaces que cuentan historias.\" → 4 lines (5 words, 60px); \"El diseño es la forma en que comunico ideas y em\" → 3 lines (11 words, 30px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 24px or less."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\desktop-page-01.jpg",
+    "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\tablet-page-01.jpg",
+    "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\mobile-page-01.jpg",
+    "C:\\Users\\MARIA VICTORIA\\Desktop\\PORTAFOLIO\\portafolio\\.taste-skill\\before\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

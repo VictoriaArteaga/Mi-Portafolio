@@ -3,12 +3,11 @@
 import { useState, type FormEvent } from "react";
 import { useT } from "@/lib/prefs";
 import { Logo, sections } from "./Navbar";
-import { Github, Instagram, Linkedin, Mail, Plane } from "./Icons";
+import { Github, Linkedin, Mail, Plane } from "./Icons";
 
 const EMAIL = "mrvctrarteaga@gmail.com";
 
 const socials = [
-  { href: "#", label: "Instagram", icon: Instagram },
   { href: "#", label: "GitHub", icon: Github },
   { href: "#", label: "LinkedIn", icon: Linkedin },
 ];
@@ -71,14 +70,6 @@ export default function Footer() {
               </p>
             </div>
             <p className="mt-5 max-w-sm text-base leading-relaxed text-white/90">{f.text}</p>
-            <a
-              href={`mailto:${EMAIL}`}
-              aria-label={f.emailLinkLabel}
-              title={f.emailLinkLabel}
-              className="mt-5 inline-grid size-11 place-items-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              <Mail className="size-4" />
-            </a>
           </div>
 
           <form onSubmit={handleSubmit} className="grid gap-5" aria-label={f.submit}>
@@ -133,16 +124,6 @@ export default function Footer() {
                   aria-live={status === "success" ? "polite" : "assertive"}
                 >
                   <span>{status === "success" ? f.success : status === "error" ? f.error : f.unconfigured}</span>
-                  {status !== "success" && (
-                    <a
-                      href={`mailto:${EMAIL}`}
-                      aria-label={f.emailLinkLabel}
-                      title={f.emailLinkLabel}
-                      className="inline-grid size-11 shrink-0 place-items-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                    >
-                      <Mail className="size-4" />
-                    </a>
-                  )}
                 </div>
               )}
             </div>
@@ -184,15 +165,17 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  aria-label={f.emailLinkLabel}
+                  title={f.emailLinkLabel}
+                  className="grid size-10 place-items-center rounded-full border border-cream/20 text-cream/70 transition-colors hover:bg-terracota hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tangerine"
+                >
+                  <Mail className="size-[1.15rem]" />
+                </a>
+              </li>
             </ul>
-            <a
-              href={`mailto:${EMAIL}`}
-              aria-label={f.emailLinkLabel}
-              title={f.emailLinkLabel}
-              className="mt-5 inline-grid size-11 place-items-center rounded-full border border-cream/20 text-cream/70 transition-colors hover:bg-terracota hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tangerine"
-            >
-              <Mail className="size-4" />
-            </a>
           </div>
         </div>
       </div>

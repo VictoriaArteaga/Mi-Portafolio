@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useT } from "@/lib/prefs";
 import { academicExperience, workExperience } from "@/data/experience";
 import Reveal from "./Reveal";
@@ -7,40 +8,87 @@ import Reveal from "./Reveal";
 function Timeline({
   entries,
   emptyMessage,
+  label,
 }: {
   entries: typeof workExperience;
   emptyMessage: string;
+  label: string;
 }) {
+  const cardTones = [
+    "bg-blush text-ink dark:bg-crimson/20 dark:text-moon",
+    "bg-butter text-ink dark:bg-terracota/20 dark:text-moon",
+    "bg-sand text-ink dark:bg-butter/10 dark:text-moon",
+  ];
+  const markerTones = [
+    "border-crimson bg-crimson dark:border-night dark:bg-tangerine",
+    "border-terracota bg-terracota dark:border-night dark:bg-blush",
+    "border-cocoa bg-cocoa dark:border-night dark:bg-butter",
+  ];
+
   return (
-    <ol className="relative mt-8 ml-3 space-y-8 border-l-2 border-dashed border-terracota/40">
+    <div
+      role="region"
+      aria-label={label}
+      tabIndex={0}
+      className="mt-8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota"
+    >
       {entries.length === 0 ? (
-        <li className="relative pl-8">
+        <div className="relative mx-auto max-w-3xl py-8 pl-12">
           <span
             aria-hidden
-            className="absolute -left-[0.6rem] top-1 size-4 rounded-full border-4 border-cream bg-terracota dark:border-night"
+            className="absolute bottom-0 left-[1.6rem] top-0 w-1 rounded-full bg-terracota/35 dark:bg-tangerine/35"
           />
-          <p className="text-base leading-relaxed text-ink/70 dark:text-moon/70">{emptyMessage}</p>
-        </li>
+          <span
+            aria-hidden
+            className="absolute left-[0.95rem] top-12 size-5 rounded-full border-4 border-cream bg-terracota dark:border-night dark:bg-tangerine"
+          />
+          <p className="relative rounded-xl bg-sand/70 p-6 text-base leading-relaxed text-ink dark:bg-dusk dark:text-moon">
+            {emptyMessage}
+          </p>
+        </div>
       ) : (
-        entries.map((item) => (
-          <li key={`${item.period}-${item.title}-${item.organization}`} className="relative pl-8">
-            <span
-              aria-hidden
-              className="absolute -left-[0.6rem] top-1 size-4 rounded-full border-4 border-cream bg-terracota dark:border-night"
-            />
-            <p className="text-sm font-semibold tracking-wide text-terracota dark:text-tangerine">{item.period}</p>
-            <h4 className="mt-1 font-serif text-xl font-semibold">{item.title}</h4>
-            <p className="text-base font-medium text-cocoa dark:text-linen">{item.organization}</p>
-            <p className="mt-2 leading-relaxed text-ink/75 dark:text-moon/75">{item.description}</p>
-          </li>
-        ))
+        <div className="relative mx-auto max-w-3xl py-2 pl-12">
+          <span
+            aria-hidden
+            className="absolute bottom-6 left-[1.6rem] top-6 w-1 rounded-full bg-terracota/35 dark:bg-tangerine/35"
+          />
+          <ol className="relative space-y-6" aria-label={label}>
+            {entries.map((item, index) => (
+              <li key={`${item.period}-${item.title}-${item.organization}`} className="relative">
+                <span
+                  aria-hidden
+                  className={`absolute -left-[2rem] top-6 size-5 rounded-full border-4 border-cream dark:border-night ${
+                    markerTones[index % markerTones.length]
+                  }`}
+                />
+                <article
+                  className={`rounded-2xl border-l-8 p-5 sm:p-6 ${
+                    cardTones[index % cardTones.length]
+                  } ${markerTones[index % markerTones.length].split(" ")[0]}`}
+                >
+                  <p className="text-base font-bold text-crimson dark:text-tangerine">{item.period}</p>
+                  <h4 className="mt-1 font-serif text-xl font-semibold sm:text-2xl">{item.title}</h4>
+                  <p className="mt-1 text-base font-semibold text-cocoa dark:text-linen">{item.organization}</p>
+                  {item.description && (
+                    <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink dark:text-moon">
+                      {item.description}
+                    </p>
+                  )}
+                </article>
+              </li>
+            ))}
+          </ol>
+        </div>
       )}
-    </ol>
+    </div>
   );
 }
 
 export default function Experiencie() {
   const t = useT().experience;
+  const [selected, setSelected] = useState<"work" | "academic">("work");
+  const isWork = selected === "work";
+  const activeTitle = isWork ? t.workTitle : t.academicTitle;
 
   return (
     <section id="experiencia" className="py-20 sm:py-24">
@@ -50,21 +98,46 @@ export default function Experiencie() {
           <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">{t.title}</h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal className="h-full">
-            <section aria-labelledby="experiencia-laboral">
-              <h3 id="experiencia-laboral" className="font-serif text-2xl font-semibold">{t.workTitle}</h3>
-              <Timeline entries={workExperience} emptyMessage={t.workEmpty} />
-            </section>
-          </Reveal>
+        <Reveal className="mt-10">
+          <div className="flex justify-center gap-3" role="group" aria-label={t.title}>
+            <button
+              type="button"
+              onClick={() => setSelected("work")}
+              aria-pressed={isWork}
+              className={`rounded-md px-6 py-3 text-base font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota ${
+                isWork
+                  ? "bg-terracota text-white"
+                  : "bg-sand/50 text-ink hover:bg-sand dark:bg-dusk dark:text-moon dark:hover:bg-bark"
+              }`}
+            >
+              {t.workTab}
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelected("academic")}
+              aria-pressed={!isWork}
+              className={`rounded-md px-6 py-3 text-base font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota ${
+                !isWork
+                  ? "bg-terracota text-white"
+                  : "bg-sand/50 text-ink hover:bg-sand dark:bg-dusk dark:text-moon dark:hover:bg-bark"
+              }`}
+            >
+              {t.academicTab}
+            </button>
+          </div>
 
-          <Reveal delay={100} className="h-full">
-            <section aria-labelledby="experiencia-academica">
-              <h3 id="experiencia-academica" className="font-serif text-2xl font-semibold">{t.academicTitle}</h3>
-              <Timeline entries={academicExperience} emptyMessage={t.academicEmpty} />
-            </section>
-          </Reveal>
-        </div>
+          <section className="mt-10" aria-live="polite" aria-labelledby="experiencia-seleccionada">
+            <h3 id="experiencia-seleccionada" className="text-center font-serif text-2xl font-semibold">
+              {activeTitle}
+            </h3>
+            <Timeline
+              key={selected}
+              entries={isWork ? workExperience : academicExperience}
+              emptyMessage={isWork ? t.workEmpty : t.academicEmpty}
+              label={activeTitle}
+            />
+          </section>
+        </Reveal>
       </div>
     </section>
   );

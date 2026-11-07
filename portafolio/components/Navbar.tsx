@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { useT } from "@/lib/prefs";
-import { ArrowRight } from "./Icons";
 import Controls from "./Controls";
 
-export const sections = ["#inicio", "#sobre-mi", "#proyectos", "#experiencia", "#testimonios", "#contacto"];
+export const sections = ["#inicio", "#sobre-mi", "#proyectos", "#experiencia", "#testimonios", "#logros", "#contacto"];
 
 export function Logo({ className = "" }: { className?: string }) {
   const t = useT();
@@ -41,14 +40,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        <a
-          href="#contacto"
-          className="hidden items-center gap-2 rounded-full bg-terracota px-5 py-2.5 text-sm font-semibold text-white transition-[transform,background-color] duration-150 ease-out-strong hover:bg-tangerine active:scale-[0.97] lg:inline-flex"
-        >
-          {t.nav.cta}
-          <ArrowRight className="size-4" />
-        </a>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
         <Controls />
@@ -86,14 +77,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <a
-          href="#contacto"
-          onClick={() => setOpen(false)}
-          className="mt-3 inline-flex items-center gap-2 rounded-full bg-terracota px-5 py-3 text-sm font-semibold text-white active:scale-[0.97]"
-        >
-          {t.nav.cta}
-          <ArrowRight className="size-4" />
-        </a>
       </div>
     </header>
   );
