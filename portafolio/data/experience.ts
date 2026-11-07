@@ -1,23 +1,55 @@
+import { projects } from "@/data/projects";
+
 export type ExperienceEntry = {
   /** Rango de fechas, por ejemplo: "2023 — 2025". */
-  period: string;
+  period?: string;
   /** Cargo laboral o título de la formación. */
   title: string;
   /** Empresa, institución educativa u organización. */
   organization: string;
   /** Responsabilidades, logros o detalles relevantes. */
   description: string;
+  /** Responsabilidades o contribuciones puntuales. */
+  highlights?: string[];
 };
 
-// Agrega aquí la experiencia laboral cuando tengas la información.
-export const workExperience: ExperienceEntry[] = [];
+const projectOrder = ["Arq 3D", "Señas", "Coco", "Respira", "Ñawi Nariño", "Hope Link"];
+
+const projectExperience = projectOrder.map((title): ExperienceEntry => {
+  const project = projects.find((item) => item.title === title);
+  if (!project) {
+    throw new Error(`No se encontró el proyecto "${title}" en data/projects.ts.`);
+  }
+
+  return {
+    ...(project.title === "Arq 3D" && { period: "Marzo - mayo 2026 · 3 meses" }),
+    title: project.title,
+    organization: "Proyecto del portafolio",
+    description: `Tecnologías: ${project.tags.join(" · ")}`,
+  };
+});
+
+export const workExperience: ExperienceEntry[] = [
+  {
+    period: "Marzo - mayo 2026",
+    title: "Desarrolladora Frontend (Freelance)",
+    organization: "VADGR · Plataforma open-source de agentes de IA con integración MCP",
+    description: "",
+    highlights: [
+      "Contribuí al desarrollo con React, TypeScript y FastAPI.",
+      "Diseñé e implementé componentes de UI/UX accesibles e intuitivos.",
+      "Corregí bugs en la CLI y mejoré su compatibilidad con Windows y Linux.",
+    ],
+  },
+  ...projectExperience,
+];
 
 // Agrega aquí la experiencia académica cuando tengas la información.
 export const academicExperience: ExperienceEntry[] = [
   {
     period: "Noviembre 2026",
     title: "Ponente",
-    organization: "I Encuentro Nacional e Internacional de Semilleros · U. de Nariño",
+    organization: "I Encuentro Nacional e Internacional de Semilleros · UDENAR",
     description:
       "Presenté MEDIEVAL, aplicativo de IA para evaluar competencias clínicas en estudiantes de medicina mediante simulación.",
   },

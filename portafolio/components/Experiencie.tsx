@@ -66,13 +66,22 @@ function Timeline({
                     cardTones[index % cardTones.length]
                   } ${markerTones[index % markerTones.length].split(" ")[0]}`}
                 >
-                  <p className="text-base font-bold text-crimson dark:text-tangerine">{item.period}</p>
+                  {item.period && (
+                    <p className="text-base font-bold text-crimson dark:text-tangerine">{item.period}</p>
+                  )}
                   <h4 className="mt-1 font-serif text-xl font-semibold sm:text-2xl">{item.title}</h4>
                   <p className="mt-1 text-base font-semibold text-cocoa dark:text-linen">{item.organization}</p>
                   {item.description && (
                     <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink dark:text-moon">
                       {item.description}
                     </p>
+                  )}
+                  {item.highlights && (
+                    <ul className="mt-3 list-disc space-y-1 pl-5 text-base leading-relaxed text-ink dark:text-moon">
+                      {item.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
                   )}
                 </article>
               </li>
@@ -94,42 +103,38 @@ export default function Experiencie() {
     <section id="experiencia" className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="text-center">
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota dark:text-tangerine">{t.eyebrow}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">{t.title}</h2>
+          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">{t.title}</h2>
         </Reveal>
 
         <Reveal className="mt-10">
-          <div className="flex justify-center gap-3" role="group" aria-label={t.title}>
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3" role="group" aria-label={t.title}>
             <button
               type="button"
               onClick={() => setSelected("work")}
               aria-pressed={isWork}
-              className={`rounded-md px-6 py-3 text-base font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota ${
+              className={`font-serif text-xl font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota sm:text-2xl ${
                 isWork
-                  ? "bg-terracota text-white"
-                  : "bg-sand/50 text-ink hover:bg-sand dark:bg-dusk dark:text-moon dark:hover:bg-bark"
+                  ? "text-terracota dark:text-tangerine"
+                  : "text-ink/65 hover:text-terracota dark:text-moon/65 dark:hover:text-tangerine"
               }`}
             >
-              {t.workTab}
+              {t.workTitle}
             </button>
             <button
               type="button"
               onClick={() => setSelected("academic")}
               aria-pressed={!isWork}
-              className={`rounded-md px-6 py-3 text-base font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota ${
+              className={`font-serif text-xl font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota sm:text-2xl ${
                 !isWork
-                  ? "bg-terracota text-white"
-                  : "bg-sand/50 text-ink hover:bg-sand dark:bg-dusk dark:text-moon dark:hover:bg-bark"
+                  ? "text-terracota dark:text-tangerine"
+                  : "text-ink/65 hover:text-terracota dark:text-moon/65 dark:hover:text-tangerine"
               }`}
             >
-              {t.academicTab}
+              {t.academicTitle}
             </button>
           </div>
 
-          <section className="mt-10" aria-live="polite" aria-labelledby="experiencia-seleccionada">
-            <h3 id="experiencia-seleccionada" className="text-center font-serif text-2xl font-semibold">
-              {activeTitle}
-            </h3>
+          <section className="mt-6" aria-live="polite" aria-label={activeTitle}>
             <Timeline
               key={selected}
               entries={isWork ? workExperience : academicExperience}
