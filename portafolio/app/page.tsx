@@ -1,3 +1,4 @@
+import AnchorScroll from "@/components/AnchorScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -9,6 +10,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <AnchorScroll />
       <Navbar />
       <main>
         <Hero />

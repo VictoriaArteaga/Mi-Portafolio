@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useT } from "@/lib/prefs";
 import Reveal from "./Reveal";
 import { ArrowRight, Heart, Pencil, Spark } from "./Icons";
@@ -12,18 +13,20 @@ export default function About() {
     <section id="sobre-mi" className="bg-[#fff1e2] py-20 dark:bg-umber sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 md:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
-          {/* Polaroid. Sustituye el degradado por <Image src="/about.jpg" fill ... /> */}
-          <div className="relative mx-auto w-full max-w-xs -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0">
+          {/* Polaroid */}
+          <div className="relative mx-auto w-full max-w-xs -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
             <div aria-hidden className="absolute -left-6 -top-3 h-8 w-20 -rotate-45 bg-butter/80" />
-            <div className="aspect-[4/5] bg-gradient-to-br from-sand to-tangerine" />
-            <span className="font-hand absolute bottom-2 left-0 right-0 text-center text-2xl text-cocoa">
+            <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-sand to-tangerine">
+              <Image src="/about.png" alt="María Victoria Arteaga" fill sizes="320px" className="object-cover object-[38%_center]" />
+            </div>
+            <span className="font-hand absolute bottom-2 left-0 right-0 text-center text-2xl text-cocoa dark:text-linen">
               Victoria Arteaga
             </span>
           </div>
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota">{t.eyebrow}</p>
+          <p className="text-xs font-bold tracking-[0.2em] text-terracota dark:text-tangerine">{t.eyebrow}</p>
           <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
             {t.title}
           </h2>

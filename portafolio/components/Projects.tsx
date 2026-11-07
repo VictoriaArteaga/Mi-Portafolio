@@ -26,8 +26,8 @@ export default function Projects() {
   return (
     <section id="proyectos" className="overflow-hidden bg-sand py-20 dark:bg-dusk sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal>
-          <p className="text-xs font-bold tracking-[0.2em] text-terracota">{t.eyebrow}</p>
+        <Reveal className="text-center">
+          <p className="text-xs font-bold tracking-[0.2em] text-terracota dark:text-tangerine">{t.eyebrow}</p>
           <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">{t.title}</h2>
         </Reveal>
 

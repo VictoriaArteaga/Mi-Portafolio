@@ -1,15 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { useT } from "@/lib/prefs";
-import { ArrowRight, Download, Heart } from "./Icons";
+import { Download, Heart } from "./Icons";
 
 export default function Hero() {
   const t = useT().hero;
   return (
     <section id="inicio" className="relative isolate overflow-hidden bg-gradient-to-b from-[#fff1e2] to-cream dark:from-umber dark:to-night">
       {/* Manchas orgánicas de fondo */}
-      <div aria-hidden className="absolute -left-24 top-1/2 -z-10 size-72 rounded-[45%_55%_60%_40%] bg-terracota/90" />
-      <div aria-hidden className="absolute -right-20 -top-16 -z-10 size-72 rounded-[55%_45%_40%_60%] bg-tangerine/90" />
+      <div aria-hidden className="absolute -left-24 top-1/2 -z-10 size-72 rounded-[45%_55%_60%_40%] bg-terracota/90 dark:opacity-20" />
+      <div aria-hidden className="absolute -right-20 -top-16 -z-10 size-72 rounded-[55%_45%_40%_60%] bg-tangerine/90 dark:opacity-20" />
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-24">
         <div>
@@ -29,36 +30,32 @@ export default function Hero() {
             {t.intro}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#proyectos"
-              className="inline-flex items-center gap-3 rounded-full bg-terracota py-3 pl-6 pr-4 text-sm font-semibold text-white shadow-[0_8px_20px_-8px] shadow-terracota transition-[transform,background-color] duration-150 ease-out-strong hover:bg-[#d4660f] active:scale-[0.97]"
-            >
-              {t.projects}
-              <span className="grid size-6 place-items-center rounded-full bg-white text-terracota">
-                <ArrowRight className="size-3.5" />
-              </span>
-            </a>
+          <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="#"
-              className="inline-flex items-center gap-3 rounded-full border border-ink/10 bg-white/70 px-6 py-3 text-sm font-semibold text-ink transition-[transform,background-color] duration-150 ease-out-strong hover:bg-white dark:border-moon/15 dark:bg-white/10 dark:text-moon dark:hover:bg-white/15 active:scale-[0.97]"
+              className="inline-flex items-center gap-3 rounded-2xl bg-cocoa py-2.5 pl-2.5 pr-6 text-lg font-bold text-sand shadow-lg shadow-cocoa/25 transition-[transform,background-color] duration-150 ease-out-strong hover:bg-[#6b4328] active:scale-[0.97] dark:bg-terracota dark:text-night dark:shadow-none dark:hover:bg-tangerine"
             >
+              <span className="grid size-10 place-items-center rounded-full bg-sand text-cocoa dark:bg-night dark:text-tangerine">
+                <Download className="size-5" />
+              </span>
               {t.cv}
-              <Download className="size-4" />
+            </a>
+            <a
+              href="#contacto"
+              className="inline-flex items-center rounded-2xl bg-cocoa px-8 py-2.5 text-lg font-bold text-sand shadow-lg shadow-cocoa/25 transition-[transform,background-color] duration-150 ease-out-strong hover:bg-[#6b4328] active:scale-[0.97] dark:bg-terracota dark:text-night dark:shadow-none dark:hover:bg-tangerine"
+            >
+              {t.contact}
             </a>
           </div>
         </div>
 
-        {/* Retrato: sustituye el bloque interior por <Image src="/victoria.png" ... /> */}
+        {/* Retrato */}
         <div className="relative mx-auto w-full max-w-sm">
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-br from-tangerine to-terracota shadow-2xl shadow-terracota/30">
-            <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-cocoa/90" />
-            <span className="font-script absolute inset-0 grid place-items-center pb-10 text-[9rem] leading-none text-cream/90">
-              V
-            </span>
+            <Image src="/hero.png" alt="María Victoria Arteaga" fill priority sizes="(min-width: 768px) 384px, 90vw" className="object-cover object-top" />
           </div>
 
-          <div className="font-hand absolute -right-2 -top-4 w-32 rotate-6 rounded-md bg-cream p-3 text-center text-xl leading-5 text-ink shadow-lg transition-transform duration-300 ease-out-strong hover:rotate-2 sm:-right-8">
+          <div className="font-hand absolute -right-2 -top-4 w-32 rotate-6 rounded-md bg-cream p-3 text-center text-xl leading-5 text-ink shadow-lg transition-transform duration-300 ease-out-strong hover:rotate-2 dark:bg-bark dark:text-moon dark:shadow-black/30 sm:-right-8">
             CREATE
             <br />
             INSPIRE

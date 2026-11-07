@@ -91,3 +91,9 @@ export const Moon = ({ className }: IconProps) => (
     <path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z" />
   </svg>
 );
+
+export const Star = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth={1.5} strokeLinejoin="round" aria-hidden className={className}>
+    <path d="M12 3.2l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.500l6-.8L12 3.200z" />
+  </svg>
+);

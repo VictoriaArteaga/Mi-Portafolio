@@ -19,7 +19,7 @@ export default function Footer() {
   const quick = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
   return (
     <footer>
-      <section id="contacto" className="relative overflow-hidden bg-terracota text-white">
+      <section id="contacto" className="relative overflow-hidden bg-terracota text-white dark:bg-dusk dark:text-moon">
         <div aria-hidden className="absolute -right-16 -top-20 size-64 rounded-full bg-tangerine/60" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-14 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-5">
@@ -34,7 +34,7 @@ export default function Footer() {
             <p className="text-sm text-white/90">{f.text}</p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-terracota transition-transform duration-150 ease-out-strong hover:scale-[1.03] active:scale-[0.97]"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-terracota transition-transform duration-150 ease-out-strong hover:scale-[1.03] active:scale-[0.97] dark:bg-terracota dark:text-night dark:hover:bg-tangerine"
             >
               {f.cta}
               <ArrowRight className="size-4" />
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
       </section>
 
-      <div className="bg-ink text-cream dark:border-t dark:border-cream/10">
+      <div className="bg-ink text-cream dark:border-t dark:border-cream/10 dark:bg-night dark:text-moon">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <Logo />

@@ -4,7 +4,7 @@ import { useLang, useT, useTheme } from "@/lib/prefs";
 import { Moon, Sun } from "./Icons";
 
 const btn =
-  "grid size-10 place-items-center rounded-full border border-cream/20 text-cream transition-[transform,background-color,color] duration-150 ease-out-strong hover:bg-terracota hover:text-white active:scale-90";
+  "grid size-10 place-items-center rounded-full border border-cream/20 text-cream transition-[transform,background-color,color] duration-150 ease-out-strong hover:bg-terracota hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tangerine active:scale-90";
 
 export default function Controls() {
   const t = useT();

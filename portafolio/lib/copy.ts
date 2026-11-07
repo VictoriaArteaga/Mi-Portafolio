@@ -16,12 +16,12 @@ const es = {
     toLang: "Cambiar el idioma a inglés",
   },
   hero: {
-    greeting: "Hola, soy Victoria",
+    greeting: "Hola, soy María Victoria",
     titleStart: "Construyo interfaces que",
     titleAccent: "cuentan historias.",
     intro:
       "Soy María Victoria Arteaga. Desarrollo frontend y diseño de interfaces con cariño por el detalle: ideas que se vuelven experiencias claras, cálidas y memorables.",
-    projects: "Ver mis proyectos",
+    contact: "¡Contáctame!",
     cv: "Descargar CV",
   },
   about: {
@@ -55,9 +55,9 @@ const es = {
     title: "Lo que dicen mis clientes",
     // TODO: reemplaza por testimonios reales (con permiso de quien los dio).
     items: [
-      { quote: "Aquí va un testimonio real sobre la calidad del trabajo y la experiencia de colaborar contigo.", name: "Nombre Apellido", role: "Cargo, Empresa" },
-      { quote: "Aquí va un testimonio real sobre la comunicación, los tiempos y el resultado final.", name: "Nombre Apellido", role: "Cargo, Empresa" },
-      { quote: "Aquí va un testimonio real sobre el cuidado por el detalle y la atención al cliente.", name: "Nombre Apellido", role: "Cargo, Empresa" },
+      { name: "Nicolas García", quote: "Aquí va un testimonio real sobre la calidad del trabajo y la experiencia de colaborar contigo." },
+      { name: "Ivonne Barco", quote: "Aquí va un testimonio real sobre la comunicación, los tiempos y el resultado final." },
+      { name: "Daniel Arteaga", quote: "Aquí va un testimonio real sobre el cuidado por el detalle y la atención al cliente." },
     ],
   },
   footer: {
@@ -89,12 +89,12 @@ const en: Copy = {
     toLang: "Cambiar el idioma a español",
   },
   hero: {
-    greeting: "Hi, I'm Victoria",
+    greeting: "Hi, I'm María Victoria",
     titleStart: "I build interfaces that",
     titleAccent: "tell stories.",
     intro:
       "I'm María Victoria Arteaga. I do frontend development and interface design with a love for detail: ideas that turn into clear, warm and memorable experiences.",
-    projects: "See my projects",
+    contact: "Contact me!",
     cv: "Download CV",
   },
   about: {
@@ -126,9 +126,9 @@ const en: Copy = {
     eyebrow: "KIND WORDS",
     title: "What Clients Say",
     items: [
-      { quote: "A real testimonial goes here about the quality of the work and what it's like to collaborate with you.", name: "First Last", role: "Role, Company" },
-      { quote: "A real testimonial goes here about communication, timing and the final result.", name: "First Last", role: "Role, Company" },
-      { quote: "A real testimonial goes here about the attention to detail and client care.", name: "First Last", role: "Role, Company" },
+      { name: "Nicolas García", quote: "A real testimonial goes here about the quality of the work and what it's like to collaborate with you." },
+      { name: "Ivonne Barco", quote: "A real testimonial goes here about communication, timing and the final result." },
+      { name: "Daniel Arteaga", quote: "A real testimonial goes here about the attention to detail and client care." },
     ],
   },
   footer: {

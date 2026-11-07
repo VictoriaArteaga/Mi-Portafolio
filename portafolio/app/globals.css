@@ -14,13 +14,13 @@
   --color-blush: #ffa0ae;
   --color-butter: #ffe49a;
 
-  /* Paleta del modo oscuro */
-  --color-night: #17100c;
-  --color-umber: #1e1510;
-  --color-dusk: #3d2616;
-  --color-bark: #261913;
-  --color-moon: #f5e6d6;
-  --color-linen: #e3c3a4;
+  /* Superficies cálidas y escalonadas para el modo oscuro. */
+  --color-night: #100e0c;
+  --color-umber: #1b1713;
+  --color-dusk: #29231d;
+  --color-bark: #211c17;
+  --color-moon: #fff4e8;
+  --color-linen: #e9c9a9;
 
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-fraunces);
@@ -32,10 +32,18 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 section[id] {
@@ -84,6 +92,9 @@ section[id] {
     transition: none !important;
     opacity: 1 !important;
     transform: none;
+  }
+  body {
+    transition: none;
   }
   .skill-bar {
     transform: scaleX(var(--level)) !important;
