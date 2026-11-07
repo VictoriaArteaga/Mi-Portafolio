@@ -1,11 +1,11 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import { useT } from "@/lib/prefs";
 import { Logo, sections } from "./Navbar";
-import { ArrowRight, Github, Instagram, Linkedin, Mail, Plane } from "./Icons";
+import { Github, Instagram, Linkedin, Mail, Plane } from "./Icons";
 
-// TODO: reemplaza por tus enlaces y correo reales.
-const EMAIL = "hola@tudominio.com";
+const EMAIL = "mrvctrarteaga@gmail.com";
 
 const socials = [
   { href: "#", label: "Instagram", icon: Instagram },
@@ -16,30 +16,137 @@ const socials = [
 export default function Footer() {
   const t = useT();
   const f = t.footer;
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "unconfigured">("idle");
   const quick = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    if (!endpoint) {
+      setStatus("unconfigured");
+      return;
+    }
+
+    setStatus("sending");
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+        }),
+      });
+
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <footer>
       <section id="contacto" className="relative overflow-hidden bg-terracota text-white dark:bg-dusk dark:text-moon">
         <div aria-hidden className="absolute -right-16 -top-20 size-64 rounded-full bg-tangerine/60" />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-14 sm:px-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-5">
-            <Plane className="hidden size-12 -rotate-12 text-white/70 sm:block" />
-            <h2 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-              {f.titleStart}
-              <br />
-              {f.titleEnd}
-            </h2>
-          </div>
-          <div className="max-w-sm">
-            <p className="text-sm text-white/90">{f.text}</p>
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-16">
+          <div>
+            <h2 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">{f.contactTitle}</h2>
+            <div className="flex items-center gap-5">
+              <Plane className="hidden size-12 -rotate-12 text-white/70 sm:block" />
+              <p className="mt-5 font-serif text-2xl font-medium leading-tight">
+                {f.titleStart} {f.titleEnd}
+              </p>
+            </div>
+            <p className="mt-5 max-w-sm text-base leading-relaxed text-white/90">{f.text}</p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-terracota transition-transform duration-150 ease-out-strong hover:scale-[1.03] active:scale-[0.97] dark:bg-terracota dark:text-night dark:hover:bg-tangerine"
+              aria-label={f.emailLinkLabel}
+              title={f.emailLinkLabel}
+              className="mt-5 inline-grid size-11 place-items-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              {f.cta}
-              <ArrowRight className="size-4" />
+              <Mail className="size-4" />
             </a>
           </div>
+
+          <form onSubmit={handleSubmit} className="grid gap-5" aria-label={f.submit}>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-semibold" htmlFor="contact-name">
+                {f.name}
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  className="min-h-12 rounded-lg bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-semibold" htmlFor="contact-email">
+                {f.email}
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="min-h-12 rounded-lg bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+                />
+              </label>
+            </div>
+
+            <label className="grid gap-2 text-sm font-semibold" htmlFor="contact-message">
+              {f.message}
+              <textarea
+                id="contact-message"
+                name="message"
+                rows={5}
+                required
+                className="resize-y rounded-lg bg-white px-4 py-3 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-tangerine"
+              />
+            </label>
+
+            <div className="flex flex-col items-start gap-3">
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="min-h-12 rounded-full bg-white px-6 py-3 text-sm font-semibold text-terracota transition-transform duration-150 ease-out-strong hover:scale-[1.03] active:scale-[0.97] disabled:cursor-wait disabled:opacity-70 dark:bg-terracota dark:text-night dark:hover:bg-tangerine"
+              >
+                {status === "sending" ? f.sending : f.submit}
+              </button>
+              {status !== "idle" && status !== "sending" && (
+                <div
+                  role={status === "success" ? "status" : "alert"}
+                  className="flex items-center gap-3 text-sm leading-relaxed"
+                  aria-live={status === "success" ? "polite" : "assertive"}
+                >
+                  <span>{status === "success" ? f.success : status === "error" ? f.error : f.unconfigured}</span>
+                  {status !== "success" && (
+                    <a
+                      href={`mailto:${EMAIL}`}
+                      aria-label={f.emailLinkLabel}
+                      title={f.emailLinkLabel}
+                      className="inline-grid size-11 shrink-0 place-items-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    >
+                      <Mail className="size-4" />
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+          </form>
         </div>
       </section>
 
@@ -78,9 +185,13 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <a href={`mailto:${EMAIL}`} className="mt-5 inline-flex items-center gap-2 text-sm text-cream/70 transition-colors hover:text-terracota">
+            <a
+              href={`mailto:${EMAIL}`}
+              aria-label={f.emailLinkLabel}
+              title={f.emailLinkLabel}
+              className="mt-5 inline-grid size-11 place-items-center rounded-full border border-cream/20 text-cream/70 transition-colors hover:bg-terracota hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tangerine"
+            >
               <Mail className="size-4" />
-              {EMAIL}
             </a>
           </div>
         </div>
