@@ -16,7 +16,8 @@ type StackKind =
   | "tailwind"
   | "postman"
   | "blender"
-  | "vite";
+  | "vite"
+  | "expo";
 
 /** Nombres de las tecnologías nuevas (las anteriores salen de lib/copy.ts). */
 const extraNames: Record<string, string> = {
@@ -28,11 +29,12 @@ const extraNames: Record<string, string> = {
   postman: "Postman",
   blender: "Blender",
   vite: "Vite",
+  expo: "Expo",
 };
 
 const stackGroups: { id: "backend" | "frontend" | "tools"; kinds: StackKind[] }[] = [
   { id: "backend", kinds: ["nest", "spring", "fastapi", "postgres"] },
-  { id: "frontend", kinds: ["next", "react", "reactnative", "electron"] },
+  { id: "frontend", kinds: ["next", "react", "reactnative", "expo", "electron"] },
   { id: "tools", kinds: ["git", "docker", "postman", "blender", "unity", "vr", "aws"] },
 ];
 
@@ -66,6 +68,7 @@ function StackIcon({ kind }: { kind: StackKind }) {
     postman: "#ff6c37",
     blender: "#ea7600",
     vite: "#a855f7",
+    expo: "currentColor",
     vr: "#c75b39",
     aws: "#ff9900",
   };
@@ -162,6 +165,12 @@ function StackIcon({ kind }: { kind: StackKind }) {
         <>
           <path d="M3 6l13 22L29 6c-6 1-20 1-26 0Z" />
           <path d="m17 3-5 12h6l-3 9 9-14h-6z" fill="#fdc700" stroke="none" />
+        </>
+      )}
+      {kind === "expo" && (
+        <>
+          <path d="M16 4 4 25h6l6-10 6 10h6z" />
+          <path d="M3 25h26" />
         </>
       )}
       {kind === "aws" && (

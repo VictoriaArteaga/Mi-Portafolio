@@ -23,6 +23,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Ñawi Nariño",
+    description: {
+      es: "Aplicación de aprendizaje móvil y API para explorar el patrimonio lingüístico de Nariño.",
+      en: "Mobile learning app and API to explore the linguistic heritage of Nariño.",
+    },
     tags: ["Next.js", "Tailwind", "TypeScript", "PostgreSQL"],
     tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
