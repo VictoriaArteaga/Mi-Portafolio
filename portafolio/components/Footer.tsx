@@ -16,11 +16,52 @@ export default function Footer() {
   const t = useT();
   const { lang } = useLang();
   const f = t.footer;
+  type Field = "name" | "email" | "message";
+  const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
+  const msgs =
+    lang === "es"
+      ? { required: "Completa este campo", email: "Ingresa un correo válido (ej. nombre@correo.com)" }
+      : { required: "Please fill in this field", email: "Enter a valid email (e.g. name@mail.com)" };
+  const clearError = (field: Field) => setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
+  const fieldBase =
+    "rounded-xl border-2 px-4 text-base font-normal outline-none focus-visible:ring-2 dark:text-moon";
+  const fieldOk =
+    "border-[#f0cfae] bg-white text-ink focus-visible:ring-terracota dark:border-cream/25 dark:bg-night";
+  const fieldBad =
+    "border-cocoa bg-cocoa/10 text-ink focus-visible:ring-cocoa dark:border-linen dark:bg-linen/10 dark:focus-visible:ring-linen";
+  const fieldError = (field: Field) =>
+    errors[field] ? (
+      <span id={`contact-${field}-error`} role="alert" className="flex items-center gap-1.5 text-sm font-semibold text-cocoa dark:text-linen">
+        <svg aria-hidden viewBox="0 0 24 24" className="size-5 shrink-0 rounded-full bg-cocoa p-0.5 text-cream dark:bg-linen dark:text-night" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v6m0 3.5v.01" />
+        </svg>
+        {errors[field]}
+      </span>
+    ) : null;
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "unconfigured">("idle");
   const quick = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // Validación propia: marca en rojo los campos con error y muestra el mensaje debajo.
+    const values = new FormData(event.currentTarget);
+    const name = String(values.get("name") ?? "").trim();
+    const email = String(values.get("email") ?? "").trim();
+    const message = String(values.get("message") ?? "").trim();
+    const nextErrors: Partial<Record<Field, string>> = {};
+    if (!name) nextErrors.name = msgs.required;
+    if (!email) nextErrors.email = msgs.required;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) nextErrors.email = msgs.email;
+    if (!message) nextErrors.message = msgs.required;
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      const first = (["name", "email", "message"] as Field[]).find((k) => nextErrors[k]);
+      if (first) document.getElementById(`contact-${first}`)?.focus();
+      return;
+    }
+
     // Si defines NEXT_PUBLIC_FORMSPREE_ENDPOINT se usa Formspree; si no, FormSubmit envía a tu correo.
     const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || `https://formsubmit.co/ajax/${EMAIL}`;
 
@@ -79,6 +120,7 @@ export default function Footer() {
           </div>
 
           <form
+            noValidate
             onSubmit={handleSubmit}
             className="relative grid gap-6 rounded-[28px] bg-cream p-7 lg:p-12 text-ink shadow-[10px_10px_0_#5a3720] dark:border-2 dark:border-cream/20 dark:bg-bark dark:text-moon dark:shadow-[10px_10px_0_#e87524] sm:p-8"
             aria-label={f.submit}
@@ -92,9 +134,12 @@ export default function Footer() {
                   name="name"
                   type="text"
                   autoComplete="name"
-                  required
-                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-cream/25 dark:bg-night dark:text-moon"
+                  className={`min-h-12 lg:min-h-14 ${fieldBase} ${errors.name ? fieldBad : fieldOk}`}
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "contact-name-error" : undefined}
+                  onChange={() => clearError("name")}
                 />
+              {fieldError("name")}
               </label>
               <label className="grid gap-2 text-sm font-bold lg:text-base" htmlFor="contact-email">
                 {f.email}
@@ -103,9 +148,12 @@ export default function Footer() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  required
-                  className="min-h-12 rounded-xl lg:min-h-14 border-2 border-[#f0cfae] bg-white px-4 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-cream/25 dark:bg-night dark:text-moon"
+                  className={`min-h-12 lg:min-h-14 ${fieldBase} ${errors.email ? fieldBad : fieldOk}`}
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "contact-email-error" : undefined}
+                  onChange={() => clearError("email")}
                 />
+              {fieldError("email")}
               </label>
             </div>
 
@@ -115,10 +163,13 @@ export default function Footer() {
                 id="contact-message"
                 name="message"
                 rows={7}
-                required
-                className="resize-y rounded-xl border-2 border-[#f0cfae] bg-white px-4 py-3 text-base font-normal text-ink outline-none focus-visible:ring-2 focus-visible:ring-terracota dark:border-cream/25 dark:bg-night dark:text-moon"
-              />
-            </label>
+                className={`resize-y py-3 ${fieldBase} ${errors.message ? fieldBad : fieldOk}`}
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? "contact-message-error" : undefined}
+                  onChange={() => clearError("message")}
+                />
+            {fieldError("message")}
+              </label>
 
             <div className="flex flex-col items-start gap-3">
               <button
