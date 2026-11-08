@@ -98,11 +98,11 @@ export default function About() {
 
       <div className="relative mx-auto grid max-w-[1264px] items-center gap-8 px-5 sm:px-8 lg:grid-cols-[460px_minmax(0,1fr)] lg:gap-x-16 lg:gap-y-0">
         {/* En celular: título primero, luego la imagen y luego el resto. En escritorio: imagen a la izquierda. */}
-        <Reveal className="relative order-2 lg:order-none lg:col-start-1 lg:row-span-2 lg:row-start-1">
+        <Reveal className="relative order-2 px-4 sm:px-0 lg:order-none lg:col-start-1 lg:row-span-2 lg:row-start-1">
           {/* Polaroid */}
-          <div className="relative mx-auto w-full max-w-[460px] -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
-            <div aria-hidden className="absolute -left-6 -top-3 h-8 w-20 -rotate-45 bg-butter/80" />
-            <div aria-hidden className="absolute -right-6 -top-2 h-8 w-20 rotate-[40deg] bg-blush/80" />
+          <div className="relative mx-auto w-full max-w-[460px] -rotate-2 rounded-sm sm:-rotate-3 bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
+            <div aria-hidden className="absolute -left-3 -top-3 h-8 w-20 sm:-left-6 -rotate-45 bg-butter/80" />
+            <div aria-hidden className="absolute -right-3 -top-2 h-8 w-20 sm:-right-6 rotate-[40deg] bg-blush/80" />
             <div className="relative aspect-[463/614] overflow-hidden bg-[#f1eee5] dark:bg-bark">
               <Image src="/about-vector.svg" alt="Ilustración vectorial de María Victoria Arteaga en un encuentro de investigación" fill unoptimized sizes="(min-width: 1024px) 480px, min(480px, calc(100vw - 64px))" className="object-cover object-center" />
             </div>
@@ -126,7 +126,7 @@ export default function About() {
           </div>
         </Reveal>
 
-        <Reveal delay={100} className="order-1 lg:order-none lg:col-start-2 lg:row-start-1 lg:self-end">
+        <Reveal delay={100} className="order-1 flex flex-col items-center text-center lg:order-none lg:col-start-2 lg:row-start-1 lg:block lg:self-end lg:text-left">
           <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{extra.eyebrow}</p>
           <h2 className="mt-1 font-serif text-4xl font-semibold sm:text-5xl">
             {t.sectionTitle}
