@@ -4,6 +4,8 @@ export type Achievement = {
   date: string;
   description?: string;
   url?: string;
+  /** Imagen del certificado (ruta en /public o URL). Se muestra en una ventana, sin botón de descarga. */
+  image?: string;
   /** Texto del botón si no es "Ver certificado" (p. ej. "Ver artículo"). */
   linkLabel?: { es: string; en: string };
 };
@@ -22,6 +24,7 @@ export const achievements: Achievement[] = [
     title: "Entre los 25 mejores investigadores de Colombia",
     issuer: "REDCOLSI 2026 · ENISI, Universidad del Sinú, Montería",
     description: "Reconocimiento obtenido en el XXIX Encuentro Nacional y XXIII Internacional de Semilleros de Investigación.",
+    url: "https://drive.google.com/file/d/1iL1_aWV-WwtO9RqhiOPmsDkeYFrzrR9Y/view?usp=sharing",
     linkLabel: { es: "Ver artículo", en: "View article" },
   },
   {

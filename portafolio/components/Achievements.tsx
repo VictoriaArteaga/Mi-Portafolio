@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { achievements } from "@/data/achievements";
 import { cvHref } from "@/data/socials";
 import { useLang, useT } from "@/lib/prefs";
@@ -14,9 +15,24 @@ const badgeTones = [
 export default function Achievements() {
   const t = useT().achievements;
   const { lang } = useLang();
+  const [viewer, setViewer] = useState<{ src: string; title: string } | null>(null);
   const eyebrow = lang === "es" ? "05 · reconocimientos" : "05 · recognitions";
 
+  // Cierra con Escape y bloquea el scroll mientras la imagen está abierta.
+  useEffect(() => {
+    if (!viewer) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setViewer(null);
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [viewer]);
+
   return (
+    <>
     <section id="logros" className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden bg-sand/40 py-8 dark:bg-dusk sm:py-10">
       {/* Fondo decorativo */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -94,12 +110,26 @@ export default function Achievements() {
                             <circle cx="12" cy="12" r="3" />
                           </svg>
                         );
+                        const label = achievement.linkLabel?.[lang] ?? t.viewCertificate;
+                        if (achievement.image) {
+                          const src = achievement.image;
+                          return (
+                            <button
+                              type="button"
+                              onClick={() => setViewer({ src, title: achievement.title })}
+                              className={`${btn} border-2 border-cocoa/45 text-cocoa hover:scale-105 active:scale-95 dark:border-linen/40 dark:text-linen`}
+                            >
+                              {eye}
+                              {label}
+                            </button>
+                          );
+                        }
                         return achievement.url ? (
                           <a
                             href={cvHref(achievement.url)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`${btn} bg-cocoa text-sand hover:scale-105 active:scale-95 dark:bg-terracota dark:text-night`}
+                            className={`${btn} border-2 border-cocoa/45 text-cocoa hover:scale-105 active:scale-95 dark:border-linen/40 dark:text-linen`}
                           >
                             {eye}
                             {achievement.linkLabel?.[lang] ?? t.viewCertificate}
@@ -128,5 +158,37 @@ export default function Achievements() {
         )}
       </div>
     </section>
+
+    {viewer && (
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={viewer.title}
+        className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/85 p-4 sm:p-8"
+        onClick={() => setViewer(null)}
+      >
+        <button
+          type="button"
+          autoFocus
+          onClick={() => setViewer(null)}
+          aria-label={lang === "es" ? "Cerrar" : "Close"}
+          className="absolute right-4 top-4 grid size-11 place-items-center rounded-full bg-cream text-ink shadow-lg transition-transform hover:scale-105 active:scale-95 sm:right-8 sm:top-8"
+        >
+          <svg aria-hidden viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
+            <path d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={viewer.src}
+          alt={viewer.title}
+          draggable={false}
+          onClick={(e) => e.stopPropagation()}
+          onContextMenu={(e) => e.preventDefault()}
+          className="max-h-[88vh] max-w-full select-none rounded-lg bg-white object-contain shadow-2xl [-webkit-touch-callout:none] [-webkit-user-drag:none]"
+        />
+      </div>
+    )}
+    </>
   );
 }
