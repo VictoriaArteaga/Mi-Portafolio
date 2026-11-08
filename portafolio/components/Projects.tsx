@@ -1,10 +1,11 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useLang, useT } from "@/lib/prefs";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import { Github } from "./Icons";
-import { projects, type ProjectTone } from "@/data/projects";
+import { projects, type Project, type ProjectTone } from "@/data/projects";
 
 type Style = { card: string; frame: string; title: string; text: string; tag: string; btn: string; gh: string };
 
@@ -30,6 +31,20 @@ const tilts = [
 export default function Projects() {
   const t = useT().projects;
   const { lang } = useLang();
+  const [selectedImage, setSelectedImage] = useState<{ project: Project; src: string } | null>(null);
+  const imageDialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = imageDialogRef.current;
+    if (!dialog) return;
+
+    if (selectedImage && !dialog.open) {
+      dialog.showModal();
+    } else if (!selectedImage && dialog.open) {
+      dialog.close();
+    }
+  }, [selectedImage]);
+
   return (
     <section id="proyectos" className="relative isolate overflow-hidden bg-sand py-20 dark:bg-dusk sm:py-24">
       {/* Fondo decorativo: círculos, puntos y estrellitas */}
@@ -72,6 +87,7 @@ export default function Projects() {
         <ul className="mt-14 grid gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 lg:grid-cols-3">
           {projects.map((p, i) => {
             const s = tones[p.tone];
+            const imageSrc = p.image;
             return (
               <li key={p.title} className="flex justify-center">
                 <Reveal delay={(i % 3) * 80} className="flex w-full justify-center">
@@ -79,9 +95,18 @@ export default function Projects() {
                     className={`relative w-full max-w-[340px] rounded-[2rem] p-3 shadow-lg shadow-cocoa/20 transition-transform duration-300 ease-out-strong hover:-translate-y-2 hover:rotate-0 ${tilts[i % tilts.length]} ${s.card}`}
                   >
                     <div className={`flex h-full flex-col rounded-[1.6rem] border-[1.5px] p-4 ${s.frame}`}>
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]">
-                        {p.image && <Image src={p.image} alt={t.shot(p.title)} fill sizes="340px" className={`object-cover ${p.imagePosition === "left" ? "object-left" : "object-center"}`} />}
-                      </div>
+                      {imageSrc ? (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedImage({ project: p, src: imageSrc })}
+                          aria-label={t.viewImage(p.title)}
+                          className="relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-3xl bg-[#c7d0da] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+                        >
+                          <Image src={imageSrc} alt={t.shot(p.title)} fill sizes="340px" className={`object-cover ${p.imagePosition === "left" ? "object-left" : "object-center"}`} />
+                        </button>
+                      ) : (
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]" />
+                      )}
 
                       <h3 className={`font-serif mt-3 text-center text-[2.125rem] font-semibold leading-[1.1] ${s.title}`}>{p.title}</h3>
                       <p className={`mt-2 text-center text-sm leading-snug ${s.text}`}>{p.description?.[lang] ?? t.description}</p>
@@ -119,6 +144,45 @@ export default function Projects() {
           })}
         </ul>
       </div>
+
+      <dialog
+        ref={imageDialogRef}
+        aria-labelledby="project-image-title"
+        onClose={() => setSelectedImage(null)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            imageDialogRef.current?.close();
+          }
+        }}
+        className="fixed m-0 h-dvh max-h-none w-screen max-w-none overflow-hidden border-0 bg-transparent p-0 backdrop:bg-black/85"
+      >
+        {selectedImage && (
+          <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-5 sm:p-8">
+            <div className="flex w-full max-w-[1200px] items-center justify-between gap-4 text-white">
+              <h2 id="project-image-title" className="font-serif text-xl font-semibold sm:text-2xl">
+                {selectedImage.project.title}
+              </h2>
+              <button
+                type="button"
+                onClick={() => imageDialogRef.current?.close()}
+                aria-label={t.closeImage}
+                className="grid size-11 shrink-0 place-items-center rounded-full bg-white/15 text-3xl leading-none transition-colors hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="relative h-[min(78dvh,800px)] w-[min(92vw,1200px)]">
+              <Image
+                src={selectedImage.src}
+                alt={t.shot(selectedImage.project.title)}
+                fill
+                sizes="92vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )}
+      </dialog>
     </section>
   );
 }

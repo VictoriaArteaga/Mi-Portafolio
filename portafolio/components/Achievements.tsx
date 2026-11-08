@@ -1,6 +1,7 @@
 "use client";
 
 import { achievements } from "@/data/achievements";
+import { cvHref } from "@/data/socials";
 import { useLang, useT } from "@/lib/prefs";
 import Reveal from "./Reveal";
 
@@ -95,7 +96,7 @@ export default function Achievements() {
                         );
                         return achievement.url ? (
                           <a
-                            href={achievement.url}
+                            href={cvHref(achievement.url)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`${btn} bg-cocoa text-sand hover:scale-105 active:scale-95 dark:bg-terracota dark:text-night`}

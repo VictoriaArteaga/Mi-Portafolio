@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useLang, useT } from "@/lib/prefs";
 import { profileContent } from "@/data/profile";
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/data/socials";
+import { CV_LINKS, EMAIL, GITHUB_URL, LINKEDIN_URL, cvHref } from "@/data/socials";
 import { Download, Github, Heart, Linkedin, Mail } from "./Icons";
 
 const socials = [
@@ -23,6 +23,7 @@ export default function Hero() {
   const { lang } = useLang();
   const t = useT().hero;
   const profile = profileContent[lang].hero;
+  const cvUrl = CV_LINKS[lang];
   const extra =
     lang === "es"
       ? { chips: ["Backend", "Inteligencia artificial", "Cloud", "Realidad virtual"], badge: "Ingeniería de Software" }
@@ -71,7 +72,8 @@ export default function Hero() {
 
           <div className="mt-2 flex flex-wrap justify-center gap-4">
             <a
-              href="#"
+              href={cvUrl ? cvHref(cvUrl) : "#"}
+              {...(cvUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="inline-flex items-center gap-3 rounded-2xl bg-cocoa py-2.5 pl-2.5 pr-6 text-lg font-bold text-sand shadow-lg shadow-cocoa/25 transition-[transform,background-color] duration-150 ease-out-strong hover:bg-[#6b4328] active:scale-[0.97] dark:bg-terracota dark:text-night dark:shadow-none dark:hover:bg-tangerine"
             >
               <span className="grid size-10 place-items-center rounded-full bg-sand text-cocoa dark:bg-night dark:text-tangerine">

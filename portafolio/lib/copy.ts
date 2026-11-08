@@ -37,6 +37,8 @@ const es = {
     demo: "Ver demo",
     repo: (title: string) => `Repositorio de ${title}`,
     shot: (title: string) => `Captura de ${title}`,
+    viewImage: (title: string) => `Ampliar imagen de ${title}`,
+    closeImage: "Cerrar imagen ampliada",
   },
   testimonials: {
     title: "Testimonios",
@@ -108,6 +110,8 @@ const en: Copy = {
     demo: "View Demo",
     repo: (title) => `${title} repository`,
     shot: (title) => `Screenshot of ${title}`,
+    viewImage: (title) => `Enlarge ${title} image`,
+    closeImage: "Close enlarged image",
   },
   testimonials: {
     title: "Testimonials",
