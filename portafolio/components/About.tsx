@@ -145,9 +145,6 @@ export default function About() {
 
           {beyondParagraph && (
             <div className="mt-6 flex items-start gap-3.5 rounded-[1.25rem] border-2 border-dashed border-terracota bg-cream px-5 py-4 dark:border-tangerine dark:bg-night">
-              <svg aria-hidden viewBox="0 0 24 24" className="mt-0.5 size-7 shrink-0 fill-terracota dark:fill-tangerine">
-                <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
-              </svg>
               <p className="text-base leading-relaxed text-ink dark:text-moon">
                 <strong>{extra.beyond}</strong> {beyondParagraph}
               </p>
