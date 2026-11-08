@@ -113,7 +113,7 @@ export default function Hero() {
             ))}
           </ul>
 
-          <div className="absolute -left-3 bottom-9 -rotate-[5deg] rounded-2xl bg-crimson px-[18px] py-3 text-[0.9375rem] font-bold text-cream shadow-[0_10px_0_rgba(42,26,18,0.2)] sm:-left-9">
+          <div className="absolute -left-3 bottom-9 -rotate-[5deg] rounded-2xl bg-terracota px-[18px] py-3 text-[0.9375rem] font-bold text-ink shadow-[0_10px_0_rgba(42,26,18,0.2)] sm:-left-9">
             {extra.badge}
           </div>
 
