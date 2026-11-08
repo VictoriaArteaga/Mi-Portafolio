@@ -74,29 +74,51 @@ export default function Achievements() {
                     <svg aria-hidden viewBox="0 0 24 24" className="absolute bottom-5 right-5 size-6 fill-terracota/30 dark:fill-tangerine/25">
                       <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
                     </svg>
-                    <span
-                      aria-hidden
-                      className={`grid size-[52px] place-items-center rounded-full ${badgeTones[i % badgeTones.length]}`}
-                    >
-                      <svg viewBox="0 0 24 24" className="size-[26px]" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="9" r="6" />
-                        <path d="m8.5 14-1.5 8 5-3 5 3-1.5-8" />
-                      </svg>
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <span
+                        aria-hidden
+                        className={`grid size-[52px] place-items-center rounded-full ${badgeTones[i % badgeTones.length]}`}
+                      >
+                        <svg viewBox="0 0 24 24" className="size-[26px]" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="9" r="6" />
+                          <path d="m8.5 14-1.5 8 5-3 5 3-1.5-8" />
+                        </svg>
+                      </span>
+                      {(() => {
+                        const btn =
+                          "inline-flex min-h-10 items-center gap-2 rounded-xl px-3.5 text-sm font-bold transition-transform duration-150 ease-out-strong";
+                        const eye = (
+                          <svg aria-hidden viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                        );
+                        return achievement.url ? (
+                          <a
+                            href={achievement.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`${btn} bg-cocoa text-sand hover:scale-105 active:scale-95 dark:bg-terracota dark:text-night`}
+                          >
+                            {eye}
+                            {achievement.linkLabel?.[lang] ?? t.viewCertificate}
+                          </a>
+                        ) : (
+                          <span
+                            aria-disabled="true"
+                            title={lang === "es" ? "Próximamente" : "Coming soon"}
+                            className={`${btn} cursor-not-allowed border-2 border-cocoa/45 text-cocoa dark:border-linen/40 dark:text-linen`}
+                          >
+                            {eye}
+                            {achievement.linkLabel?.[lang] ?? t.viewCertificate}
+                          </span>
+                        );
+                      })()}
+                    </div>
                     <p className="mt-2 text-sm font-bold text-[#a8430a] dark:text-tangerine">{achievement.date}</p>
                     <h3 className="font-serif text-2xl font-semibold leading-tight">{achievement.title}</h3>
-                    <p className="leading-normal text-cocoa dark:text-linen">{achievement.issuer}</p>
-                    {achievement.description && <p className="leading-relaxed">{achievement.description}</p>}
-                    {achievement.url && (
-                      <a
-                        href={achievement.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-auto inline-block pt-3 font-bold text-[#a8430a] underline underline-offset-4 dark:text-tangerine"
-                      >
-                        {t.viewCertificate}
-                      </a>
-                    )}
+                    <p className="text-left leading-normal text-cocoa dark:text-linen sm:text-justify">{achievement.issuer}</p>
+                    {achievement.description && <p className="whitespace-pre-line text-left leading-relaxed sm:text-justify">{achievement.description}</p>}
                   </article>
                 </Reveal>
               </li>
