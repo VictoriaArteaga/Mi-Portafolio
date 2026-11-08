@@ -42,6 +42,7 @@ export const projects: Project[] = [
     tone: "crimson",
     repo: "https://github.com/VictoriaArteaga/RESPIRA.git",
     demo: "#",
+    image: "/projects/respira.svg",
   },
   {
     title: "Coco",
@@ -53,6 +54,7 @@ export const projects: Project[] = [
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "#",
+    image: "/projects/coco.svg",
   },
   {
     title: "Señas",
