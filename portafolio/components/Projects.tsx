@@ -102,7 +102,7 @@ export default function Projects() {
                           aria-label={t.viewImage(p.title)}
                           className="relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-3xl bg-[#c7d0da] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                         >
-                          <Image src={imageSrc} alt={t.shot(p.title)} fill sizes="340px" className={`object-cover ${p.imagePosition === "left" ? "object-left" : "object-center"}`} />
+                          <Image src={imageSrc} alt={t.shot(p.title)} fill sizes="340px" className="object-contain" />
                         </button>
                       ) : (
                         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]" />

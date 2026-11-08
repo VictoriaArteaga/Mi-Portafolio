@@ -16,7 +16,6 @@ export type Project = {
   demo: string;
   /** Ruta en /public, p. ej. "/projects/respira.png". Si falta se muestra un placeholder. */
   image?: string;
-  imagePosition?: "left";
 };
 
 // TODO: reemplazar descripciones, tags y enlaces por los reales de cada proyecto.
@@ -91,6 +90,5 @@ export const projects: Project[] = [
     repo: "https://github.com/VictoriaArteaga/hopeLink.git",
     demo: "#",
     image: "/projects/kashiapp.svg",
-    imagePosition: "left",
   },
 ];
