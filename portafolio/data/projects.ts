@@ -14,8 +14,8 @@ export type Project = {
   tone: ProjectTone;
   repo: string;
   demo: string;
-  /** Ruta en /public, p. ej. "/projects/respira.png". Si falta se muestra un placeholder. */
-  image?: string;
+  /** Imagen del proyecto en /public, con sus dimensiones intrínsecas. */
+  image?: { src: string; width: number; height: number };
 };
 
 // TODO: reemplazar descripciones, tags y enlaces por los reales de cada proyecto.
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     tone: "crimson",
     repo: "https://github.com/VictoriaArteaga/RESPIRA.git",
     demo: "#",
-    image: "/projects/respira.svg",
+    image: { src: "/projects/respira.svg", width: 1901, height: 986 },
   },
   {
     title: "Coco",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "#",
-    image: "/projects/coco.svg",
+    image: { src: "/projects/coco.svg", width: 1904, height: 944 },
   },
   {
     title: "Señas",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     tone: "butter",
     repo: "https://github.com/VictoriaArteaga/SENAS.git",
     demo: "#",
-    image: "/projects/senas.svg",
+    image: { src: "/projects/senas.svg", width: 890, height: 505 },
   },
   {
     title: "Arq 3D",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     tone: "blush",
     repo: "#",
     demo: "https://modelo-conceptual-3d.vercel.app/",
-    image: "/projects/arq-3d.svg",
+    image: { src: "/projects/arq-3d.svg", width: 1546, height: 768 },
   },
   {
     title: "KashiApp",
@@ -89,6 +89,6 @@ export const projects: Project[] = [
     tone: "cocoa",
     repo: "https://github.com/VictoriaArteaga/hopeLink.git",
     demo: "#",
-    image: "/projects/kashiapp.svg",
+    image: { src: "/projects/kashiapp.svg", width: 1600, height: 641 },
   },
 ];

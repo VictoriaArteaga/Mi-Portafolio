@@ -87,7 +87,7 @@ export default function Projects() {
         <ul className="mt-14 grid gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 lg:grid-cols-3">
           {projects.map((p, i) => {
             const s = tones[p.tone];
-            const imageSrc = p.image;
+            const image = p.image;
             return (
               <li key={p.title} className="flex justify-center">
                 <Reveal delay={(i % 3) * 80} className="flex w-full justify-center">
@@ -95,14 +95,14 @@ export default function Projects() {
                     className={`relative w-full max-w-[340px] rounded-[2rem] p-3 shadow-lg shadow-cocoa/20 transition-transform duration-300 ease-out-strong hover:-translate-y-2 hover:rotate-0 ${tilts[i % tilts.length]} ${s.card}`}
                   >
                     <div className={`flex h-full flex-col rounded-[1.6rem] border-[1.5px] p-4 ${s.frame}`}>
-                      {imageSrc ? (
+                      {image ? (
                         <button
                           type="button"
-                          onClick={() => setSelectedImage({ project: p, src: imageSrc })}
+                          onClick={() => setSelectedImage({ project: p, src: image.src })}
                           aria-label={t.viewImage(p.title)}
-                          className="relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-3xl bg-[#c7d0da] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+                          className="w-full cursor-zoom-in overflow-hidden rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                         >
-                          <Image src={imageSrc} alt={t.shot(p.title)} fill sizes="340px" className="object-contain" />
+                          <Image src={image.src} alt={t.shot(p.title)} width={image.width} height={image.height} sizes="340px" className="block h-auto w-full" />
                         </button>
                       ) : (
                         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]" />
