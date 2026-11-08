@@ -20,8 +20,8 @@ export default function Footer() {
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
   const msgs =
     lang === "es"
-      ? { required: "Completa este campo", email: "Ingresa un correo válido (ej. nombre@correo.com)" }
-      : { required: "Please fill in this field", email: "Enter a valid email (e.g. name@mail.com)" };
+      ? { required: "Completa este campo", nameShort: "El nombre debe tener mínimo 3 letras", email: "Ingresa un correo válido (ej. nombre@correo.com)" }
+      : { required: "Please fill in this field", nameShort: "The name must have at least 3 letters", email: "Enter a valid email (e.g. name@mail.com)" };
   const clearError = (field: Field) => setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
   const fieldBase =
     "rounded-xl border-2 px-4 text-base font-normal outline-none focus-visible:ring-2 dark:text-moon";
@@ -52,6 +52,7 @@ export default function Footer() {
     const message = String(values.get("message") ?? "").trim();
     const nextErrors: Partial<Record<Field, string>> = {};
     if (!name) nextErrors.name = msgs.required;
+    else if ((name.match(/\p{L}/gu)?.length ?? 0) < 3) nextErrors.name = msgs.nameShort;
     if (!email) nextErrors.email = msgs.required;
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) nextErrors.email = msgs.email;
     if (!message) nextErrors.message = msgs.required;
@@ -88,7 +89,11 @@ export default function Footer() {
       });
 
       const result = await response.json().catch(() => null);
-      if (!response.ok || result?.success === "false" || result?.success === false) {
+      // FormSubmit guarda el primer mensaje de un correo nuevo y pide activarlo; aun así el mensaje
+      // quedó recibido y se entrega a tu correo, así que se muestra como enviado.
+      const needsActivation = /activat|confirm/i.test(String(result?.message ?? ""));
+      const failed = !response.ok || result?.success === "false" || result?.success === false;
+      if (failed && !(response.ok && needsActivation)) {
         setStatus("error");
         return;
       }
