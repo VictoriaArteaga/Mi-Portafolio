@@ -26,11 +26,11 @@ export default function Achievements() {
         <div className="absolute bottom-16 right-[6%] size-28 rounded-full border-[3px] border-crimson/30 dark:border-blush/15" />
         <div className="absolute right-[30%] top-6 size-10 rounded-full bg-blush/70 dark:bg-blush/15" />
         <div
-          className="absolute right-10 top-28 h-28 w-36 opacity-70 dark:opacity-30"
+          className="absolute right-10 top-28 hidden h-28 w-36 opacity-70 dark:opacity-30 sm:block"
           style={{ backgroundImage: "radial-gradient(#e87524 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <div
-          className="absolute bottom-10 left-8 h-24 w-32 opacity-60 dark:opacity-25"
+          className="absolute bottom-10 left-8 hidden h-24 w-32 opacity-60 dark:opacity-25 sm:block"
           style={{ backgroundImage: "radial-gradient(#5a3720 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <svg viewBox="0 0 200 12" fill="none" className="absolute bottom-24 right-[18%] w-32 text-terracota/50">

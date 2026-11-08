@@ -99,7 +99,7 @@ export default function About() {
       <div className="relative mx-auto grid max-w-[1264px] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[460px_minmax(0,1fr)] lg:gap-16">
         <Reveal className="relative">
           {/* Polaroid */}
-          <div className="relative mx-auto w-full max-w-[504px] -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
+          <div className="relative mx-auto w-full max-w-[460px] -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
             <div aria-hidden className="absolute -left-6 -top-3 h-8 w-20 -rotate-45 bg-butter/80" />
             <div aria-hidden className="absolute -right-6 -top-2 h-8 w-20 rotate-[40deg] bg-blush/80" />
             <div className="relative aspect-[463/614] overflow-hidden bg-[#f1eee5] dark:bg-bark">
@@ -113,7 +113,7 @@ export default function About() {
           {/* Sello */}
           <div
             aria-hidden
-            className="font-hand absolute -bottom-5 right-0 grid size-[6.5rem] rotate-[10deg] place-items-center rounded-full border-[3px] border-dashed border-cocoa bg-butter text-center text-[1.35rem] font-bold leading-none text-ink dark:border-linen dark:bg-terracota dark:text-night sm:-right-3"
+            className="font-hand absolute -bottom-4 right-2 grid size-20 rotate-[10deg] place-items-center rounded-full border-[3px] border-dashed border-cocoa bg-butter text-center text-base sm:size-[6.5rem] sm:text-[1.35rem] font-bold leading-none text-ink dark:border-linen dark:bg-terracota dark:text-night sm:-right-3"
           >
             <span>
               {extra.stamp[0]}
@@ -134,7 +134,7 @@ export default function About() {
             <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
           </svg>
 
-          <div className="mt-5 space-y-4 text-justify leading-relaxed text-ink/75 dark:text-moon/75">
+          <div className="mt-5 space-y-4 text-left leading-relaxed sm:text-justify text-ink/75 dark:text-moon/75">
             {mainParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

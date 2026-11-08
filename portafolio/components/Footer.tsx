@@ -68,7 +68,7 @@ export default function Footer() {
           className="absolute bottom-10 left-8 h-24 w-36 opacity-60 dark:opacity-25"
           style={{ backgroundImage: "radial-gradient(#fff6ec 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
-        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16 lg:gap-24 lg:px-12">
+        <div className="relative mx-auto grid w-full max-w-[1440px] items-center gap-12 px-5 sm:px-8 md:gap-16 lg:grid-cols-2 lg:gap-24 lg:px-12">
           <div className="flex flex-col gap-6">
             <p className="font-hand text-3xl font-bold lg:text-4xl">{lang === "es" ? "06 · hablemos" : "06 · let's talk"}</p>
             <h2 className="font-serif text-5xl font-semibold leading-[1.05] sm:text-[60px] lg:text-[84px]">
@@ -84,7 +84,7 @@ export default function Footer() {
             aria-label={f.submit}
           >
             <span aria-hidden className="absolute -top-3.5 right-7 h-[26px] w-20 rotate-[4deg] bg-butter/95" />
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
               <label className="grid gap-2 text-sm font-bold lg:text-base" htmlFor="contact-name">
                 {f.name}
                 <input

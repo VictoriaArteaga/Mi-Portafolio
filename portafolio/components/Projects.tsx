@@ -18,7 +18,14 @@ const tones: Record<ProjectTone, Style> = {
 };
 
 // Inclinaciones alternas, como cartas esparcidas sobre una mesa.
-const tilts = ["-rotate-[8deg]", "rotate-[6deg]", "-rotate-[5deg]", "rotate-[9deg]", "rotate-[5deg]", "-rotate-[7deg]"];
+const tilts = [
+  "-rotate-[3deg] sm:-rotate-[8deg]",
+  "rotate-[2deg] sm:rotate-[6deg]",
+  "-rotate-[2deg] sm:-rotate-[5deg]",
+  "rotate-[3deg] sm:rotate-[9deg]",
+  "rotate-[2deg] sm:rotate-[5deg]",
+  "-rotate-[3deg] sm:-rotate-[7deg]",
+];
 
 export default function Projects() {
   const t = useT().projects;
@@ -30,10 +37,10 @@ export default function Projects() {
         <div className="absolute -left-20 top-24 size-64 rounded-full border-[3px] border-terracota/40" />
         <div className="absolute -left-8 top-36 size-64 rounded-full border-[3px] border-cream/70 dark:border-tangerine/20" />
         <div className="absolute -right-24 top-1/3 size-72 rounded-full bg-tangerine/40 dark:bg-terracota/10" />
-        <div className="absolute -top-20 left-[32%] size-56 rounded-full border-[3px] border-crimson/25 dark:border-blush/15" />
+        <div className="absolute -top-20 left-[32%] hidden size-56 rounded-full border-[3px] border-crimson/25 dark:border-blush/15 sm:block" />
         <div className="absolute bottom-24 right-[8%] size-24 rounded-full bg-butter/70 dark:bg-butter/10" />
         <div
-          className="absolute left-6 top-16 h-32 w-32 opacity-70 dark:opacity-30"
+          className="absolute left-6 top-16 hidden h-32 w-32 opacity-70 dark:opacity-30 sm:block"
           style={{ backgroundImage: "radial-gradient(#e87524 2.5px, transparent 2.5px)", backgroundSize: "18px 18px" }}
         />
         <div

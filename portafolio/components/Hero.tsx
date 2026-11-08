@@ -31,13 +31,13 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden bg-gradient-to-b from-[#fff1e2] to-cream dark:from-umber dark:to-night">
       {/* Manchas orgánicas de fondo */}
-      <div aria-hidden className="absolute -left-24 top-1/2 -z-10 size-72 rounded-[45%_55%_60%_40%] bg-terracota/90 dark:opacity-20" />
+      <div aria-hidden className="absolute -left-24 top-1/2 -z-10 size-72 rounded-[45%_55%_60%_40%] bg-terracota/90 opacity-40 dark:opacity-20 lg:opacity-100 lg:dark:opacity-20" />
       <div aria-hidden className="absolute -right-20 -top-16 -z-10 size-72 rounded-[55%_45%_40%_60%] bg-tangerine/90 dark:opacity-20" />
-      <svg aria-hidden viewBox="0 0 24 24" className="absolute left-[6%] top-16 -z-10 size-[34px] fill-crimson dark:opacity-60">
+      <svg aria-hidden viewBox="0 0 24 24" className="absolute left-[6%] top-16 -z-10 hidden size-[34px] fill-crimson dark:opacity-60 sm:block">
         <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
       </svg>
 
-      <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-[1360px] items-center gap-14 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-24 lg:grid-cols-[minmax(0,1fr)_470px] lg:gap-16">
+      <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-[1360px] items-center gap-14 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,1fr)_470px] lg:gap-16">
         <div className="flex flex-col gap-5 xl:pl-[110px]">
           <p className="font-hand flex items-center gap-2.5 text-3xl text-ink dark:text-moon sm:text-[2.125rem]">
             {profile.name} <Heart className="size-6 text-terracota" />
@@ -51,7 +51,7 @@ export default function Hero() {
               </svg>
             </span>
           </h1>
-          <div className="space-y-4 text-justify text-lg leading-[1.7] text-cocoa dark:text-moon/75">
+          <div className="space-y-4 text-left text-lg sm:text-justify leading-[1.7] text-cocoa dark:text-moon/75">
             {profile.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -87,7 +87,7 @@ export default function Hero() {
         {/* Retrato */}
         <div className="relative mx-auto w-full max-w-[470px]">
           {/* Marco punteado en arco */}
-          <div aria-hidden className="absolute -right-[22px] bottom-[22px] left-[22px] -top-[22px] rounded-t-[999px] rounded-b-[2.5rem] border-[3px] border-dashed border-terracota" />
+          <div aria-hidden className="absolute -right-2 bottom-3 left-3 -top-3 sm:-right-[22px] sm:bottom-[22px] sm:left-[22px] sm:-top-[22px] rounded-t-[999px] rounded-b-[2.5rem] border-[3px] border-dashed border-terracota" />
 
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-br from-tangerine to-terracota shadow-2xl shadow-terracota/30">
             <Image src="/hero.png" alt="María Victoria Arteaga" fill priority sizes="(min-width: 1024px) 470px, (min-width: 768px) 384px, 90vw" className="object-cover object-top" />
