@@ -104,7 +104,7 @@ export default function About() {
             <div aria-hidden className="absolute -left-3 -top-3 h-8 w-20 sm:-left-6 -rotate-45 bg-butter/80" />
             <div aria-hidden className="absolute -right-3 -top-2 h-8 w-20 sm:-right-6 rotate-[40deg] bg-blush/80" />
             <div className="relative aspect-[463/614] overflow-hidden bg-[#f1eee5] dark:bg-bark">
-              <Image src="/about-vector.svg" alt="Ilustración vectorial de María Victoria Arteaga en un encuentro de investigación" fill unoptimized sizes="(min-width: 1024px) 480px, min(480px, calc(100vw - 64px))" className="object-cover object-center" />
+              <Image src="/about-vector.svg" alt="Fotografía de María Victoria Arteaga" fill unoptimized sizes="(min-width: 1024px) 480px, min(480px, calc(100vw - 64px))" className="object-cover object-center" />
             </div>
             <span className="font-hand absolute bottom-2 left-0 right-0 text-center text-2xl text-cocoa dark:text-linen">
               Victoria Arteaga
