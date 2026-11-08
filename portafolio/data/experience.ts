@@ -13,7 +13,7 @@ export type ExperienceEntry = {
   highlights?: string[];
 };
 
-const projectOrder = ["Arq 3D", "Señas", "Coco", "Respira", "Ñawi Nariño", "Hope Link"];
+const projectOrder = ["Arq 3D", "Señas", "Coco", "Respira", "Ñawi Nariño", "KashiApp"];
 
 const projectExperience = projectOrder.map((title): ExperienceEntry => {
   const project = projects.find((item) => item.title === title);

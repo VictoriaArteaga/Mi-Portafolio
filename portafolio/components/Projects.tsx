@@ -80,7 +80,7 @@ export default function Projects() {
                   >
                     <div className={`flex h-full flex-col rounded-[1.6rem] border-[1.5px] p-4 ${s.frame}`}>
                       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]">
-                        {p.image && <Image src={p.image} alt={t.shot(p.title)} fill sizes="340px" className="object-cover" />}
+                        {p.image && <Image src={p.image} alt={t.shot(p.title)} fill sizes="340px" className={`object-cover ${p.imagePosition === "left" ? "object-left" : "object-center"}`} />}
                       </div>
 
                       <h3 className={`font-serif mt-3 text-center text-[2.125rem] font-semibold leading-[1.1] ${s.title}`}>{p.title}</h3>

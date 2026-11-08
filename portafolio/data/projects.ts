@@ -16,6 +16,7 @@ export type Project = {
   demo: string;
   /** Ruta en /public, p. ej. "/projects/respira.png". Si falta se muestra un placeholder. */
   image?: string;
+  imagePosition?: "left";
 };
 
 // TODO: reemplazar descripciones, tags y enlaces por los reales de cada proyecto.
@@ -74,14 +75,16 @@ export const projects: Project[] = [
     image: "/projects/arq-3d.svg",
   },
   {
-    title: "Hope Link",
+    title: "KashiApp",
     description: {
-      es: "Api para la gestión integral de emergencias y respuesta ante desastres naturales.",
-      en: "API for comprehensive emergency management and response to natural disasters.",
+      es: "Billetera digital robusta diseñada bajo los principios de Clean Architecture y Arquitectura Hexagonal. El proyecto está enfocado en la modularidad, la seguridad y el cumplimiento de estándares de calidad ISO 25010.",
+      en: "Robust digital wallet designed under Clean Architecture and Hexagonal Architecture principles. The project focuses on modularity, security and compliance with ISO 25010 quality standards.",
     },
-    tags: ["Nest.js", "TypeScript","PostgreSQL"],
+    tags: ["Java", "SpringBoot", "TypeScript", "React", "PostgreSQL"],
     tone: "cocoa",
     repo: "https://github.com/VictoriaArteaga/hopeLink.git",
     demo: "#",
+    image: "/projects/kashiapp.svg",
+    imagePosition: "left",
   },
 ];
