@@ -30,6 +30,7 @@ export const projects: Project[] = [
     tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
     demo: "#",
+    image: { src: "/projects/nawi-narino.svg", width: 759, height: 496 },
   },
   {
     title: "Respira",
