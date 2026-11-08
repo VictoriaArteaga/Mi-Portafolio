@@ -96,7 +96,7 @@ export default function Hero() {
           <div aria-hidden className="absolute -right-2 bottom-3 left-3 -top-3 sm:-right-[22px] sm:bottom-[22px] sm:left-[22px] sm:-top-[22px] rounded-t-[999px] rounded-b-[2.5rem] border-[3px] border-dashed border-terracota" />
 
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-br from-tangerine to-terracota shadow-2xl shadow-terracota/30">
-            <Image src="/hero.png" alt="María Victoria Arteaga" fill priority sizes="(min-width: 1024px) 470px, (min-width: 768px) 384px, 90vw" className="object-cover object-top" />
+            <Image src="/about-vector.svg" alt="María Victoria Arteaga" fill priority unoptimized sizes="(min-width: 1024px) 470px, (min-width: 768px) 384px, 90vw" className="object-cover object-top" />
           </div>
 
           <ul className="absolute -right-3 top-1/2 flex -translate-y-1/2 flex-col gap-2 sm:-right-7">
