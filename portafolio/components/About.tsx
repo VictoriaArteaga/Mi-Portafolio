@@ -93,11 +93,12 @@ export default function About() {
   return (
     <section id="sobre-mi" className="relative overflow-hidden bg-[#fff1e2] py-12 dark:bg-umber sm:py-14">
       {/* Anillos decorativos */}
-      <div aria-hidden className="absolute right-10 top-5 size-36 rounded-full border-[3px] border-tangerine/60" />
-      <div aria-hidden className="absolute right-20 top-14 size-36 rounded-full border-[3px] border-terracota/40" />
+      <div aria-hidden className="absolute right-10 top-5 hidden size-36 rounded-full sm:block border-[3px] border-tangerine/60" />
+      <div aria-hidden className="absolute right-20 top-14 hidden size-36 rounded-full sm:block border-[3px] border-terracota/40" />
 
-      <div className="relative mx-auto grid max-w-[1264px] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[460px_minmax(0,1fr)] lg:gap-16">
-        <Reveal className="relative">
+      <div className="relative mx-auto grid max-w-[1264px] items-center gap-8 px-5 sm:px-8 lg:grid-cols-[460px_minmax(0,1fr)] lg:gap-x-16 lg:gap-y-0">
+        {/* En celular: título primero, luego la imagen y luego el resto. En escritorio: imagen a la izquierda. */}
+        <Reveal className="relative order-2 lg:order-none lg:col-start-1 lg:row-span-2 lg:row-start-1">
           {/* Polaroid */}
           <div className="relative mx-auto w-full max-w-[460px] -rotate-3 rounded-sm bg-white p-3 pb-10 shadow-xl transition-transform duration-300 ease-out-strong hover:rotate-0 dark:bg-bark dark:shadow-black/35">
             <div aria-hidden className="absolute -left-6 -top-3 h-8 w-20 -rotate-45 bg-butter/80" />
@@ -113,7 +114,7 @@ export default function About() {
           {/* Sello */}
           <div
             aria-hidden
-            className="font-hand absolute -bottom-4 right-2 grid size-20 rotate-[10deg] place-items-center rounded-full border-[3px] border-dashed border-cocoa bg-butter text-center text-base sm:size-[6.5rem] sm:text-[1.35rem] font-bold leading-none text-ink dark:border-linen dark:bg-terracota dark:text-night sm:-right-3"
+            className="font-hand absolute bottom-14 -right-1 grid size-20 rotate-[10deg] place-items-center rounded-full border-[3px] border-dashed border-cocoa bg-butter text-center text-base sm:-bottom-5 sm:right-0 sm:size-[6.5rem] sm:text-[1.35rem] lg:-right-3 font-bold leading-none text-ink dark:border-linen dark:bg-terracota dark:text-night sm:-right-3"
           >
             <span>
               {extra.stamp[0]}
@@ -125,7 +126,7 @@ export default function About() {
           </div>
         </Reveal>
 
-        <Reveal delay={100}>
+        <Reveal delay={100} className="order-1 lg:order-none lg:col-start-2 lg:row-start-1 lg:self-end">
           <p className="font-hand text-3xl font-bold text-[#a8430a] dark:text-tangerine">{extra.eyebrow}</p>
           <h2 className="mt-1 font-serif text-4xl font-semibold sm:text-5xl">
             {t.sectionTitle}
@@ -133,8 +134,10 @@ export default function About() {
           <svg aria-hidden viewBox="0 0 200 12" fill="none" className="mt-2 w-40 text-terracota dark:text-tangerine">
             <path d="M2 8c20-8 40 6 60 0s40-8 60-2 60 6 76 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
           </svg>
+        </Reveal>
 
-          <div className="mt-5 space-y-4 text-left leading-relaxed sm:text-justify text-ink/75 dark:text-moon/75">
+        <Reveal delay={150} className="order-3 lg:order-none lg:col-start-2 lg:row-start-2 lg:self-start">
+          <div className="space-y-4 text-left lg:mt-5 leading-relaxed sm:text-justify text-ink/75 dark:text-moon/75">
             {mainParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
