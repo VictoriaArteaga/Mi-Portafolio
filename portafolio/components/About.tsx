@@ -1,12 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useLang, useT } from "@/lib/prefs";
 import { profileContent } from "@/data/profile";
 import Reveal from "./Reveal";
 const stackIcons = ["nest", "spring", "fastapi", "next", "react", "unity", "postgres", "vr", "aws"] as const;
 
-function StackIcon({ kind }: { kind: (typeof stackIcons)[number] }) {
+type StackKind =
+  | (typeof stackIcons)[number]
+  | "git"
+  | "docker"
+  | "reactnative"
+  | "electron"
+  | "tailwind"
+  | "postman"
+  | "blender"
+  | "vite";
+
+/** Nombres de las tecnologías nuevas (las anteriores salen de lib/copy.ts). */
+const extraNames: Record<string, string> = {
+  git: "Git",
+  docker: "Docker",
+  reactnative: "React Native",
+  electron: "Electron",
+  tailwind: "Tailwind CSS",
+  postman: "Postman",
+  blender: "Blender",
+  vite: "Vite",
+};
+
+const stackGroups: { id: "backend" | "frontend" | "tools"; kinds: StackKind[] }[] = [
+  { id: "backend", kinds: ["nest", "spring", "fastapi", "postgres"] },
+  { id: "frontend", kinds: ["next", "react", "reactnative", "electron"] },
+  { id: "tools", kinds: ["git", "docker", "postman", "blender", "unity", "vr", "aws"] },
+];
+
+function StackIcon({ kind }: { kind: StackKind }) {
   if (kind === "unity" || kind === "postgres") {
     return (
       <Image
@@ -28,6 +58,14 @@ function StackIcon({ kind }: { kind: (typeof stackIcons)[number] }) {
     react: "#61dafb",
     unity: "currentColor",
     postgres: "#4169e1",
+    git: "#f05032",
+    docker: "#2496ed",
+    reactnative: "#61dafb",
+    electron: "#47848f",
+    tailwind: "#38bdf8",
+    postman: "#ff6c37",
+    blender: "#ea7600",
+    vite: "#a855f7",
     vr: "#c75b39",
     aws: "#ff9900",
   };
@@ -69,6 +107,63 @@ function StackIcon({ kind }: { kind: (typeof stackIcons)[number] }) {
           <path d="M8 19h6m-3-3v6" />
         </>
       )}
+      {kind === "git" && (
+        <>
+          <path d="M16 3 29 16 16 29 3 16z" />
+          <circle cx="13" cy="13" r="2" />
+          <circle cx="13" cy="21" r="2" />
+          <circle cx="20" cy="17" r="2" />
+          <path d="M13 15v4M13 13l5 3" />
+        </>
+      )}
+      {kind === "docker" && (
+        <>
+          <rect x="6" y="12" width="4" height="4" />
+          <rect x="11" y="12" width="4" height="4" />
+          <rect x="16" y="12" width="4" height="4" />
+          <rect x="11" y="7" width="4" height="4" />
+          <path d="M3 18h24c1-2 2-3 3-3-1-1-2-1-3-1M3 18c0 5 5 9 12 9 7 0 11-4 12-9" />
+        </>
+      )}
+      {kind === "reactnative" && (
+        <>
+          <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(60 16 16)" />
+          <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(120 16 16)" />
+          <rect x="12" y="8" width="8" height="16" rx="2" />
+        </>
+      )}
+      {kind === "electron" && (
+        <>
+          <circle cx="16" cy="16" r="2.5" fill={colors.electron} stroke="none" />
+          <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(45 16 16)" />
+          <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(-45 16 16)" />
+        </>
+      )}
+      {kind === "tailwind" && (
+        <>
+          <path d="M5 11c2-5 7-6 11-3s7 2 11-2c-2 5-7 6-11 3s-7-2-11 2Z" />
+          <path d="M5 21c2-5 7-6 11-3s7 2 11-2c-2 5-7 6-11 3s-7-2-11 2Z" />
+        </>
+      )}
+      {kind === "postman" && (
+        <>
+          <circle cx="16" cy="16" r="12" />
+          <path d="m10 22 9-9m0 0h-5m5 0v5" />
+        </>
+      )}
+      {kind === "blender" && (
+        <>
+          <circle cx="17" cy="18" r="8" />
+          <circle cx="17" cy="18" r="3" />
+          <path d="m4 20 10-8M6 14h9" />
+        </>
+      )}
+      {kind === "vite" && (
+        <>
+          <path d="M3 6l13 22L29 6c-6 1-20 1-26 0Z" />
+          <path d="m17 3-5 12h6l-3 9 9-14h-6z" fill="#fdc700" stroke="none" />
+        </>
+      )}
       {kind === "aws" && (
         <>
           <path d="M8 12.5c0-1.6 1.2-2.6 3.1-2.6h2.3v-.5c0-.9-.6-1.4-1.5-1.4-.8 0-1.3.3-1.5.9H8.3c.3-2 1.7-3.1 3.8-3.1 2.4 0 3.8 1.3 3.8 3.5v5h-2.5l-.1-1.1c-.6.9-1.5 1.3-2.7 1.3-1.7 0-2.8-.8-2.8-2zm5.4-.7v-.3h-1.9c-.8 0-1.2.3-1.2.9s.4.9 1.1.9c1.2 0 2-.6 2-1.5z" fill={colors.aws} stroke="none" />
@@ -82,11 +177,13 @@ function StackIcon({ kind }: { kind: (typeof stackIcons)[number] }) {
 export default function About() {
   const { lang } = useLang();
   const t = useT().about;
+  const [activeGroup, setActiveGroup] = useState<(typeof stackGroups)[number]["id"]>("backend");
+  const current = stackGroups.find((g) => g.id === activeGroup) ?? stackGroups[0];
   const paragraphs = profileContent[lang].about.paragraphs;
   const extra =
     lang === "es"
-      ? { eyebrow: "01 · conóceme", stamp: ["backend", "e IA", "aplicada"], beyond: "Fuera del código:" }
-      : { eyebrow: "01 · get to know me", stamp: ["backend", "& applied", "AI"], beyond: "Beyond the code:" };
+      ? { eyebrow: "01 · conóceme", stamp: ["backend", "e IA", "aplicada"], beyond: "Fuera del código:", groups: { backend: "Backend", frontend: "Frontend", tools: "Herramientas y otras tecnologías" } }
+      : { eyebrow: "01 · get to know me", stamp: ["backend", "& applied", "AI"], beyond: "Beyond the code:", groups: { backend: "Backend", frontend: "Frontend", tools: "Tools & other technologies" } };
   const mainParagraphs = paragraphs.length > 1 ? paragraphs.slice(0, -1) : paragraphs;
   const beyondParagraph = paragraphs.length > 1 ? paragraphs[paragraphs.length - 1] : null;
 
@@ -145,7 +242,7 @@ export default function About() {
 
           {beyondParagraph && (
             <div className="mt-6 flex items-start gap-3.5 rounded-[1.25rem] border-2 border-dashed border-terracota bg-cream px-5 py-4 dark:border-tangerine dark:bg-night">
-              <p className="text-base leading-relaxed text-ink dark:text-moon">
+              <p className="text-left text-base leading-relaxed text-ink dark:text-moon sm:text-justify">
                 <strong>{extra.beyond}</strong> {beyondParagraph}
               </p>
             </div>
@@ -153,16 +250,40 @@ export default function About() {
 
           <div className="mt-6">
             <h3 className="font-serif text-2xl font-semibold">{t.stackTitle}</h3>
-            <ul className="mt-4 flex flex-wrap gap-2.5">
-              {t.stack.map((name, i) => (
-                <li
-                  key={name}
-                  className="inline-flex items-center gap-2.5 rounded-[0.875rem] border-2 border-[#f0cfae] bg-white py-2 pl-2.5 pr-3.5 text-[0.95rem] font-medium text-ink dark:border-dusk dark:bg-bark dark:text-moon"
-                >
-                  <StackIcon kind={stackIcons[i]} />
-                  <span>{name}</span>
-                </li>
-              ))}
+            <div role="group" aria-label={t.stackTitle} className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
+              {stackGroups.map((group) => {
+                const active = group.id === activeGroup;
+                return (
+                  <button
+                    key={group.id}
+                    type="button"
+                    onClick={() => setActiveGroup(group.id)}
+                    aria-pressed={active}
+                    className={`min-h-11 border-b-[3px] font-serif text-lg font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota ${
+                      active
+                        ? "border-terracota text-[#a8430a] dark:border-tangerine dark:text-tangerine"
+                        : "border-transparent text-ink/65 hover:text-terracota dark:text-moon/65 dark:hover:text-tangerine"
+                    }`}
+                  >
+                    {extra.groups[group.id]}
+                  </button>
+                );
+              })}
+            </div>
+            <ul aria-live="polite" className="mt-3 flex min-h-[7.5rem] flex-wrap content-start gap-2.5">
+              {current.kinds.map((kind) => {
+                const idx = (stackIcons as readonly string[]).indexOf(kind);
+                const name = idx >= 0 ? t.stack[idx] : extraNames[kind];
+                return (
+                  <li
+                    key={kind}
+                    className="inline-flex items-center gap-2.5 rounded-[0.875rem] border-2 border-[#f0cfae] bg-white py-2 pl-2.5 pr-3.5 text-[0.95rem] font-medium text-ink dark:border-dusk dark:bg-bark dark:text-moon"
+                  >
+                    <StackIcon kind={kind} />
+                    <span>{name}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </Reveal>
