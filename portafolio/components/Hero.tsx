@@ -37,11 +37,15 @@ export default function Hero() {
         <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
       </svg>
 
-      <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-[1360px] items-center gap-14 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,1fr)_470px] lg:gap-16">
-        <div className="flex flex-col gap-5 xl:pl-[110px]">
+      <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-[1360px] items-center gap-8 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,1fr)_470px] lg:gap-x-16 lg:gap-y-0">
+        {/* En celular: saludo, luego la imagen, luego el resto. En escritorio: texto a la izquierda e imagen a la derecha. */}
+        <div className="order-1 lg:order-none lg:col-start-1 lg:row-start-1 lg:self-end xl:pl-[110px]">
           <p className="font-hand flex items-center gap-2.5 text-3xl text-ink dark:text-moon sm:text-[2.125rem]">
             {profile.name} <Heart className="size-6 text-terracota" />
           </p>
+        </div>
+
+        <div className="order-3 flex flex-col gap-5 lg:order-none lg:col-start-1 lg:row-start-2 lg:mt-5 lg:self-start xl:pl-[110px]">
           <h1 className="font-serif text-5xl font-semibold leading-[1.04] tracking-tight text-ink sm:text-6xl lg:text-[68px] dark:text-moon">
             {profile.titleStart}{" "}
             <span className="font-hand relative inline-block text-6xl font-bold text-[#a8430a] sm:text-7xl lg:text-[84px] dark:text-terracota">
@@ -85,7 +89,7 @@ export default function Hero() {
         </div>
 
         {/* Retrato */}
-        <div className="relative mx-auto w-full max-w-[470px]">
+        <div className="relative order-2 mx-auto w-full max-w-[470px] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1">
           {/* Marco punteado en arco */}
           <div aria-hidden className="absolute -right-2 bottom-3 left-3 -top-3 sm:-right-[22px] sm:bottom-[22px] sm:left-[22px] sm:-top-[22px] rounded-t-[999px] rounded-b-[2.5rem] border-[3px] border-dashed border-terracota" />
 

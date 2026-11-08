@@ -85,7 +85,7 @@ export default function About() {
   const paragraphs = profileContent[lang].about.paragraphs;
   const extra =
     lang === "es"
-      ? { eyebrow: "01 · conóceme", stamp: ["backend", "& IA", "aplicada"], beyond: "Fuera del código:" }
+      ? { eyebrow: "01 · conóceme", stamp: ["backend", "e IA", "aplicada"], beyond: "Fuera del código:" }
       : { eyebrow: "01 · get to know me", stamp: ["backend", "& applied", "AI"], beyond: "Beyond the code:" };
   const mainParagraphs = paragraphs.length > 1 ? paragraphs.slice(0, -1) : paragraphs;
   const beyondParagraph = paragraphs.length > 1 ? paragraphs[paragraphs.length - 1] : null;
