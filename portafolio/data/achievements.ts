@@ -18,6 +18,7 @@ export const achievements: Achievement[] = [
     issuer: "Universidad Cooperativa de Colombia",
     description:
       "Reconocimiento por parte del Programa de Ingeniería de Software y el Consejo de Facultad por la dedicación, rigor y aporte a la innovación tecnológica en salud.",
+    image: "/achievements/merito-investigativo-ucc.svg",
   },
   {
     date: "Octubre 2026",
@@ -37,15 +38,18 @@ export const achievements: Achievement[] = [
     date: "Marzo - mayo 2026",
     title: "Ciberguardianas",
     issuer: "Universidad Cooperativa de Colombia · 70 horas - Formación en Ciberseguridad para Mujeres en STEM",
+    image: "/achievements/ciberguardianas.svg",
   },
   {
     date: "Mayo 2026",
     title: "Ponente Sobresaliente",
     issuer: "XXIII Encuentro Departamental y III Binacional de Semilleros - ponencia MEDIEVAL",
+    image: "/achievements/ponente-sobresaliente.svg",
   },
   {
     date: "Mayo 2025",
     title: "Ponente Meritorio",
     issuer: "XXII Encuentro Departamental y II Binacional de Semilleros - ponencia estrategia de la enseñanza de la anatomía dental con realidad virtual",
+    image: "/achievements/ponente-meritorio.svg",
   },
 ];
