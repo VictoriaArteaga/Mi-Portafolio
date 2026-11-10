@@ -53,7 +53,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Tailwind", "PostgreSQL"],
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
-    demo: "#",
+    demo: "https://coco-murex-omega.vercel.app/",
     image: { src: "/projects/coco.svg", width: 1904, height: 944 },
   },
   {
