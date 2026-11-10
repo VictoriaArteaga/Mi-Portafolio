@@ -41,7 +41,7 @@ export const projects: Project[] = [
     tags: ["React", "CSS", "API", "PostgreSQL"],
     tone: "crimson",
     repo: "https://github.com/VictoriaArteaga/RESPIRA.git",
-    demo: "#",
+    demo: "https://respira-eta.vercel.app/",
     image: { src: "/projects/respira.svg", width: 1901, height: 986 },
   },
   {
