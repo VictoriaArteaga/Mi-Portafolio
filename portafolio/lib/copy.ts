@@ -42,9 +42,7 @@ const es = {
   },
   testimonials: {
     title: "Testimonios",
-    items: [
-      { name: "Ing. Daniel Arteaga", quote: "Aquí va un testimonio real sobre el cuidado por el detalle y la atención al cliente." },
-    ],
+    items: [] as { name: string; quote: string }[],
   },
   achievements: {
     title: "Logros y Certificados",
@@ -115,9 +113,7 @@ const en: Copy = {
   },
   testimonials: {
     title: "Testimonials",
-    items: [
-      { name: "Ing. Daniel Arteaga", quote: "A real testimonial goes here about attention to detail and client care." },
-    ],
+    items: [] as { name: string; quote: string }[],
   },
   achievements: {
     title: "Achievements & Certificates",
