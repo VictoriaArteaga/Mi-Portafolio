@@ -19,6 +19,7 @@ export type Project = {
   tone: ProjectTone;
   repo: string;
   demo: string;
+  apk?: string;
   /** Imagen del proyecto en /public, con sus dimensiones intrínsecas. */
   image?: { src: string; width: number; height: number };
   /** Si es true, la miniatura de la tarjeta se recorta a lo ancho para ocupar el mismo alto que la de Arq 3D. */
@@ -58,6 +59,7 @@ export const projects: Project[] = [
     tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
     demo: "#",
+    apk: "",
     image: { src: "/projects/nawi-narino.svg", width: 759, height: 496 },
   },
   {
@@ -84,6 +86,7 @@ export const projects: Project[] = [
     tone: "crimson",
     repo: "https://github.com/VictoriaArteaga/RESPIRA.git",
     demo: "https://respira-eta.vercel.app/",
+    apk: "",
     image: { src: "/projects/respira.svg", width: 1901, height: 986 },
   },
   {
@@ -114,6 +117,7 @@ export const projects: Project[] = [
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "https://coco-murex-omega.vercel.app/",
+    apk: "",
     image: { src: "/projects/coco.svg", width: 920, height: 713 },
   },
   {
@@ -126,6 +130,7 @@ export const projects: Project[] = [
     tone: "butter",
     repo: "https://github.com/VictoriaArteaga/SENAS.git",
     demo: "#",
+    apk: "",
     image: { src: "/projects/senas.svg", width: 890, height: 505 },
   },
   {

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLang, useT } from "@/lib/prefs";
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { Github } from "./Icons";
+import { Download, Github } from "./Icons";
 import { ARQ_THUMB_RATIO, projects, type Project, type ProjectTone } from "@/data/projects";
 
 type Style = { card: string; frame: string; title: string; text: string; tag: string; btn: string; gh: string };
@@ -155,6 +155,31 @@ export default function Projects() {
                         >
                           {t.demo}
                         </a>
+                        {p.apk !== undefined && (
+                          p.apk ? (
+                            <a
+                              href={p.apk}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${lang === "es" ? "Descargar APK de" : "Download"} ${p.title}`}
+                              className={`inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-bold transition-transform duration-150 ease-out-strong hover:scale-105 active:scale-[0.96] ${s.btn}`}
+                            >
+                              <Download className="size-4" />
+                              APK
+                            </a>
+                          ) : (
+                            <button
+                              type="button"
+                              disabled
+                              title={lang === "es" ? "Enlace de descarga próximamente" : "Download link coming soon"}
+                              aria-label={`${lang === "es" ? "Descargar APK de" : "Download"} ${p.title}`}
+                              className={`inline-flex cursor-not-allowed items-center gap-1.5 rounded-md px-3 py-2 text-sm font-bold opacity-60 ${s.btn}`}
+                            >
+                              <Download className="size-4" />
+                              APK
+                            </button>
+                          )
+                        )}
                       </div>
                     </div>
                   </article>
