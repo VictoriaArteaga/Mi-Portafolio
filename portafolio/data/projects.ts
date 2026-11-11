@@ -35,7 +35,7 @@ export const projects: Project[] = [
     tags: [],
     tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
-    demo: "#",
+    demo: "https://nawinarino-frontend.vercel.app/",
     apk: "https://github.com/VictoriaArteaga/NawiNarino/releases/download/v1.0.0/NawiNarino.apk",
     image: { src: "/projects/nawi-narino.svg", width: 1185, height: 768 },
   },
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "https://coco-murex-omega.vercel.app/",
-    apk: "",
+    apk: "https://github.com/VictoriaArteaga/COCO/releases/latest/download/coco-smartwatch.apk",
     image: { src: "/projects/coco.svg", width: 1108, height: 768 },
   },
   {
