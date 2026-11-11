@@ -37,7 +37,7 @@ export const projects: Project[] = [
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
     demo: "#",
     apk: "",
-    image: { src: "/projects/nawi-narino.svg", width: 759, height: 496 },
+    image: { src: "/projects/nawi-narino.svg", width: 1185, height: 768 },
   },
   {
     title: "Respira",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "https://coco-murex-omega.vercel.app/",
     apk: "",
-    image: { src: "/projects/coco.svg", width: 920, height: 713 },
+    image: { src: "/projects/coco.svg", width: 1108, height: 768 },
   },
   {
     title: "Señas",
