@@ -10,11 +10,6 @@ export type Project = {
   title: string;
   /** Descripción por idioma. Si falta se usa el texto provisional de lib/copy.ts. */
   description?: { es: string; en: string };
-  technicalDetails?: {
-    es: { label: string; value: string }[];
-    en: { label: string; value: string }[];
-  };
-  note?: { es: string; en: string };
   tags: string[];
   tone: ProjectTone;
   repo: string;
@@ -37,25 +32,7 @@ export const projects: Project[] = [
       es: "App móvil educativa y cultural para aprender y explorar las lenguas y los pueblos indígenas de Nariño. Incluye un explorador con IA que responde citando documentos reales.",
       en: "Educational and cultural mobile app to learn about and explore the languages and Indigenous peoples of Nariño. Includes an AI explorer that answers with citations from real documents.",
     },
-    technicalDetails: {
-      es: [
-        { label: "Lenguajes", value: "TypeScript, Python" },
-        { label: "Frameworks", value: "Expo / React Native, FastAPI" },
-        { label: "Base de datos", value: "PostgreSQL (Supabase)" },
-        { label: "IA aplicada", value: "RAG con citas, embeddings bge-m3 y gpt-oss-120b vía Groq" },
-      ],
-      en: [
-        { label: "Languages", value: "TypeScript, Python" },
-        { label: "Frameworks", value: "Expo / React Native, FastAPI" },
-        { label: "Database", value: "PostgreSQL (Supabase)" },
-        { label: "Applied AI", value: "Cited RAG with bge-m3 embeddings and gpt-oss-120b via Groq" },
-      ],
-    },
-    note: {
-      es: "Los textos educativos aún no han sido verificados por hablantes.",
-      en: "The educational texts have not yet been verified by speakers.",
-    },
-    tags: ["App móvil", "React Native", "FastAPI", "RAG", "Supabase"],
+    tags: [],
     tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
     demo: "#",
@@ -68,21 +45,7 @@ export const projects: Project[] = [
       es: "Aplicación de escritorio para monitorear infecciones respiratorias agudas en menores de 5 años en Nariño, con indicadores por municipio y semana epidemiológica. No es una herramienta de diagnóstico.",
       en: "Desktop application for monitoring acute respiratory infections in children under 5 in Nariño, with indicators by municipality and epidemiological week. It is not a diagnostic tool.",
     },
-    technicalDetails: {
-      es: [
-        { label: "Lenguajes", value: "Python, TypeScript" },
-        { label: "Frameworks", value: "FastAPI, React, Electron" },
-        { label: "Base de datos", value: "PostgreSQL" },
-        { label: "IA aplicada", value: "Pronósticos experimentales de atenciones por IRA con HistGradientBoosting (scikit-learn)" },
-      ],
-      en: [
-        { label: "Languages", value: "Python, TypeScript" },
-        { label: "Frameworks", value: "FastAPI, React, Electron" },
-        { label: "Database", value: "PostgreSQL" },
-        { label: "Applied AI", value: "Experimental forecasts of ARI visits with HistGradientBoosting (scikit-learn)" },
-      ],
-    },
-    tags: ["Python", "FastAPI", "React", "Electron", "PostgreSQL", "scikit-learn"],
+    tags: [],
     tone: "crimson",
     repo: "https://github.com/VictoriaArteaga/RESPIRA.git",
     demo: "https://respira-eta.vercel.app/",
@@ -95,25 +58,7 @@ export const projects: Project[] = [
       es: "Plataforma web y para smartwatch que registra hábitos de conejos domésticos (alimentación, agua, sueño, juego y comportamiento) y detecta cambios en su rutina. No reemplaza la valoración veterinaria.",
       en: "Web and smartwatch platform for tracking pet rabbits' habits (feeding, water, sleep, play, and behavior) and detecting changes in their routine. It does not replace veterinary assessment.",
     },
-    technicalDetails: {
-      es: [
-        { label: "Lenguajes", value: "Java, TypeScript, Kotlin" },
-        { label: "Frameworks", value: "Spring Boot, Next.js, Jetpack Compose (Wear OS)" },
-        { label: "Base de datos", value: "PostgreSQL (H2 en desarrollo)" },
-        { label: "IA aplicada", value: "Google Gemini para análisis preventivo y Vosk para dictado por voz sin conexión" },
-      ],
-      en: [
-        { label: "Languages", value: "Java, TypeScript, Kotlin" },
-        { label: "Frameworks", value: "Spring Boot, Next.js, Jetpack Compose (Wear OS)" },
-        { label: "Database", value: "PostgreSQL (H2 in development)" },
-        { label: "Applied AI", value: "Google Gemini for preventive analysis and Vosk for offline voice dictation" },
-      ],
-    },
-    note: {
-      es: "Gemini está integrado en el código; no se confirma que se hayan realizado llamadas reales al servicio.",
-      en: "Gemini is integrated in the code; actual calls to the service have not been confirmed.",
-    },
-    tags: ["Java", "Next.js", "Wear OS", "PostgreSQL", "Gemini", "Vosk"],
+    tags: [],
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "https://coco-murex-omega.vercel.app/",
