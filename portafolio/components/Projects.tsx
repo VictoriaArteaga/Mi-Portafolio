@@ -117,6 +117,18 @@ export default function Projects() {
                       <h3 className={`font-serif mt-3 text-center text-[2.125rem] font-semibold leading-[1.1] ${s.title}`}>{p.title}</h3>
                       <p className={`mt-2 text-center text-sm leading-snug ${s.text}`}>{p.description?.[lang] ?? t.description}</p>
 
+                      {p.technicalDetails && (
+                        <dl className={`mt-3 space-y-1 text-left text-[0.8rem] leading-snug ${s.text}`}>
+                          {p.technicalDetails[lang].map(({ label, value }) => (
+                            <div key={label}>
+                              <dt className="inline font-bold">{label}: </dt>
+                              <dd className="inline">{value}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                      )}
+                      {p.note && <p className={`mt-2 text-left text-xs leading-snug ${s.text}`}>{p.note[lang]}</p>}
+
                       <ul className="mt-3 flex flex-wrap justify-center gap-1.5">
                         {p.tags.map((tag) => (
                           <li key={tag} className={`rounded-md border px-2 py-0.5 text-[0.7rem] font-semibold ${s.tag}`}>
