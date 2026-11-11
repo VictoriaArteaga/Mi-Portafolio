@@ -49,7 +49,7 @@ export const projects: Project[] = [
     tone: "crimson",
     repo: "https://github.com/VictoriaArteaga/RESPIRA.git",
     demo: "https://respira-eta.vercel.app/",
-    apk: "",
+    apk: "https://github.com/VictoriaArteaga/RESPIRA/releases/latest",
     image: { src: "/projects/respira.svg", width: 1901, height: 986 },
   },
   {
