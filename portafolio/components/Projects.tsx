@@ -128,6 +128,8 @@ export default function Projects() {
                       <div className="mt-4 flex items-center justify-center gap-3">
                         <a
                           href={p.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label={t.repo(p.title)}
                           className={`grid size-9 place-items-center rounded-full transition-transform duration-150 ease-out-strong hover:scale-110 active:scale-90 ${s.gh}`}
                         >
