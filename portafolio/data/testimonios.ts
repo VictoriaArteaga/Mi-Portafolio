@@ -38,11 +38,11 @@ export const testimonios: Testimonio[] = [
     paragraphs: {
       es: [
         "He acompañado a María Victoria en diferentes etapas de su formación académica, tanto desde mi experiencia como docente como en su proceso de investigación y desarrollo de su trabajo de grado. Durante este tiempo, he podido reconocer su compromiso, responsabilidad y disposición para aprender, así como su interés por profundizar en sus conocimientos y mantener un buen desempeño académico.",
-        "Se caracteriza por ser una estudiante dedicada, juiciosa y constante en sus actividades académicas. Ha demostrado responsabilidad y compromiso en el desarrollo de su proyecto de investigación, destacándose por la dedicación y el trabajo que ha realizado a lo largo de este proceso. Considero que estas características son fortalezas importantes que contribuirán a su crecimiento y desarrollo como futura ingeniera de software.",
+        "Se caracteriza por ser una estudiante dedicada, juiciosa y constante en sus actividades académicas. Ha demostrado responsabilidad y compromiso en el desarrollo de su proyecto de investigación, destacándose por la dedicación y el trabajo que ha realizado a lo largo de este proceso. Considero que estas características son fortalezas importantes que contribuirán a su crecimiento profesional."
       ],
       en: [
         "I have accompanied María Victoria through different stages of her academic training, both as her teacher and during the research and development of her thesis project. During this time, I have come to recognize her commitment, responsibility, and willingness to learn, as well as her interest in deepening her knowledge and maintaining strong academic performance.",
-        "She is a dedicated, diligent, and consistent student. She has shown responsibility and commitment in developing her research project, standing out for the dedication and work she has put in throughout the process. I consider these traits important strengths that will contribute to her growth and development as a future software engineer.",
+        "She is a dedicated, diligent, and consistent student. She has shown responsibility and commitment in developing her research project, standing out for the dedication and work she has put in throughout the process. I consider these traits important strengths that will contribute to her professional growth.",
       ],
     },
   },
