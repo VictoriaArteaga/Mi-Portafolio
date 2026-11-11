@@ -36,7 +36,7 @@ export const projects: Project[] = [
     tone: "terracota",
     repo: "https://github.com/VictoriaArteaga/NawiNarino.git",
     demo: "#",
-    apk: "",
+    apk: "https://github.com/VictoriaArteaga/NawiNarino/releases/download/v1.0.0/NawiNarino.apk",
     image: { src: "/projects/nawi-narino.svg", width: 1185, height: 768 },
   },
   {
