@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useT } from "@/lib/prefs";
+import { useLang, useT } from "@/lib/prefs";
+import { CV_LINKS, cvHref } from "@/data/socials";
 import Controls from "./Controls";
+import { Download } from "./Icons";
 
 export const sections = ["#inicio", "#sobre-mi", "#proyectos", "#experiencia", "#testimonios", "#logros", "#contacto"];
 
@@ -21,7 +23,13 @@ export function Logo({ className = "" }: { className?: string }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const t = useT();
+  const { lang } = useLang();
   const links = sections.map((href, i) => ({ href, label: t.nav.links[i] }));
+  const cvUrl = CV_LINKS[lang];
+  const cvProps = {
+    href: cvUrl ? cvHref(cvUrl) : "#",
+    ...(cvUrl ? { target: "_blank", rel: "noopener noreferrer" } : {}),
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-ink text-cream dark:border-b dark:border-cream/10 dark:bg-night dark:text-moon">
@@ -42,6 +50,13 @@ export default function Navbar() {
         </ul>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
+        <a
+          {...cvProps}
+          className="hidden items-center gap-2 rounded-full bg-terracota px-4 py-2 text-sm font-bold text-ink transition-[transform,background-color] duration-150 ease-out-strong hover:bg-tangerine active:scale-[0.97] lg:inline-flex"
+        >
+          <Download className="size-4" />
+          {t.hero.cv}
+        </a>
         <Controls />
         <button
           type="button"
@@ -76,6 +91,16 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li className="pt-3">
+            <a
+              {...cvProps}
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center gap-2 rounded-full bg-terracota px-5 py-2.5 text-base font-bold text-ink transition-transform duration-150 active:scale-[0.97]"
+            >
+              <Download className="size-5" />
+              {t.hero.cv}
+            </a>
+          </li>
         </ul>
       </div>
     </header>
