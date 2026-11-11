@@ -59,7 +59,7 @@ export const projects: Project[] = [
     tone: "tangerine",
     repo: "https://github.com/VictoriaArteaga/COCO.git",
     demo: "https://coco-murex-omega.vercel.app/",
-    image: { src: "/projects/coco.svg", width: 1904, height: 944 },
+    image: { src: "/projects/coco.svg", width: 920, height: 713 },
   },
   {
     title: "Señas",
