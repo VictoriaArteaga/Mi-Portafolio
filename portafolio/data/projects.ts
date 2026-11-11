@@ -75,7 +75,7 @@ export const projects: Project[] = [
     tone: "butter",
     repo: "https://github.com/VictoriaArteaga/SENAS.git",
     demo: "#",
-    apk: "",
+    apk: "#",
     image: { src: "/projects/senas.svg", width: 890, height: 505 },
   },
   {
