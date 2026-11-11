@@ -40,8 +40,8 @@ export const projects: Project[] = [
   {
     title: "Respira",
     description: {
-      es: "Aplicación de escritorio académica para apoyar el monitoreo de infecciones respiratorias agudas en menores de cinco años en Nariño.",
-      en: "Academic desktop application to support the monitoring of acute respiratory infections in children under five in Nariño.",
+      es: "Aplicación de escritorio para apoyar el monitoreo de infecciones respiratorias agudas en menores de cinco años en Nariño.",
+      en: "Desktop application to support the monitoring of acute respiratory infections in children under five in Nariño.",
     },
     tags: ["React", "CSS", "API", "PostgreSQL"],
     tone: "crimson",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     title: "Coco",
     description: {
-      es: "COCO registra y consulta hábitos de conejos domésticos. No diagnostica ni reemplaza la valoración veterinaria.",
+      es: "Aplicación smartwatch y web: COCO registra y consulta hábitos de conejos domésticos. No diagnostica ni reemplaza la valoración veterinaria.",
       en: "COCO records and looks up the habits of pet rabbits. It does not diagnose or replace a veterinary assessment.",
     },
     tags: ["Next.js", "Tailwind", "PostgreSQL"],
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     },
     tags: ["Java", "SpringBoot", "TypeScript", "React", "TripoIA", "PostgreSQL"],
     tone: "blush",
-    repo: "#",
+    repo: "https://github.com/VictoriaArteaga/Proyecto-Final-Patrones-Backend.git",
     demo: "https://modelo-conceptual-3d.vercel.app/",
     image: { src: "/projects/arq-3d.svg", width: 1546, height: 768 },
   },
