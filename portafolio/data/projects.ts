@@ -89,7 +89,7 @@ export const projects: Project[] = [
     tags: ["Java", "SpringBoot", "TypeScript", "React", "PostgreSQL"],
     tone: "cocoa",
     repo: "https://github.com/VictoriaArteaga/hopeLink.git",
-    demo: "#",
+    demo: "https://kashiapp.vercel.app/",
     image: { src: "/projects/kashiapp.svg", width: 1600, height: 641 },
   },
 ];
