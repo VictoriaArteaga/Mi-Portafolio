@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     title: "Coco",
     description: {
-      es: "Aplicación smartwatch y web: COCO registra y consulta hábitos de conejos domésticos. No diagnostica ni reemplaza la valoración veterinaria.",
+      es: "Aplicación smartwatch y web: registra y consulta hábitos de conejos domésticos. No diagnostica ni reemplaza la valoración veterinaria.",
       en: "COCO records and looks up the habits of pet rabbits. It does not diagnose or replace a veterinary assessment.",
     },
     tags: ["Next.js", "Tailwind", "PostgreSQL"],
