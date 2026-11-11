@@ -16,7 +16,12 @@ export type Project = {
   demo: string;
   /** Imagen del proyecto en /public, con sus dimensiones intrínsecas. */
   image?: { src: string; width: number; height: number };
+  /** Si es true, la miniatura de la tarjeta se recorta a lo ancho para ocupar el mismo alto que la de Arq 3D. */
+  cropToArq?: boolean;
 };
+
+/** Proporción de la imagen de Arq 3D, usada como referencia para el alto de las miniaturas. */
+export const ARQ_THUMB_RATIO = 1546 / 768;
 
 // TODO: reemplazar descripciones, tags y enlaces por los reales de cada proyecto.
 export const projects: Project[] = [
@@ -91,5 +96,6 @@ export const projects: Project[] = [
     repo: "https://github.com/VictoriaArteaga/hopeLink.git",
     demo: "https://kashiapp.vercel.app/",
     image: { src: "/projects/kashiapp.svg", width: 1600, height: 641 },
+    cropToArq: true,
   },
 ];

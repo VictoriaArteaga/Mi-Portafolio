@@ -5,7 +5,7 @@ import { useLang, useT } from "@/lib/prefs";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import { Github } from "./Icons";
-import { projects, type Project, type ProjectTone } from "@/data/projects";
+import { ARQ_THUMB_RATIO, projects, type Project, type ProjectTone } from "@/data/projects";
 
 type Style = { card: string; frame: string; title: string; text: string; tag: string; btn: string; gh: string };
 
@@ -102,7 +102,13 @@ export default function Projects() {
                           aria-label={t.viewImage(p.title)}
                           className="w-full cursor-zoom-in overflow-hidden rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                         >
-                          <Image src={image.src} alt={t.shot(p.title)} width={image.width} height={image.height} sizes="340px" className="block h-auto w-full" />
+                          {p.cropToArq ? (
+                            <span className="relative block w-full" style={{ aspectRatio: ARQ_THUMB_RATIO }}>
+                              <Image src={image.src} alt={t.shot(p.title)} fill sizes="340px" className="object-cover object-center" />
+                            </span>
+                          ) : (
+                            <Image src={image.src} alt={t.shot(p.title)} width={image.width} height={image.height} sizes="340px" className="block h-auto w-full" />
+                          )}
                         </button>
                       ) : (
                         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#c7d0da]" />
