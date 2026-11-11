@@ -89,12 +89,12 @@ export default function Projects() {
             const s = tones[p.tone];
             const image = p.image;
             return (
-              <li key={p.title} className="flex justify-center">
-                <Reveal delay={(i % 3) * 80} className="flex w-full justify-center">
+              <li key={p.title} className="flex h-full justify-center">
+                <Reveal delay={(i % 3) * 80} className="flex h-full w-full justify-center">
                   <article
-                    className={`relative w-full max-w-[340px] rounded-[2rem] p-3 shadow-lg shadow-cocoa/20 transition-transform duration-300 ease-out-strong hover:-translate-y-2 hover:rotate-0 ${tilts[i % tilts.length]} ${s.card}`}
+                    className={`relative flex h-full w-full max-w-[340px] flex-col rounded-[2rem] p-3 shadow-lg shadow-cocoa/20 transition-transform duration-300 ease-out-strong hover:-translate-y-2 hover:rotate-0 ${tilts[i % tilts.length]} ${s.card}`}
                   >
-                    <div className={`flex h-full flex-col rounded-[1.6rem] border-[1.5px] p-4 ${s.frame}`}>
+                    <div className={`flex h-full flex-1 flex-col rounded-[1.6rem] border-[1.5px] p-4 ${s.frame}`}>
                       {image ? (
                         <button
                           type="button"
@@ -127,7 +127,7 @@ export default function Projects() {
                         </ul>
                       )}
 
-                      <div className="mt-4 flex items-center justify-center gap-3">
+                      <div className="mt-auto flex items-center justify-center gap-3 pt-4">
                         <a
                           href={p.repo}
                           target="_blank"
