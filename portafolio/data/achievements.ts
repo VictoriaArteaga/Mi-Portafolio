@@ -33,6 +33,8 @@ export const achievements: Achievement[] = [
     title: "Certificado de ponente · ENISI 2026",
     issuer: "XXIX Encuentro Nacional y XXIII Internacional de Semilleros · Universidad del Sinú, Montería",
     description: "Ponencia de MEDIEVAL, aplicativo de IA para evaluar competencias clínicas.",
+    url: "https://medi-eval-web.vercel.app/",
+    linkLabel: { es: "Ver proyecto", en: "View project" },
   },
   {
     date: "Marzo - mayo 2026",
