@@ -1,5 +1,3 @@
-import { projects } from "@/data/projects";
-
 export type ExperienceEntry = {
   /** Rango de fechas, por ejemplo: "2023 — 2025". */
   period?: string;
@@ -13,23 +11,56 @@ export type ExperienceEntry = {
   highlights?: string[];
 };
 
-const projectOrder = ["Arq 3D", "Señas", "Coco", "Respira", "Ñawi Nariño", "KashiApp"];
-
-const projectExperience = projectOrder.map((title): ExperienceEntry => {
-  const project = projects.find((item) => item.title === title);
-  if (!project) {
-    throw new Error(`No se encontró el proyecto "${title}" en data/projects.ts.`);
-  }
-
-  return {
-    ...(project.title === "Arq 3D" && { period: "Marzo - mayo 2026 · 3 meses" }),
-    title: project.title,
-    organization: "Proyecto del portafolio",
-    description: `Tecnologías: ${project.tags.join(" · ")}`,
-  };
-});
-
 export const workExperience: ExperienceEntry[] = [
+  {
+    period: "Septiembre - noviembre 2026",
+    title: "Desarrolladora Full Stack (Freelance)",
+    organization: "Respira · Aplicación de escritorio para el monitoreo de infecciones respiratorias",
+    description: "",
+    highlights: [
+      "Desarrollé el frontend de la aplicación.",
+      "Desarrollé el backend y entrené el modelo de IA con scikit-learn.",
+    ],
+  },
+  {
+    period: "Septiembre - noviembre 2026",
+    title: "Desarrolladora Full Stack (Freelance)",
+    organization: "COCO · Registro y consulta de hábitos de conejos domésticos",
+    description: "",
+    highlights: ["Me encargué del desarrollo del frontend y del backend."],
+  },
+  {
+    period: "Septiembre - noviembre 2026",
+    title: "Desarrolladora Backend y 3D (Freelance)",
+    organization: "Señas · Videojuego educativo 3D de Lengua de Señas Colombiana",
+    description: "",
+    highlights: [
+      "Desarrollé el backend por completo, incluyendo el registro y la autenticación de usuarios.",
+      "Me encargué del renderizado de los modelos y las escenas 3D en Unity.",
+    ],
+  },
+  {
+    period: "Abril - mayo 2026",
+    title: "Scrum Master y Desarrolladora Backend (Freelance)",
+    organization: "KashiApp · Billetera digital",
+    description: "",
+    highlights: [
+      "Ejercí como Scrum Master del equipo.",
+      "Desarrollé módulos del backend y escribí pruebas unitarias y de integración.",
+      "Construí la vista del historial de transacciones en el frontend.",
+    ],
+  },
+  {
+    period: "Marzo - mayo 2026",
+    title: "Desarrolladora Full Stack (Freelance)",
+    organization: "Arq 3D · Diseños arquitectónicos generados con IA",
+    description: "",
+    highlights: [
+      "Desarrollé el backend de la aplicación.",
+      "Integré la IA de Tripo AI para generar imágenes.",
+      "Implementé en el frontend el renderizado del visor 3D de las casas.",
+    ],
+  },
   {
     period: "Marzo - mayo 2026",
     title: "Desarrolladora Frontend (Freelance)",
@@ -41,7 +72,6 @@ export const workExperience: ExperienceEntry[] = [
       "Corregí bugs en la CLI y mejoré su compatibilidad con Windows y Linux.",
     ],
   },
-  ...projectExperience,
 ];
 
 // Agrega aquí la experiencia académica cuando tengas la información.
