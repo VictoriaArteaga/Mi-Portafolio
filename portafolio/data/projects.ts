@@ -88,8 +88,8 @@ export const projects: Project[] = [
   {
     title: "KashiApp",
     description: {
-      es: "Billetera digital robusta diseñada bajo los principios de Clean Architecture y Arquitectura Hexagonal. El proyecto está enfocado en la modularidad, la seguridad y el cumplimiento de estándares de calidad ISO 25010.",
-      en: "Robust digital wallet designed under Clean Architecture and Hexagonal Architecture principles. The project focuses on modularity, security and compliance with ISO 25010 quality standards.",
+      es: "Billetera digital diseñada bajo los principios de Arquitectura Hexagonal. El proyecto está enfocado en la modularidad, la seguridad y el cumplimiento de estándares de calidad ISO 25010.",
+      en: "Digital wallet designed under Hexagonal Architecture principles. The project focuses on modularity, security and compliance with ISO 25010 quality standards.",
     },
     tags: ["Java", "SpringBoot", "TypeScript", "React", "PostgreSQL"],
     tone: "cocoa",
